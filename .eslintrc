@@ -16,6 +16,7 @@
     "no-implicit-globals": 0,
     "no-cond-assign": 0
   },
+  "parser": "babel-eslint",
   "parserOptions": {
     "sourceType": "module"
   }
