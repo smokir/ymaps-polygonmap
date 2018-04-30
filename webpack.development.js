@@ -13,13 +13,17 @@ module.exports = {
                 }
             },
             {
+                test: /\.geojson$/,
+                use: {
+                    loader: 'json-loader'
+                }
+            },
+            {
                 test: /\.html$/,
                 exclude: /node_modules/,
-                use: [
-                    {
-                        loader: 'html-loader'
-                    }
-                ]
+                use: {
+                    loader: 'html-loader'
+                }
             }
         ]
     },
