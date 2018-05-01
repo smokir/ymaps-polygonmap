@@ -1,4 +1,6 @@
 import normalizeFeature from './utils/normalizeFeature';
+import defaultMapper from './utils/defaultMapper';
+import inside from './utils/inside';
 
 ymaps.modules.define('Polygonmap', [
     'meta',
@@ -7,18 +9,29 @@ ymaps.modules.define('Polygonmap', [
 ], (provide, meta, OptionManager, ObjectManager) => {
     class Polygonmap {
         constructor(data, options) {
+            const defaultOptions = new OptionManager({
+                mapper: defaultMapper
+            });
+
+            this.options = new OptionManager(options, defaultOptions);
+
             if (data) {
                 this.setData(data);
             }
-
-            this.options = new OptionManager(options);
         }
 
         setData(data) {
             this._data = {
-                points: this._normalize(data[0]),
-                polygons: this._normalize(data[1])
+                points: {
+                    type: 'FeatureCollection',
+                    features: []
+                },
+                polygons: {
+                    type: 'FeatureCollection',
+                    features: []
+                }
             };
+            this._prepare(data);
 
             return this;
         }
@@ -35,20 +48,64 @@ ymaps.modules.define('Polygonmap', [
             return this;
         }
 
-        _normalize(data) {
-            if (data.type === 'FeatureCollection') {
-                const features = data.features
-                    .map((feature, id) => normalizeFeature(feature, {id}, meta));
+        _prepare(data) {
+            let pointFeatures = data[0].features;
+            let pointsCountMaximum = 0;
+            const polygonFeatures = data[1].features;
 
-                return Object.assign({}, data, {features});
-            } else if (data.type === 'Feature') {
-                const features = [normalizeFeature(data, {id: 0}, meta)];
+            if (data[0].type === 'FeatureCollection' && data[1].type === 'FeatureCollection') {
+                for (let i = 0; i < polygonFeatures.length; i++) {
+                    const restPointFeatures = [];
+                    const polygonFeature = normalizeFeature(polygonFeatures[i], meta, {id: i});
 
-                return {type: 'FeatureCollection', features};
+                    let pointsCount = 0;
+
+                    for (let j = 0; j < pointFeatures.length; j++) {
+                        let pointFeature;
+
+                        if (i === 0) {
+                            pointFeature =
+                                normalizeFeature(pointFeatures[j], meta, {id: j});
+                            this._data.points.features.push(pointFeature);
+                        } else {
+                            pointFeature = pointFeatures[j];
+                        }
+
+                        const isInside = inside(polygonFeature.geometry, pointFeature.geometry);
+
+                        if (isInside) {
+                            pointsCount++;
+                        } else {
+                            restPointFeatures.push(pointFeature);
+                        }
+                    }
+
+                    pointFeatures = restPointFeatures;
+
+                    if (pointsCount > pointsCountMaximum) {
+                        pointsCountMaximum = pointsCount;
+                    }
+
+                    polygonFeature.properties = polygonFeature.properties || {};
+                    polygonFeature.properties.pointsCount = pointsCount;
+
+                    this._data.polygons.features.push(polygonFeature);
+                }
             }
+
+            this._data.pointsCountMaximum = pointsCountMaximum;
         }
 
         _render() {
+            const mapper = this.options.get('mapper');
+            const pointsCountMaximum = this._data.pointsCountMaximum;
+
+            this._data.polygons.features = this._data.polygons.features.map((feature, i) => {
+                feature.properties.pointsCountMaximum = pointsCountMaximum;
+
+                return mapper(feature, i);
+            });
+
             this.polygons = new ObjectManager();
             this.polygons.add(this._data.polygons);
 

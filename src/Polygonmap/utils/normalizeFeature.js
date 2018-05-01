@@ -1,6 +1,6 @@
 import reverseCoordinates from './reverseCoordinates';
 
-const normalizeFeature = (feature, props = {}, meta) => {
+const normalizeFeature = (feature, meta, props = {}) => {
     let coordinates;
     let type = feature.geometry.type;
 
