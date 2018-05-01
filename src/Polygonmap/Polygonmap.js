@@ -22,14 +22,8 @@ ymaps.modules.define('Polygonmap', [
 
         setData(data) {
             this._data = {
-                points: {
-                    type: 'FeatureCollection',
-                    features: []
-                },
-                polygons: {
-                    type: 'FeatureCollection',
-                    features: []
-                }
+                points: {type: 'FeatureCollection', features: []},
+                polygons: {type: 'FeatureCollection', features: []}
             };
             this._prepare(data);
 
@@ -64,16 +58,13 @@ ymaps.modules.define('Polygonmap', [
                         let pointFeature;
 
                         if (i === 0) {
-                            pointFeature =
-                                normalizeFeature(pointFeatures[j], meta, {id: j});
+                            pointFeature = normalizeFeature(pointFeatures[j], meta, {id: j});
                             this._data.points.features.push(pointFeature);
                         } else {
                             pointFeature = pointFeatures[j];
                         }
 
-                        const isInside = inside(polygonFeature.geometry, pointFeature.geometry);
-
-                        if (isInside) {
+                        if (inside(polygonFeature.geometry, pointFeature.geometry)) {
                             pointsCount++;
                         } else {
                             restPointFeatures.push(pointFeature);
@@ -102,6 +93,7 @@ ymaps.modules.define('Polygonmap', [
 
             this._data.polygons.features = this._data.polygons.features.map((feature, i) => {
                 feature.properties.pointsCountMaximum = pointsCountMaximum;
+                feature.properties.pointsCountAll = this._data.points.features.length;
 
                 return mapper(feature, i);
             });

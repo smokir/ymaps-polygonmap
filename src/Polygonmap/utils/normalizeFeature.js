@@ -21,7 +21,7 @@ const normalizeFeature = (feature, meta, props = {}) => {
         }
     }
 
-    return Object.assign({}, feature, props, {geometry: {type, coordinates}});
+    return Object.assign({}, props, feature, {geometry: {type, coordinates}});
 };
 
 export default normalizeFeature;
