@@ -1,20 +1,26 @@
-import convertCoordinates from './utils/convertCoordinates';
-import convertMultiPolygonToPolygon from './utils/convertMultiPolygonToPolygon';
+import normalizeFeature from './utils/normalizeFeature';
 
 ymaps.modules.define('Polygonmap', [
+    'meta',
     'option.Manager',
-    'Monitor',
-    'Layer'
-], (provide, OptionManager) => {
+    'ObjectManager'
+], (provide, meta, OptionManager, ObjectManager) => {
     class Polygonmap {
-        constructor(points, polygons, options) {
-            this._data = {
-                points: points && points.type === 'FeatureCollection' ?
-                    points.features : points,
-                polygons: polygons && polygons.type === 'FeatureCollection' ?
-                    polygons.features : polygons
-            };
+        constructor(data, options) {
+            if (data) {
+                this.setData(data);
+            }
+
             this.options = new OptionManager(options);
+        }
+
+        setData(data) {
+            this._data = {
+                points: this._normalize(data[0]),
+                polygons: this._normalize(data[1])
+            };
+
+            return this;
         }
 
         setMap(map) {
@@ -29,16 +35,24 @@ ymaps.modules.define('Polygonmap', [
             return this;
         }
 
+        _normalize(data) {
+            if (data.type === 'FeatureCollection') {
+                const features = data.features
+                    .map((feature, id) => normalizeFeature(feature, {id}, meta));
+
+                return Object.assign({}, data, {features});
+            } else if (data.type === 'Feature') {
+                const features = [normalizeFeature(data, {id: 0}, meta)];
+
+                return {type: 'FeatureCollection', features};
+            }
+        }
+
         _render() {
-            this.polygons = this._data.polygons.map((feature) => {
-                const geoObject = new ymaps.GeoObject(
-                    convertMultiPolygonToPolygon(feature, convertCoordinates)
-                );
+            this.polygons = new ObjectManager();
+            this.polygons.add(this._data.polygons);
 
-                this._map.geoObjects.add(geoObject);
-
-                return geoObject;
-            }, []);
+            this._map.geoObjects.add(this.polygons);
         }
     }
 
