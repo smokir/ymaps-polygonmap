@@ -14,27 +14,36 @@ ymaps.modules.define('Polygonmap', [
             });
 
             this.options = new OptionManager(options, defaultOptions);
+            this.setData(data);
+        }
 
-            if (data) {
-                this.setData(data);
-            }
+        getData() {
+            return this._data || null;
         }
 
         setData(data) {
-            this._data = {
-                points: {type: 'FeatureCollection', features: []},
-                polygons: {type: 'FeatureCollection', features: []}
-            };
-            this._prepare(data);
+            this._data = data;
+
+            if (data) {
+                this._data = {
+                    points: {type: 'FeatureCollection', features: []},
+                    polygons: {type: 'FeatureCollection', features: []}
+                };
+                this._prepare(data);
+            }
 
             return this;
+        }
+
+        getMap() {
+            return this._map;
         }
 
         setMap(map) {
             if (this._map !== map) {
                 this._map = map;
 
-                if (map) {
+                if (map && this._data) {
                     this._render();
                 }
             }
@@ -42,12 +51,20 @@ ymaps.modules.define('Polygonmap', [
             return this;
         }
 
-        _prepare(data) {
-            let pointFeatures = data[0].features;
-            let pointsCountMaximum = 0;
-            const polygonFeatures = data[1].features;
+        destroy() {
+            this.setData(null);
+            this.setMap(null);
+        }
 
-            if (data[0].type === 'FeatureCollection' && data[1].type === 'FeatureCollection') {
+        _prepare(data) {
+            const polygonFeatures = data[0].features;
+            let pointFeatures = data[1].features;
+            let pointsCountMaximum = 0;
+
+            if (
+                data[0].type === 'FeatureCollection' &&
+                data[1].type === 'FeatureCollection'
+            ) {
                 for (let i = 0; i < polygonFeatures.length; i++) {
                     const restPointFeatures = [];
                     const polygonFeature = normalizeFeature(polygonFeatures[i], meta, {id: i});
