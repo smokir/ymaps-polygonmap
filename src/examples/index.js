@@ -1,4 +1,5 @@
 import './../Polygonmap/Polygonmap';
+import dataPoints from './data/bikeparking-moscow.geojson';
 import dataPolygons from './data/moscow-mo.geojson';
 
 ymaps.ready(() => {
@@ -10,7 +11,7 @@ ymaps.ready(() => {
     });
 
     ymaps.modules.require(['Polygonmap'], (Polygonmap) => {
-        const polygonmap = new Polygonmap(null, dataPolygons);
+        const polygonmap = new Polygonmap([dataPoints, dataPolygons]);
 
         polygonmap.setMap(myMap);
     });
