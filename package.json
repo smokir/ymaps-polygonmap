@@ -55,5 +55,8 @@
   },
   "bugs": {
     "url": "https://github.com/yandex-shri-fx-team/mapsapi-polygonmap/issues"
+  },
+  "dependencies": {
+    "robust-point-in-polygon": "^1.0.3"
   }
 }
