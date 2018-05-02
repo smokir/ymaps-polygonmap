@@ -17,7 +17,7 @@ Yandex.Maps API module for data visualization.
    <script src="http://my.cdn.tld/polygonmap.min.js" type="text/javascript"></script>
    ```
 
-   If you use GeoJSON data:
+   If you use [GeoJSON](http://geojson.org) data:
 
    ```html
    <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU&coordOrder=longlat" type="text/javascript"></script>
@@ -25,7 +25,7 @@ Yandex.Maps API module for data visualization.
    <script src="http://my.cdn.tld/polygonmap.min.js" type="text/javascript"></script>
    ```
 
-   If you use NPM:
+   If you use [npm](https://www.npmjs.com):
 
    ```html
    <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
