@@ -137,8 +137,8 @@ Destroys `Polygonmap` instance.
                     }
                 }]
             };
-        const data = [dataPolygons, dataPoints];
-        const polygonmap = new Polygonmap([dataPolygons, dataPoints]);
+        const data = {polygons: dataPolygons, points: dataPoints};
+        const polygonmap = new Polygonmap(data);
 
         polygonmap.setMap(myMap);
     });
@@ -148,12 +148,12 @@ Destroys `Polygonmap` instance.
 
     ```js
     ymaps.modules.require(['Polygonmap'], function (Polygonmap) {
-        const data = [dataPolygons, dataPoints];
+        const data = {polygons: dataPolygons, points: dataPoints};
         const polygonmap = new Polygonmap(data);
 
         polygonmap.setMap(myMap);
 
-        const newData = [newDataPolygons, newDataPoints];
+        const data = {polygons: newDataPolygons, points: newDataPoints};
 
         polygonmap.setData(newData);
     });
@@ -163,7 +163,7 @@ Destroys `Polygonmap` instance.
 
     ```js
     ymaps.modules.require(['Polygonmap'], function (Polygonmap) {
-        const data = [dataPolygons, dataPoints];
+        const data = {polygons: dataPolygons, points: dataPoints};
         const polygonmap = new Polygonmap(data);
 
         polygonmap.options.set('mapper', (feature) => {
