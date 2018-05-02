@@ -24,7 +24,7 @@ const inside = (polygon, point) => {
             }
         }
     } else {
-        for (let k = 1; k < polygonsCoord.length; k++) {
+        for (let k = 1; k < polygonsCoord.length && result; k++) {
             const polygonCoord = polygonsCoord[k];
             const isInsidePolygon = isInside(polygonCoord, pointCoord);
 
