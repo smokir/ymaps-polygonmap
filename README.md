@@ -25,6 +25,23 @@ Yandex.Maps API module for data visualization.
    <script src="http://my.cdn.tld/polygonmap.min.js" type="text/javascript"></script>
    ```
 
+   If you use NPM:
+
+   ```html
+   <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+   ```
+
+   ```bash
+   npm i --save git+https://github.com/yandex-shri-fx-team/mapsapi-polygonmap.git
+   ```
+
+   ```js
+   require('mapsapi-polygonmap');
+
+   // Or with babel
+   import 'mapsapi-polygonmap';
+   ```
+
 3. Get access to module functions by using [ymaps.modules.require](http://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/modules.require.xml) method:
 
    ```js
