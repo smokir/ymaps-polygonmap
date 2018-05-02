@@ -57,13 +57,13 @@ ymaps.modules.define('Polygonmap', [
         }
 
         _prepare(data) {
-            const polygonFeatures = data[0].features;
-            let pointFeatures = data[1].features;
+            const polygonFeatures = data.polygons.features;
+            let pointFeatures = data.points.features;
             let pointsCountMaximum = 0;
 
             if (
-                data[0].type === 'FeatureCollection' &&
-                data[1].type === 'FeatureCollection'
+                data.polygons.type === 'FeatureCollection' &&
+                data.points.type === 'FeatureCollection'
             ) {
                 for (let i = 0; i < polygonFeatures.length; i++) {
                     const restPointFeatures = [];

@@ -11,7 +11,7 @@ ymaps.ready(() => {
     });
 
     ymaps.modules.require(['Polygonmap'], (Polygonmap) => {
-        const polygonmap = new Polygonmap([polygons, points]);
+        const polygonmap = new Polygonmap({polygons, points});
 
         polygonmap.setMap(myMap);
     });
