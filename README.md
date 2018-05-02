@@ -53,7 +53,7 @@ Yandex.Maps API module for data visualization.
 
 | Name | Returns | Description |
 |-|-|-|
-| [getData](#getdata) | {polygons: Object, points: Object}&nbsp;&#124;&nbsp;null | Returns reference to data provided to constructor or [setData](#setdata) method. |
+| [getData](#getdata) | Object&nbsp;&#124;&nbsp;null | Returns reference to data provided to constructor or [setData](#setdata) method. |
 | [setData](#setdata) | Polygonmap | Adds new data. If `Polygonmap` instance is already rendered, it will be re-rendered. |
 | [getMap](#getmap) | Map&nbsp;&#124;&nbsp;null | Returns reference to [Map](http://api.yandex.com/maps/doc/jsapi/2.1/ref/reference/Map.xml) object. |
 | [setMap](#setmap) | Polygonmap | Sets [Map](http://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/Map.xml) instance to render polygonmap layer over it. |
