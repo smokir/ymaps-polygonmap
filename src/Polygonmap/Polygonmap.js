@@ -118,7 +118,47 @@ ymaps.modules.define('Polygonmap', [
             this.polygons = new ObjectManager();
             this.polygons.add(this._data.polygons);
 
+            this._initInteractivity(this.polygons);
+
             this._map.geoObjects.add(this.polygons);
+        }
+
+        _initInteractivity(objManager) {
+            const interactiveSettings = {
+                mouseEnter: {
+                    fillOpacity: 0.5,
+                    strokeWidth: 2
+                },
+                mouseLeave: {
+                    fillOpacity: 1,
+                    strokeWidth: 1
+                }
+            };
+
+            objManager.events.add('mouseenter', (e) => {
+                const objId = e.get('objectId');
+                objManager.objects.setObjectOptions(objId, interactiveSettings.mouseEnter);
+            });
+
+            objManager.events.add('mouseleave', (e) => {
+                const objId = e.get('objectId');
+                objManager.objects.setObjectOptions(objId, interactiveSettings.mouseLeave);
+            });
+
+            const balloon = new ymaps.Balloon(this._map);
+            balloon.options.setParent(this._map.options);
+
+            objManager.events.add('click', (e) => {
+                const objId = e.get('objectId');
+                const object = objManager.objects.getById(objId);
+                const someHtml = '<div>Some object <br> data.</div>';
+
+                balloon.setData({
+                    content: someHtml
+                });
+
+                balloon.open(object.geometry.coordinates[0][0]);
+            });
         }
     }
 
