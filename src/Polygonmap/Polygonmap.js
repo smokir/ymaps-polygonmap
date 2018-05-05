@@ -26,10 +26,18 @@ ymaps.modules.define('Polygonmap', [
                             '<div>Количество точек: ' + object.properties.pointsCount + '</div>' +
                         '</div>';
                     }
+                },
+                color: {
+                    rangesCount: 10,
+                    colormap: 'cdom',
+                    format: 'rgbaString',
+                    alpha: 0.9
                 }
             });
 
             this.options = new OptionManager(options, defaultOptions);
+            const mapper = this.options.get('mapper');
+            this.options.set('mapper', mapper.bind(this));
             this.setData(data);
         }
 
@@ -117,19 +125,13 @@ ymaps.modules.define('Polygonmap', [
                 }
             }
 
-            this._data.pointsCountMaximum = pointsCountMaximum;
+            this.pointsCountMaximum = pointsCountMaximum;
         }
 
         _render() {
             const mapper = this.options.get('mapper');
-            const pointsCountMaximum = this._data.pointsCountMaximum;
 
-            this._data.polygons.features = this._data.polygons.features.map((feature, i) => {
-                feature.properties.pointsCountMaximum = pointsCountMaximum;
-                feature.properties.pointsCountAll = this._data.points.features.length;
-
-                return mapper(feature, i, pointsCountMaximum);
-            });
+            this._data.polygons.features = this._data.polygons.features.map(mapper);
 
             this.polygons = new ObjectManager();
             this.polygons.add(this._data.polygons);
