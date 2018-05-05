@@ -1,6 +1,6 @@
 import './../Polygonmap/Polygonmap';
 import points from './data/bikeparking-moscow.geojson';
-import polygons from './data/moscow-mo.geojson';
+import polygons from './data/hexogons-moscow.geojson';
 
 ymaps.ready(() => {
     // eslint-disable-next-line no-unused-vars
