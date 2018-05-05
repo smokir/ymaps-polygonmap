@@ -1,13 +1,10 @@
-const defaultMapper = (feature) => {
-    const k = feature.properties.pointsCount / feature.properties.pointsCountMaximum;
+import RangeMapper from './rangeMapper';
 
-    const R = 0;
-    const G = 102;
-    const B = 255;
-    const alpha = k === 0 ? 0 : 0.2 + k * 0.8;
+const defaultMapper = (feature, i, pointsCountMaximum) => {
+    const rangeMapper = new RangeMapper(10, pointsCountMaximum);
 
     feature.options = {
-        fillColor: `rgba(${R}, ${G}, ${B}, ${alpha})`
+        fillColor: rangeMapper.getColor(feature.properties.pointsCount)
     };
 
     return feature;
