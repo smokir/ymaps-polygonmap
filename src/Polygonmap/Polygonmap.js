@@ -166,7 +166,7 @@ ymaps.modules.define('Polygonmap', [
                     content: interactivity.createBalloonContent(object)
                 });
 
-                balloon.open(object.geometry.coordinates[0][0]);
+                balloon.open(e.get('coords'));
             });
         }
     }
