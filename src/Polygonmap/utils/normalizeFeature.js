@@ -6,13 +6,15 @@ const normalizeFeature = (feature, meta, props = {}) => {
 
     if (feature.geometry.type === 'MultiPolygon') {
         type = 'Polygon';
-        coordinates = feature.geometry.coordinates.reduce((acc, coordinates) => {
-            if (typeof meta !== 'undefined' && meta.coordinatesOrder === 'longlat') {
+        if (typeof meta !== 'undefined' && meta.coordinatesOrder === 'longlat') {
+            coordinates = feature.geometry.coordinates.reduce((acc, coordinates) => {
                 return acc.concat(coordinates);
-            } else {
+            }, []);
+        } else {
+            coordinates = feature.geometry.coordinates.reduce((acc, coordinates) => {
                 return acc.concat(reverseCoordinates(coordinates));
-            }
-        }, []);
+            }, []);
+        }
     } else {
         if (typeof meta !== 'undefined' && meta.coordinatesOrder === 'longlat') {
             coordinates = feature.geometry.coordinates;
