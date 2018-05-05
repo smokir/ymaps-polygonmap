@@ -128,7 +128,7 @@ ymaps.modules.define('Polygonmap', [
                 feature.properties.pointsCountMaximum = pointsCountMaximum;
                 feature.properties.pointsCountAll = this._data.points.features.length;
 
-                return mapper(feature, i);
+                return mapper(feature, i, pointsCountMaximum);
             });
 
             this.polygons = new ObjectManager();

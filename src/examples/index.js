@@ -1,7 +1,6 @@
 import './../Polygonmap/Polygonmap';
 import points from './data/bikeparking-moscow.geojson';
-import RangeMapper from '../Polygonmap/utils/rangeMapper';
-import hexagonGrid from '../Polygonmap/utils/hexagonGrid';
+import polygons from './data/moscow-mo.geojson';
 
 ymaps.ready(() => {
     const el = document.getElementById('map');
@@ -30,16 +29,6 @@ ymaps.ready(() => {
 
     ymaps.modules.require(['Polygonmap'], (Polygonmap) => {
         const polygonmap = new Polygonmap({polygons, points});
-        const rangeMapper = new RangeMapper(10, polygonmap.getData().pointsCountMaximum);
-
-        polygonmap.options.set('mapper', (feature) => {
-            const pointsCount = feature.properties.pointsCount;
-
-            feature.options = {fillColor: rangeMapper.getColor(pointsCount)};
-
-            return feature;
-        });
-
         polygonmap.setMap(myMap);
     });
 });
