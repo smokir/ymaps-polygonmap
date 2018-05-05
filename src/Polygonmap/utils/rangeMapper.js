@@ -2,11 +2,11 @@ import Colormap from 'colormap';
 
 class RangeMapper {
     /**
-     * @param {Number} rangesCount count of ranges
-     * @param {Number} maxPointsCount max points
-     * @param {String} colormap type of colormap
-     * @param {String} format hex || rgbaString
-     * @param {Number|Array} alpha alpha chanel
+     * @param {number} rangesCount count of ranges
+     * @param {number} maxPointsCount max points
+     * @param {string} colormap type of colormap
+     * @param {string} format hex || rgbaString
+     * @param {number|Array} alpha alpha chanel
      */
     constructor(rangesCount = 10, maxPointsCount, colormap = 'cdom', format = 'rgbaString', alpha = 0.7) {
         this._rangesCount = rangesCount;
