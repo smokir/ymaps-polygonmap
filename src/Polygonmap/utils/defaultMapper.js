@@ -1,14 +1,14 @@
-import RangeMapper from './rangeMapper';
+import Colorize from './colorize/index';
 
 /**
  *
  * @this context Polygonmap
  */
 const defaultMapper = function (feature) {
-    const rangeMapper = new RangeMapper(this.pointsCountMaximum, this.options.get('color'));
+    const colorize = new Colorize(this.pointsCountMaximum, this.options.get('color'));
 
     feature.options = {
-        fillColor: rangeMapper.getColor(feature.properties.pointsCount)
+        fillColor: colorize.getColor(feature.properties.pointsCount)
     };
 
     return feature;
