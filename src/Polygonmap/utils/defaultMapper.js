@@ -1,7 +1,11 @@
 import RangeMapper from './rangeMapper';
 
-const defaultMapper = (feature, i, pointsCountMaximum) => {
-    const rangeMapper = new RangeMapper(10, pointsCountMaximum);
+/**
+ *
+ * @this context Polygonmap
+ */
+const defaultMapper = function (feature) {
+    const rangeMapper = new RangeMapper(this.pointsCountMaximum, this.options.get('color'));
 
     feature.options = {
         fillColor: rangeMapper.getColor(feature.properties.pointsCount)

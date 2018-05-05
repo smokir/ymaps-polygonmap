@@ -8,20 +8,20 @@ class RangeMapper {
      * @param {string} format hex || rgbaString
      * @param {number|Array} alpha alpha chanel
      */
-    constructor(rangesCount = 10, maxPointsCount, colormap = 'cdom', format = 'rgbaString', alpha = 0.7) {
-        this._rangesCount = rangesCount;
+    constructor(maxPointsCount, options) {
+        this._rangesCount = options.rangesCount;
 
-        if (maxPointsCount && typeof maxPointsCount === 'number' && maxPointsCount > 0) {
+        if (typeof maxPointsCount === 'number') {
             this._maxPointsCount = maxPointsCount;
         } else {
             throw new Error('Wrong "maxPointsCount" value');
         }
 
         this._colors = Colormap({
-            colormap: colormap,
+            colormap: options.colormap,
             nshades: this._rangesCount,
-            format: format,
-            alpha: alpha
+            format: options.format,
+            alpha: options.alpha
         }).reverse();
 
         this._ranges = this._createRangesArray();
@@ -44,7 +44,7 @@ class RangeMapper {
     }
 
     getColor(pointsCount) {
-        let color = '';
+        let color = this._colors[0];
 
         for (let i = 0; i <= this._ranges.length; i++) {
             if (pointsCount >= this._ranges[i] && pointsCount < this._ranges[i + 1]) {
