@@ -10,7 +10,23 @@ ymaps.modules.define('Polygonmap', [
     class Polygonmap {
         constructor(data, options) {
             const defaultOptions = new OptionManager({
-                mapper: defaultMapper
+                mapper: defaultMapper,
+                interactivity: {
+                    mouseEnter: {
+                        fillOpacity: 0.5,
+                        strokeWidth: 2
+                    },
+                    mouseLeave: {
+                        fillOpacity: 1,
+                        strokeWidth: 1
+                    },
+                    createBalloonContent: function (object) {
+                        return '<div>' +
+                            '<h3>Данные об объекте</h3>' +
+                            '<div>Количество точек: ' + object.properties.pointsCount + '</div>' +
+                        '</div>';
+                    }
+                }
             });
 
             this.options = new OptionManager(options, defaultOptions);
@@ -124,25 +140,16 @@ ymaps.modules.define('Polygonmap', [
         }
 
         _initInteractivity(objManager) {
-            const interactiveSettings = {
-                mouseEnter: {
-                    fillOpacity: 0.5,
-                    strokeWidth: 2
-                },
-                mouseLeave: {
-                    fillOpacity: 1,
-                    strokeWidth: 1
-                }
-            };
+            const interactivity = this.options.get('interactivity');
 
             objManager.events.add('mouseenter', (e) => {
                 const objId = e.get('objectId');
-                objManager.objects.setObjectOptions(objId, interactiveSettings.mouseEnter);
+                objManager.objects.setObjectOptions(objId, interactivity.mouseEnter);
             });
 
             objManager.events.add('mouseleave', (e) => {
                 const objId = e.get('objectId');
-                objManager.objects.setObjectOptions(objId, interactiveSettings.mouseLeave);
+                objManager.objects.setObjectOptions(objId, interactivity.mouseLeave);
             });
 
             const balloon = new ymaps.Balloon(this._map);
@@ -151,10 +158,9 @@ ymaps.modules.define('Polygonmap', [
             objManager.events.add('click', (e) => {
                 const objId = e.get('objectId');
                 const object = objManager.objects.getById(objId);
-                const someHtml = '<div>Some object <br> data.</div>';
 
                 balloon.setData({
-                    content: someHtml
+                    content: interactivity.createBalloonContent(object)
                 });
 
                 balloon.open(object.geometry.coordinates[0][0]);
