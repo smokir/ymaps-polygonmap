@@ -141,18 +141,21 @@ ymaps.modules.define('Polygonmap', [
 
         _initInteractivity(objManager) {
             const interactivity = this.options.get('interactivity');
+            const balloon = new ymaps.Balloon(this._map);
 
             objManager.events.add('mouseenter', (e) => {
-                const objId = e.get('objectId');
-                objManager.objects.setObjectOptions(objId, interactivity.mouseEnter);
+                __setObjectOptions(e, interactivity.mouseEnter);
             });
 
             objManager.events.add('mouseleave', (e) => {
-                const objId = e.get('objectId');
-                objManager.objects.setObjectOptions(objId, interactivity.mouseLeave);
+                __setObjectOptions(e, interactivity.mouseLeave);
             });
 
-            const balloon = new ymaps.Balloon(this._map);
+            function __setObjectOptions(e, options) {
+                const objId = e.get('objectId');
+                objManager.objects.setObjectOptions(objId, options);
+            }
+
             balloon.options.setParent(this._map.options);
 
             objManager.events.add('click', (e) => {
