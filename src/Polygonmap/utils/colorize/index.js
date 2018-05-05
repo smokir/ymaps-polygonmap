@@ -1,6 +1,6 @@
 import Colormap from 'colormap';
 
-class RangeMapper {
+class Colorize {
     /**
      * @param {number} rangesCount count of ranges
      * @param {number} maxPointsCount max points
@@ -56,4 +56,4 @@ class RangeMapper {
     }
 }
 
-export default RangeMapper;
+export default Colorize;
