@@ -2,6 +2,7 @@ import normalizeFeature from './utils/normalizeFeature';
 import defaultMapper from './utils/defaultMapper';
 import inside from './utils/inside';
 import Colorize from './utils/colorize/index';
+import OptionsManager from './utils/optionsManager/index';
 
 ymaps.modules.define('Polygonmap', [
     'meta',
@@ -10,7 +11,7 @@ ymaps.modules.define('Polygonmap', [
 ], (provide, meta, OptionManager, ObjectManager) => {
     class Polygonmap {
         constructor(data, options) {
-            const defaultOptions = new OptionManager({
+            const defaultOptions = {
                 mapper: defaultMapper,
                 color: {
                     rangesCount: 10,
@@ -18,9 +19,10 @@ ymaps.modules.define('Polygonmap', [
                     format: 'rgbaString',
                     alpha: 0.7
                 }
-            });
+            };
 
-            this.options = new OptionManager(options, defaultOptions);
+            this.options = new OptionsManager(defaultOptions, options);
+
             const mapper = this.options.get('mapper');
             this.options.set('mapper', mapper.bind(this));
             this.setData(data);
