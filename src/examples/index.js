@@ -5,7 +5,7 @@ import polygons from './data/moscow-mo.geojson';
 ymaps.ready(() => {
     // eslint-disable-next-line no-unused-vars
     const myMap = new ymaps.Map('map', {
-        center: [55.76, 37.64],
+        center: [37.64, 55.76],
         zoom: 10,
         controls: ['zoomControl', 'typeSelector']
     });
