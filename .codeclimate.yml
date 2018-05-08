@@ -1,0 +1,15 @@
+exclude_patterns:
+- config/
+- db/
+- dist/
+- examples/
+- umd/
+- features/
+- '**/node_modules/'
+- script/
+- '**/spec/'
+- '**/test/'
+- '**/*.test.js/'
+- '**/tests/'
+- '**/vendor/'
+- '**/*.d.ts'
