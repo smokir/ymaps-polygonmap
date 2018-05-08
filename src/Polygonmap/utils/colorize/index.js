@@ -41,13 +41,12 @@ class Colorize {
         return this._colors;
     }
 
-    getColor(pointsCount) {
-        let color = this._colors[9];
-        if (pointsCount) {
-            for (let i = 0; i <= this._ranges.length; i++) {
-                if (pointsCount <= this._ranges[i] && pointsCount > this._ranges[i + 1]) {
-                    color = this._colors[i];
-                }
+    getColor(pointsCount = 0) {
+        let color = this._colors[this._rangesCount - 1];
+
+        for (let i = 0; i < this._ranges.length; i++) {
+            if (pointsCount <= this._ranges[i] && pointsCount > this._ranges[i + 1]) {
+                color = this._colors[i];
             }
         }
 
