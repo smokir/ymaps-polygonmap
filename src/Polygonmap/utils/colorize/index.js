@@ -22,21 +22,19 @@ class Colorize {
             nshades: this._rangesCount,
             format: options.format,
             alpha: options.alpha
-        }).reverse();
-
+        });
         this._ranges = this._createRangesArray();
     }
 
     _createRangesArray() {
         const arr = [];
-
-        for (let i = 0; i < parseInt(this._maxPointsCount / this._rangesCount, 10); i++) {
-            arr.push(i * this._rangesCount);
+        for (let i = 1; i < this._rangesCount; i++) {
+            arr.push(i * parseInt(this._maxPointsCount / this._rangesCount, 10));
         }
 
         arr.push(this._maxPointsCount + 1);
 
-        return arr;
+        return arr.reverse();
     }
 
     getColorMap() {
@@ -44,11 +42,12 @@ class Colorize {
     }
 
     getColor(pointsCount) {
-        let color = this._colors[0];
-
-        for (let i = 0; i <= this._ranges.length; i++) {
-            if (pointsCount >= this._ranges[i] && pointsCount < this._ranges[i + 1]) {
-                color = this._colors[i];
+        let color = this._colors[9];
+        if (pointsCount) {
+            for (let i = 0; i <= this._ranges.length; i++) {
+                if (pointsCount <= this._ranges[i] && pointsCount > this._ranges[i + 1]) {
+                    color = this._colors[i];
+                }
             }
         }
 

@@ -3,7 +3,9 @@ import {expect, assert} from 'chai';
 
 import Colorize from './index';
 
-const maxPointsCount = 154;
+const maxPointsCount = 101;
+const minPointsCount = 0;
+const checkedValue = 94;
 const options = {
     rangesCount: 10,
     colormap: 'cdom',
@@ -31,38 +33,38 @@ describe('colorize', () => {
     describe('check returned color type', () => {
         it('should return rgba', () => {
             const colorize = new Colorize(maxPointsCount, options);
-            const color = colorize.getColor(94);
+            const color = colorize.getColor(checkedValue);
             const expected = new RegExp('rgba').test(color);
             assert.equal(expected, true);
         });
         it('should return hex', () => {
             const colorize = new Colorize(maxPointsCount, hexOptions);
-            const color = colorize.getColor(94);
+            const color = colorize.getColor(checkedValue);
             const expected = new RegExp('#').test(color);
             assert.equal(expected, true);
         });
     });
 
     describe('check returned color value', () => {
-        it('should return rgba(47,15,62,1)', () => {
+        it('should return right rgba color for max value', () => {
             const colorize = new Colorize(maxPointsCount, options);
-            const expected = 'rgba(47,15,62,1)';
-            const result = colorize.getColor(94);
+            const expected = colorize.getColorMap()[0];
+            const result = colorize.getColor(maxPointsCount);
+            expect(result).to.be.equal(expected);
+        });
+
+        it('should return right rgba color for min value', () => {
+            const colorize = new Colorize(maxPointsCount, options);
+            const expected = colorize.getColorMap()[9];
+            const result = colorize.getColor(minPointsCount);
             expect(result).to.be.equal(expected);
         });
 
         it('should return correct alpha channel value', () => {
             const colorize = new Colorize(maxPointsCount, alphaOptions);
             const expected = 0.7;
-            const result = colorize.getColor(94);
+            const result = colorize.getColor(checkedValue);
             expect(result[3]).to.be.equal(expected);
-        });
-
-        it('should return #2f0f3e', () => {
-            const colorize = new Colorize(maxPointsCount, hexOptions);
-            const expected = '#2f0f3e';
-            const result = colorize.getColor(94);
-            expect(result).to.be.equal(expected);
         });
     });
 });

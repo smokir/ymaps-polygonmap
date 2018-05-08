@@ -1,6 +1,7 @@
 import normalizeFeature from './utils/normalizeFeature';
 import defaultMapper from './utils/defaultMapper';
 import inside from './utils/inside';
+import Colorize from './utils/colorize/index';
 
 ymaps.modules.define('Polygonmap', [
     'meta',
@@ -114,6 +115,8 @@ ymaps.modules.define('Polygonmap', [
 
         _render() {
             const mapper = this.options.get('mapper');
+
+            this.colorize = new Colorize(this.pointsCountMaximum, this.options.get('color'));
 
             this._data.polygons.features = this._data.polygons.features.map(mapper);
 
