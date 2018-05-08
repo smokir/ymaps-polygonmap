@@ -9,7 +9,7 @@ const inside = (polygon, point) => {
     let result = contains(polygonCoord, pointCoord) !== 1;
 
     if (result) {
-        for (let k = 1; k < polygonsCoord.length && !result; k++) {
+        for (let k = 1; k < polygonsCoord.length && result; k++) {
             const holeCoord = polygonsCoord[k];
             const isInsideHole = contains(holeCoord, pointCoord) !== 1;
 
@@ -18,7 +18,7 @@ const inside = (polygon, point) => {
             }
         }
     } else {
-        for (let k = 1; k < polygonsCoord.length && result; k++) {
+        for (let k = 1; k < polygonsCoord.length && !result; k++) {
             const polygonCoord = polygonsCoord[k];
             const isInsidePolygon = contains(polygonCoord, pointCoord) !== 1;
 
