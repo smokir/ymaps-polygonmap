@@ -1,5 +1,8 @@
 import normalizeFeature from './utils/normalizeFeature';
 import defaultMapper from './utils/defaultMapper';
+import defaultOnMouseEnter from './utils/defaultOnMouseEnter';
+import defaultOnMouseLeave from './utils/defaultOnMouseLeave';
+import defaultBalloonContent from './utils/defaultBalloonContent';
 import inside from './utils/inside';
 
 ymaps.modules.define('Polygonmap', [
@@ -11,26 +14,9 @@ ymaps.modules.define('Polygonmap', [
         constructor(data, options) {
             const defaultOptions = new OptionManager({
                 mapper: defaultMapper,
-                onMouseEnter: function (objectManager, e) {
-                    const objId = e.get('objectId');
-                    objectManager.objects.setObjectOptions(objId, {
-                        fillOpacity: 0.5,
-                        strokeWidth: 2
-                    });
-                },
-                onMouseLeave: function (objectManager, e) {
-                    const objId = e.get('objectId');
-                    objectManager.objects.setObjectOptions(objId, {
-                        fillOpacity: 1,
-                        strokeWidth: 1
-                    });
-                },
-                balloonContent: function (object) {
-                    return `<div>
-                            <h3>Данные об объекте</h3>
-                            <div>Количество точек: ${object.properties.pointsCount}</div>
-                    </div>`;
-                }
+                onMouseEnter: defaultOnMouseEnter,
+                onMouseLeave: defaultOnMouseLeave,
+                balloonContent: defaultBalloonContent
             });
 
             this.options = new OptionManager(options, defaultOptions);
@@ -145,14 +131,14 @@ ymaps.modules.define('Polygonmap', [
 
         _initInteractivity(objectManager) {
             const balloon = new ymaps.Balloon(this._map);
+            const onMouseEnter = this.options.get('onMouseEnter');
+            const onMouseLeave = this.options.get('onMouseLeave');
 
             objectManager.events.add('mouseenter', (e) => {
-                const onMouseEnter = this.options.get('onMouseEnter');
                 onMouseEnter(objectManager, e);
             });
 
             objectManager.events.add('mouseleave', (e) => {
-                const onMouseLeave = this.options.get('onMouseLeave');
                 onMouseLeave(objectManager, e);
             });
 
