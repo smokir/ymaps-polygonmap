@@ -11,21 +11,25 @@ ymaps.modules.define('Polygonmap', [
         constructor(data, options) {
             const defaultOptions = new OptionManager({
                 mapper: defaultMapper,
-                interactivity: {
-                    mouseEnter: {
+                onMouseEnter: function (objectManager, e) {
+                    const objId = e.get('objectId');
+                    objectManager.objects.setObjectOptions(objId, {
                         fillOpacity: 0.5,
                         strokeWidth: 2
-                    },
-                    mouseLeave: {
+                    });
+                },
+                onMouseLeave: function (objectManager, e) {
+                    const objId = e.get('objectId');
+                    objectManager.objects.setObjectOptions(objId, {
                         fillOpacity: 1,
                         strokeWidth: 1
-                    },
-                    createBalloonContent: function (object) {
-                        return '<div>' +
-                            '<h3>Данные об объекте</h3>' +
-                            '<div>Количество точек: ' + object.properties.pointsCount + '</div>' +
-                        '</div>';
-                    }
+                    });
+                },
+                balloonContent: function (object) {
+                    return `<div>
+                            <h3>Данные об объекте</h3>
+                            <div>Количество точек: ${object.properties.pointsCount}</div>
+                    </div>`;
                 }
             });
 
@@ -139,31 +143,28 @@ ymaps.modules.define('Polygonmap', [
             this._map.geoObjects.add(this.polygons);
         }
 
-        _initInteractivity(objManager) {
-            const interactivity = this.options.get('interactivity');
+        _initInteractivity(objectManager) {
             const balloon = new ymaps.Balloon(this._map);
 
-            objManager.events.add('mouseenter', (e) => {
-                __setObjectOptions(e, interactivity.mouseEnter);
+            objectManager.events.add('mouseenter', (e) => {
+                const onMouseEnter = this.options.get('onMouseEnter');
+                onMouseEnter(objectManager, e);
             });
 
-            objManager.events.add('mouseleave', (e) => {
-                __setObjectOptions(e, interactivity.mouseLeave);
+            objectManager.events.add('mouseleave', (e) => {
+                const onMouseLeave = this.options.get('onMouseLeave');
+                onMouseLeave(objectManager, e);
             });
-
-            function __setObjectOptions(e, options) {
-                const objId = e.get('objectId');
-                objManager.objects.setObjectOptions(objId, options);
-            }
 
             balloon.options.setParent(this._map.options);
 
-            objManager.events.add('click', (e) => {
+            objectManager.events.add('click', (e) => {
                 const objId = e.get('objectId');
-                const object = objManager.objects.getById(objId);
+                const object = objectManager.objects.getById(objId);
+                const balloonContent = this.options.get('balloonContent');
 
                 balloon.setData({
-                    content: interactivity.createBalloonContent(object)
+                    content: balloonContent(object)
                 });
 
                 balloon.open(e.get('coords'));
