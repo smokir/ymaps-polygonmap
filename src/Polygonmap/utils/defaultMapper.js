@@ -1,3 +1,9 @@
+/**
+ * Function of iterative transformation of features.
+ *
+ * @param {Object} feature ymaps feature data
+ * @returns {Object}
+ */
 const defaultMapper = (feature) => {
     const k = feature.properties.pointsCount / feature.properties.pointsCountMaximum;
 

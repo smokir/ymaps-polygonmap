@@ -2,12 +2,25 @@ import normalizeFeature from './utils/normalizeFeature';
 import defaultMapper from './utils/defaultMapper';
 import inside from './utils/inside';
 
+/**
+ * Polygonmap module.
+ *
+ * @module Polygonmap
+ * @requires option.Manager
+ * @requires ObjectManager
+ */
 ymaps.modules.define('Polygonmap', [
     'meta',
     'option.Manager',
     'ObjectManager'
 ], (provide, meta, OptionManager, ObjectManager) => {
     class Polygonmap {
+        /**
+         * @param {Object} [data] polygons and points
+         *  {Object} data.polygons GeoJSON featureCollections
+         *  {Object} data.points GeoJSON featureCollections
+         * @param {Object} [options] options for customization
+         */
         constructor(data, options) {
             const defaultOptions = new OptionManager({
                 mapper: defaultMapper
@@ -17,10 +30,25 @@ ymaps.modules.define('Polygonmap', [
             this.setData(data);
         }
 
+        /**
+         * Get the data, polygons and points.
+         *
+         * @public
+         * @returns {Object}
+         */
         getData() {
             return this._data || null;
         }
 
+        /**
+         * Set the data, polygons and points.
+         *
+         * @public
+         * @param {Object} data polygons and points
+         *  {Object} data.polygons GeoJSON featureCollections
+         *  {Object} data.points GeoJSON featureCollections
+         * @returns {Polygonmap} Self-reference.
+         */
         setData(data) {
             this._data = data;
 
@@ -35,10 +63,23 @@ ymaps.modules.define('Polygonmap', [
             return this;
         }
 
+        /**
+         * Get the Map instance.
+         *
+         * @public
+         * @returns {Map} reference to Map instance.
+         */
         getMap() {
             return this._map;
         }
 
+        /**
+         * Set Map instance to render Polygonmap object.
+         *
+         * @public
+         * @param {Map} map Map instance.
+         * @returns {Heatmap} Self-reference.
+         */
         setMap(map) {
             if (this._map !== map) {
                 this._map = map;
@@ -51,11 +92,24 @@ ymaps.modules.define('Polygonmap', [
             return this;
         }
 
+        /**
+         * Destructs Polygonmap instance.
+         *
+         * @public
+         */
         destroy() {
             this.setData(null);
             this.setMap(null);
         }
 
+        /**
+         * Prepare for render Polygonmap.
+         *
+         * @private
+         * @param {Object} data polygons and points
+         *  {Object} data.polygons GeoJSON featureCollections
+         *  {Object} data.points GeoJSON featureCollections
+         */
         _prepare(data) {
             const polygonFeatures = data.polygons.features;
             let pointFeatures = data.points.features;
@@ -104,6 +158,11 @@ ymaps.modules.define('Polygonmap', [
             this._data.pointsCountMaximum = pointsCountMaximum;
         }
 
+        /**
+         * Render Polygonmap.
+         *
+         * @private
+         */
         _render() {
             const mapper = this.options.get('mapper');
             const pointsCountMaximum = this._data.pointsCountMaximum;

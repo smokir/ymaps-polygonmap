@@ -1,3 +1,11 @@
+/**
+ * Normalization of the GeoJSON feature for the ymaps.
+ *
+ * @param {Object} feature GeoJSON feature data
+ * @param {Object} meta ymaps metadata
+ * @param {Object} props={} additional options for the feature
+ * @returns {Object}
+ */
 const normalizeFeature = (feature, meta, props = {}) => {
     let {type, coordinates} = feature.geometry;
 
@@ -11,6 +19,7 @@ const normalizeFeature = (feature, meta, props = {}) => {
         geometry: {
             type,
             coordinates,
+            // This parameter is needed for drawing holes in polygons on ymaps
             fillRule: 'evenOdd'
         }
     });
