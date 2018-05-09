@@ -1,7 +1,6 @@
 import contains from 'robust-point-in-polygon';
 
 const inside = (polygon, point) => {
-    // TODO: Check format, is it GeoJSON
     const pointCoord = point.coordinates;
     const polygonsCoord = polygon.coordinates;
     const polygonCoord = polygonsCoord[0];
