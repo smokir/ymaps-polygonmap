@@ -63,8 +63,8 @@ describe('normalizeFeature', () => {
         const geometry = result.geometry;
 
         expect(geometry.type).to.be.equal(expectedType);
-        expect(geometry.coordinates).lengthOf(4);
-        expect(geometry.coordinates[0]).lengthOf(4);
+        expect(geometry.coordinates).lengthOf(3);
+        expect(geometry.coordinates[0]).lengthOf(5);
         expect(geometry.coordinates[0][0]).lengthOf(2);
         expect(geometry.coordinates[0][0][0]).to.be.a('number');
     });
