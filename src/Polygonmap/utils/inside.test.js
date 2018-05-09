@@ -3,46 +3,20 @@ import {expect} from 'chai';
 
 import inside from './inside';
 
-const points = {
-    type: 'FeatureCollection',
-    features: [
-        {
-            type: 'Feature',
-            geometry: {
-                type: 'Point',
-                coordinates: [37.64, 55.76]
-            }
-        },
-        {
-            type: 'Feature',
-            geometry: {
-                type: 'Point',
-                coordinates: [37.60, 55.70]
-            }
-        },
-        {
-            type: 'Feature',
-            geometry: {
-                type: 'Point',
-                coordinates: [37.00, 55.00]
-            }
-        },
-        {
-            type: 'Feature',
-            geometry: {
-                type: 'Point',
-                coordinates: [37.62, 55.73]
-            }
-        }
-    ]
-};
+describe('inside', () => {
+    let output;
+    let input0;
+    let inputs1;
+    let i = 0;
 
-const polygons = {
-    type: 'FeatureCollection',
-    features: [
-        {
-            type: 'Feature',
-            geometry: {
+    beforeEach(() => {
+        output = inside(input0, inputs1[i]);
+        i++;
+    });
+
+    describe('should return boolean', () => {
+        before(() => {
+            input0 = {
                 type: 'Polygon',
                 coordinates: [
                     [
@@ -66,39 +40,30 @@ const polygons = {
                         [37.69, 55.78],
                         [37.68, 55.78]
                     ]
-                ],
-                fillRule: 'evenOdd'
-            }
-        }
-    ]
-};
+                ]
+            };
+            inputs1 = [
+                {type: 'Point', coordinates: [37.64, 55.76]},
+                {type: 'Point', coordinates: [37.60, 55.70]},
+                {type: 'Point', coordinates: [37.00, 55.00]},
+                {type: 'Point', coordinates: [37.62, 55.73]}
+            ];
+        });
 
-describe('inside', () => {
-    it('should return true for point that is inside', () => {
-        const expected = true;
-        const result = inside(polygons.features[0].geometry, points.features[0].geometry);
+        it('should return true if point is inside polygon', () => {
+            expect(output).to.be.equal(true);
+        });
 
-        expect(result).to.be.equal(expected);
-    });
+        it('should return true if point is on border', () => {
+            expect(output).to.be.equal(true);
+        });
 
-    it('should return true for point that is on border', () => {
-        const expected = true;
-        const result = inside(polygons.features[0].geometry, points.features[1].geometry);
+        it('should return false if point is outside', () => {
+            expect(output).to.be.equal(false);
+        });
 
-        expect(result).to.be.equal(expected);
-    });
-
-    it('should return false for point that is outside', () => {
-        const expected = false;
-        const result = inside(polygons.features[0].geometry, points.features[2].geometry);
-
-        expect(result).to.be.equal(expected);
-    });
-
-    it('should return false for point that is in hole', () => {
-        const expected = false;
-        const result = inside(polygons.features[0].geometry, points.features[3].geometry);
-
-        expect(result).to.be.equal(expected);
+        it('should return false if point is inside hole', () => {
+            expect(output).to.be.equal(false);
+        });
     });
 });

@@ -3,50 +3,51 @@ import {expect} from 'chai';
 
 import defaultMapper from './defaultMapper';
 
-const polygons = {
-    type: 'FeatureCollection',
-    features: [
-        {
-            type: 'Feature',
-            geometry: {
-                type: 'Polygon',
-                coordinates: [
-                    [
-                        [37.60, 55.70],
-                        [37.70, 55.70],
-                        [37.70, 55.80],
-                        [37.60, 55.80],
-                        [37.60, 55.70]
-                    ],
-                    [
-                        [37.61, 55.72],
-                        [37.61, 55.74],
-                        [37.63, 55.74],
-                        [37.63, 55.72],
-                        [37.61, 55.72]
-                    ]
-                ],
-                fillRule: 'evenOdd'
-            },
-            properties: {
-                pointsCount: 10,
-                pointsCountMaximum: 100
-            }
-        }
-    ]
-};
-
 describe('defaultMapper', () => {
-    it('should return object with Feature type', () => {
-        const expectedType = 'Feature';
-        const result = defaultMapper(polygons.features[0]);
+    let output;
+    let input;
 
-        expect(result.type).to.be.equal(expectedType);
+    beforeEach(() => {
+        output = defaultMapper(input);
     });
 
-    it('should add a property fillColor to options', () => {
-        const result = defaultMapper(polygons.features[0]);
+    describe('given that the feature contains something intresting', () => {
+        before(() => {
+            input = {
+                type: 'Feature',
+                geometry: {
+                    type: 'Polygon',
+                    coordinates: [
+                        [
+                            [37.60, 55.70],
+                            [37.70, 55.70],
+                            [37.70, 55.80],
+                            [37.60, 55.80],
+                            [37.60, 55.70]
+                        ],
+                        [
+                            [37.61, 55.72],
+                            [37.61, 55.74],
+                            [37.63, 55.74],
+                            [37.63, 55.72],
+                            [37.61, 55.72]
+                        ]
+                    ]
+                },
+                properties: {
+                    pointsCount: 10,
+                    pointsCountMaximum: 100
+                }
+            };
+        });
 
-        expect(result.options).to.have.own.property('fillColor');
+        it('will contains field type equals \'Feature\'', () => {
+            expect(output).to.have.own.property('type');
+            expect(output.type).to.be.equal('Feature');
+        });
+
+        it('will contains field fillColor in options', () => {
+            expect(output.options).to.have.own.property('fillColor');
+        });
     });
 });
