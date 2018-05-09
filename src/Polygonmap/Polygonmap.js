@@ -16,10 +16,10 @@ ymaps.modules.define('Polygonmap', [
 ], (provide, meta, OptionManager, ObjectManager) => {
     class Polygonmap {
         /**
-         * @param {Object} [data] polygons and points
-         *  {Object} data.polygons GeoJSON featureCollections
-         *  {Object} data.points GeoJSON featureCollections
-         * @param {Object} [options] options for customization
+         * @param {Object} [data] Polygons and points.
+         *  {Object} data.polygons GeoJSON FeatureCollections.
+         *  {Object} data.points GeoJSON FeatureCollections.
+         * @param {Object} [options] Options for customization.
          */
         constructor(data, options) {
             const defaultOptions = new OptionManager({
@@ -34,7 +34,7 @@ ymaps.modules.define('Polygonmap', [
          * Get the data, polygons and points.
          *
          * @public
-         * @returns {Object}
+         * @returns {Object} Polygons and points.
          */
         getData() {
             return this._data || null;
@@ -44,9 +44,9 @@ ymaps.modules.define('Polygonmap', [
          * Set the data, polygons and points.
          *
          * @public
-         * @param {Object} data polygons and points
-         *  {Object} data.polygons GeoJSON featureCollections
-         *  {Object} data.points GeoJSON featureCollections
+         * @param {Object} data Polygons and points.
+         *  {Object} data.polygons GeoJSON FeatureCollections.
+         *  {Object} data.points GeoJSON FeatureCollections.
          * @returns {Polygonmap} Self-reference.
          */
         setData(data) {
@@ -67,7 +67,7 @@ ymaps.modules.define('Polygonmap', [
          * Get the Map instance.
          *
          * @public
-         * @returns {Map} reference to Map instance.
+         * @returns {Map} Reference to Map instance.
          */
         getMap() {
             return this._map;
@@ -106,9 +106,10 @@ ymaps.modules.define('Polygonmap', [
          * Prepare for render Polygonmap.
          *
          * @private
-         * @param {Object} data polygons and points
-         *  {Object} data.polygons GeoJSON featureCollections
-         *  {Object} data.points GeoJSON featureCollections
+         * @param {Object} data Polygons and points.
+         *  {Object} data.polygons GeoJSON FeatureCollections.
+         *  {Object} data.points GeoJSON FeatureCollections.
+         * @returns {undefined}
          */
         _prepare(data) {
             const polygonFeatures = data.polygons.features;

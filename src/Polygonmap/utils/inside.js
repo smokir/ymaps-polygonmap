@@ -3,9 +3,9 @@ import contains from 'robust-point-in-polygon';
 /**
  * Determining the occurrence of a point in a polygon (PIP).
  *
- * @param {Object} polygon geometry with type 'Polygon'
- * @param {Object} point geometry with type 'Point'
- * @returns {boolean}
+ * @param {Object} polygon Polygon geometry.
+ * @param {Object} point Point geometry.
+ * @returns {boolean} Entering a point in the polygon.
  */
 const inside = (polygon, point) => {
     const pointCoord = point.coordinates;
