@@ -1,24 +1,8 @@
-import reverseCoordinates from './reverseCoordinates';
-
 const normalizeFeature = (feature, meta, props = {}) => {
-    let coordinates;
-    let type = feature.geometry.type;
-
+    let {type, coordinates} = feature.geometry;
     if (feature.geometry.type === 'MultiPolygon') {
         type = 'Polygon';
-        coordinates = feature.geometry.coordinates.reduce((acc, coordinates) => {
-            if (typeof meta !== 'undefined' && meta.coordinatesOrder === 'longlat') {
-                return acc.concat(coordinates);
-            } else {
-                return acc.concat(reverseCoordinates(coordinates));
-            }
-        }, []);
-    } else {
-        if (typeof meta !== 'undefined' && meta.coordinatesOrder === 'longlat') {
-            coordinates = feature.geometry.coordinates;
-        } else {
-            coordinates = reverseCoordinates(feature.geometry.coordinates);
-        }
+        coordinates = feature.geometry.coordinates.reduce((acc, coordinates) => acc.concat(coordinates), []);
     }
 
     return Object.assign({}, props, feature, {geometry: {type, coordinates}});
