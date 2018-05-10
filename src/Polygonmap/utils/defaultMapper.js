@@ -5,16 +5,9 @@
  * @returns {Object} Transformed ymaps feature data.
  * @this Polygonmap
  */
-const defaultMapper = (feature) => {
-    const k = feature.properties.pointsCount / feature.properties.pointsCountMaximum;
-
-    const R = 0;
-    const G = 102;
-    const B = 255;
-    const alpha = k === 0 ? 0 : 0.2 + k * 0.8;
-
+const defaultMapper = function (feature) {
     feature.options = {
-        fillColor: `rgba(${R}, ${G}, ${B}, ${alpha})`
+        fillColor: this.colorize.getColor(feature.properties.pointsCount)
     };
 
     return feature;

@@ -4,6 +4,7 @@ import defaultOnMouseEnter from './utils/defaultOnMouseEnter';
 import defaultOnMouseLeave from './utils/defaultOnMouseLeave';
 import defaultBalloonContent from './utils/defaultBalloonContent';
 import inside from './utils/inside';
+import Colorize from './utils/colorize/index';
 
 /**
  * Polygonmap module.
@@ -27,12 +28,20 @@ ymaps.modules.define('Polygonmap', [
         constructor(data, options) {
             const defaultOptions = new OptionManager({
                 mapper: defaultMapper,
+                color: {
+                    rangesCount: 10,
+                    colormap: 'cdom',
+                    format: 'rgbaString',
+                    alpha: 0.7
+                },
                 onMouseEnter: defaultOnMouseEnter,
                 onMouseLeave: defaultOnMouseLeave,
                 balloonContent: defaultBalloonContent
             });
 
             this.options = new OptionManager(options, defaultOptions);
+            const mapper = this.options.get('mapper');
+            this.options.set('mapper', mapper.bind(this));
             this.setData(data);
         }
 
@@ -162,7 +171,7 @@ ymaps.modules.define('Polygonmap', [
                 }
             }
 
-            this._data.pointsCountMaximum = pointsCountMaximum;
+            this.pointsCountMaximum = pointsCountMaximum;
         }
 
         /**
@@ -172,14 +181,10 @@ ymaps.modules.define('Polygonmap', [
          */
         _render() {
             const mapper = this.options.get('mapper');
-            const pointsCountMaximum = this._data.pointsCountMaximum;
 
-            this._data.polygons.features = this._data.polygons.features.map((feature, i) => {
-                feature.properties.pointsCountMaximum = pointsCountMaximum;
-                feature.properties.pointsCountAll = this._data.points.features.length;
+            this.colorize = new Colorize(this.pointsCountMaximum, this.options.get('color'));
 
-                return mapper(feature, i);
-            });
+            this._data.polygons.features = this._data.polygons.features.map(mapper);
 
             this.polygons = new ObjectManager();
             this.polygons.add(this._data.polygons);
