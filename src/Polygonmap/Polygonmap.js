@@ -1,5 +1,8 @@
 import normalizeFeature from './utils/normalizeFeature';
 import defaultMapper from './utils/defaultMapper';
+import defaultOnMouseEnter from './utils/defaultOnMouseEnter';
+import defaultOnMouseLeave from './utils/defaultOnMouseLeave';
+import defaultBalloonContent from './utils/defaultBalloonContent';
 import inside from './utils/inside';
 
 /**
@@ -23,7 +26,10 @@ ymaps.modules.define('Polygonmap', [
          */
         constructor(data, options) {
             const defaultOptions = new OptionManager({
-                mapper: defaultMapper
+                mapper: defaultMapper,
+                onMouseEnter: defaultOnMouseEnter,
+                onMouseLeave: defaultOnMouseLeave,
+                balloonContent: defaultBalloonContent
             });
 
             this.options = new OptionManager(options, defaultOptions);
@@ -178,7 +184,37 @@ ymaps.modules.define('Polygonmap', [
             this.polygons = new ObjectManager();
             this.polygons.add(this._data.polygons);
 
+            this._initInteractivity(this.polygons);
+
             this._map.geoObjects.add(this.polygons);
+        }
+
+        _initInteractivity(objectManager) {
+            const balloon = new ymaps.Balloon(this._map);
+            const onMouseEnter = this.options.get('onMouseEnter');
+            const onMouseLeave = this.options.get('onMouseLeave');
+
+            objectManager.events.add('mouseenter', (e) => {
+                onMouseEnter(objectManager, e);
+            });
+
+            objectManager.events.add('mouseleave', (e) => {
+                onMouseLeave(objectManager, e);
+            });
+
+            balloon.options.setParent(this._map.options);
+
+            objectManager.events.add('click', (e) => {
+                const objId = e.get('objectId');
+                const object = objectManager.objects.getById(objId);
+                const balloonContent = this.options.get('balloonContent');
+
+                balloon.setData({
+                    content: balloonContent(object)
+                });
+
+                balloon.open(e.get('coords'));
+            });
         }
     }
 
