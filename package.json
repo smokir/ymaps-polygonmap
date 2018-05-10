@@ -60,6 +60,8 @@
   },
   "dependencies": {
     "colormap": "^2.3.0",
+    "multi-geocoder": "^0.1.6",
+    "osmosis": "^1.1.6",
     "robust-point-in-polygon": "^1.0.3"
   }
 }
