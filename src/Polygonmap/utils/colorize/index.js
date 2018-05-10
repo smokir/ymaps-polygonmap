@@ -6,11 +6,8 @@ import Colormap from 'colormap';
  */
 class Colorize {
     /**
-     * @param {number} rangesCount count of ranges
      * @param {number} maxPointsCount max points
-     * @param {string} colormap type of colormap
-     * @param {string} format hex || rgbaString
-     * @param {number|Array} alpha alpha chanel
+     * @param {object} options setting for generate colormap
      */
     constructor(maxPointsCount, options) {
         this._rangesCount = options.rangesCount;
@@ -32,7 +29,7 @@ class Colorize {
 
     /**
      * Create array for ranges depending on rangesCount
-     * @returns {Array.<*>}
+     * @returns {Array.<*>} return array of ranges
      * @private
      */
     _createRangesArray() {
@@ -47,8 +44,7 @@ class Colorize {
     }
 
     /**
-     * Return generated array of colors
-     * @returns {Array}
+     * @returns {Array} Return generated array of colors
      */
     getColorMap() {
         return this._colors;
@@ -56,8 +52,8 @@ class Colorize {
 
     /**
      * Return color depending on count of points inside polygon
-     * @param pointsCount - count of point inside polygon
-     * @returns {string}
+     * @param {number} pointsCount - count of point inside polygon
+     * @returns {string} return color
      */
     getColor(pointsCount = 0) {
         let color = this._colors[this._rangesCount - 1];
