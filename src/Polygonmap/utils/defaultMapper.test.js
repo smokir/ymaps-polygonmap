@@ -3,12 +3,18 @@ import {expect} from 'chai';
 
 import defaultMapper from './defaultMapper';
 
+const polygonmapMock = {
+    colorize: {
+        getColor: () => 'rgba(255,255,255,1)'
+    }
+};
+
 describe('defaultMapper', () => {
     let output;
     let input;
 
     beforeEach(() => {
-        output = defaultMapper(input);
+        output = defaultMapper.bind(polygonmapMock)(input);
     });
 
     describe('given that the feature contains something intresting', () => {
