@@ -1,5 +1,9 @@
 import Colormap from 'colormap';
 
+/**
+ * Polygon colorize.
+ * Needed for coloring polygons as you need
+ */
 class Colorize {
     /**
      * @param {number} rangesCount count of ranges
@@ -26,6 +30,11 @@ class Colorize {
         this._ranges = this._createRangesArray();
     }
 
+    /**
+     * Create array for ranges depending on rangesCount
+     * @returns {Array.<*>}
+     * @private
+     */
     _createRangesArray() {
         const arr = [];
         for (let i = 1; i < this._rangesCount; i++) {
@@ -37,10 +46,19 @@ class Colorize {
         return arr.reverse();
     }
 
+    /**
+     * Return generated array of colors
+     * @returns {Array}
+     */
     getColorMap() {
         return this._colors;
     }
 
+    /**
+     * Return color depending on count of points inside polygon
+     * @param pointsCount - count of point inside polygon
+     * @returns {string}
+     */
     getColor(pointsCount = 0) {
         let color = this._colors[this._rangesCount - 1];
 
