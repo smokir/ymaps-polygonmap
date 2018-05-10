@@ -34,6 +34,14 @@ describe('optionsManager', () => {
             expect(result).to.be.equal(expected);
         });
 
+        it('should return correct option.option value', () => {
+            const options = new OptionsManager(defaultSettings, userSettings);
+            const expected = 'rgbaString';
+            const result = options.get('color.format');
+
+            expect(result).to.be.equal(expected);
+        });
+
         it('should execute functions', () => {
             const options = new OptionsManager(defaultSettings, userSettings).options;
             const value = 2;
@@ -60,12 +68,31 @@ describe('optionsManager', () => {
             expect(options.get('foo')).to.be.equal('bar');
         });
 
+        it('should set value as object with two properties', () => {
+            const options = new OptionsManager(defaultSettings, userSettings);
+            const value = {foo: 'bar', bar: 'foo'};
+
+            options.set(value);
+            expect(options.get('foo')).to.be.equal('bar');
+            expect(options.get('bar')).to.be.equal('foo');
+        });
+
         it('should set value as object with children', () => {
             const options = new OptionsManager(defaultSettings, userSettings);
             const value = {foo: {bar: 'bar', bla: 'bla'}};
 
             options.set(value);
             assert.include(options.get('foo'), value.foo);
+        });
+
+        it('should set value as key.key, value', () => {
+            const options = new OptionsManager(defaultSettings, userSettings);
+            const key = 'bla.alb';
+            const value = 'blabla';
+
+            const expected = {bla: {alb: 'blabla'}};
+            options.set(key, value);
+            assert.include(options.get('bla'), expected.bla);
         });
     });
 });

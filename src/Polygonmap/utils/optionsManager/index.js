@@ -1,7 +1,8 @@
 import extend from 'extend';
 
 /**
- * Options manager
+ * Options manager.
+ * Calls to define additional options by default, and also has methods for setting and getting options.
  */
 export default class OptionsManager {
     /**
@@ -29,16 +30,28 @@ export default class OptionsManager {
     }
 
     /**
-     * Get option
+     * Get option.
+     * You can get option as: value or value.value
      * @param {string} value - name of option
      * @returns value of option
      */
     get(value) {
-        return this._options.get(value);
+        const arr = value.split('.');
+        if (arr.length > 1) {
+            let entry = this._options.get(arr[0]);
+
+            for (let i = 1, item; item = arr[i++];) {
+                entry = entry[item];
+            }
+            return entry;
+        } else {
+            return this._options.get(value);
+        }
     }
 
     /**
-     * Set option
+     * Set option.
+     * You can set option as: set(key, value) and set({key: "value"} or set(key.key, value))
      * @param {string|object} key - name of new option or object with options
      * @param {string|object|array} value - value of new option
      */
@@ -49,7 +62,23 @@ export default class OptionsManager {
                 this._options.set(value, key[value]);
             }
         } else {
-            this._options.set(key, value);
+            const arr = key.split('.');
+
+            if (arr.length > 1) {
+                const last = arr.pop();
+                const object = {};
+                let entry = object;
+
+                for (let i = 0, item; item = arr[i++];) {
+                    entry[item] = {};
+                    entry = entry[item];
+                }
+                entry[last] = value;
+
+                this.set(object);
+            } else {
+                this._options.set(arr[0], value);
+            }
         }
     }
 
