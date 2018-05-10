@@ -1,27 +1,28 @@
-import reverseCoordinates from './reverseCoordinates';
-
+/**
+ * Normalization of the GeoJSON feature for the ymaps.
+ *
+ * @param {Object} feature GeoJSON feature data.
+ * @param {Object} meta Ymaps metadata.
+ * @param {Object} props={} Additional options for the feature.
+ * @returns {Object} Normalized ymaps feature data.
+ */
 const normalizeFeature = (feature, meta, props = {}) => {
-    let coordinates;
-    let type = feature.geometry.type;
+    let {type, coordinates} = feature.geometry;
 
     if (feature.geometry.type === 'MultiPolygon') {
         type = 'Polygon';
-        coordinates = feature.geometry.coordinates.reduce((acc, coordinates) => {
-            if (typeof meta !== 'undefined' && meta.coordinatesOrder === 'longlat') {
-                return acc.concat(coordinates);
-            } else {
-                return acc.concat(reverseCoordinates(coordinates));
-            }
-        }, []);
-    } else {
-        if (typeof meta !== 'undefined' && meta.coordinatesOrder === 'longlat') {
-            coordinates = feature.geometry.coordinates;
-        } else {
-            coordinates = reverseCoordinates(feature.geometry.coordinates);
-        }
+        coordinates = feature.geometry.coordinates
+            .reduce((acc, coordinates) => acc.concat(coordinates), []);
     }
 
-    return Object.assign({}, props, feature, {geometry: {type, coordinates}});
+    return Object.assign({}, props, feature, {
+        geometry: {
+            type,
+            coordinates,
+            // This parameter is needed for drawing holes in polygons on ymaps
+            fillRule: 'evenOdd'
+        }
+    });
 };
 
 export default normalizeFeature;
