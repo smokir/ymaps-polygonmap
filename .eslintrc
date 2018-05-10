@@ -14,7 +14,9 @@
     "curly": [0, "multi"],
     "no-console": ["error", { "allow": ["error"] }],
     "no-implicit-globals": 0,
-    "no-cond-assign": 0
+    "no-cond-assign": 0,
+    "object-shorthand": "error",
+    "valid-jsdoc": ["error", { "requireReturn": false }]
   },
   "parser": "babel-eslint",
   "parserOptions": {

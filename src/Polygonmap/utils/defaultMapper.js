@@ -1,6 +1,9 @@
 /**
+ * Function of iterative transformation of features.
  *
- * @this context Polygonmap
+ * @param {Object} feature Ymaps feature data.
+ * @returns {Object} Transformed ymaps feature data.
+ * @this Polygonmap
  */
 const defaultMapper = function (feature) {
     feature.options = {

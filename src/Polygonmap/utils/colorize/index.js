@@ -1,12 +1,13 @@
 import Colormap from 'colormap';
 
+/**
+ * Polygon colorize.
+ * Needed for coloring polygons as you need
+ */
 class Colorize {
     /**
-     * @param {number} rangesCount count of ranges
      * @param {number} maxPointsCount max points
-     * @param {string} colormap type of colormap
-     * @param {string} format hex || rgbaString
-     * @param {number|Array} alpha alpha chanel
+     * @param {object} options setting for generate colormap
      */
     constructor(maxPointsCount, options) {
         this._rangesCount = options.rangesCount;
@@ -26,6 +27,11 @@ class Colorize {
         this._ranges = this._createRangesArray();
     }
 
+    /**
+     * Create array for ranges depending on rangesCount
+     * @returns {Array.<*>} return array of ranges
+     * @private
+     */
     _createRangesArray() {
         const arr = [];
         for (let i = 1; i < this._rangesCount; i++) {
@@ -37,10 +43,18 @@ class Colorize {
         return arr.reverse();
     }
 
+    /**
+     * @returns {Array} Return generated array of colors
+     */
     getColorMap() {
         return this._colors;
     }
 
+    /**
+     * Return color depending on count of points inside polygon
+     * @param {number} pointsCount - count of point inside polygon
+     * @returns {string} return color
+     */
     getColor(pointsCount = 0) {
         let color = this._colors[this._rangesCount - 1];
 
