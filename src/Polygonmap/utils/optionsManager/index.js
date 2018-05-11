@@ -33,7 +33,7 @@ export default class OptionsManager {
      * Get option.
      * You can get option as: value or value.value
      * @param {string} value - name of option
-     * @returns value of option
+     * @returns {string|number|object|array} value of option
      */
     get(value) {
         const arr = value.split('.');
@@ -84,7 +84,7 @@ export default class OptionsManager {
 
     /**
      * Get all options
-     * @returns {Map}
+     * @returns {Map} return all options
      */
     get options() {
         return this._options;

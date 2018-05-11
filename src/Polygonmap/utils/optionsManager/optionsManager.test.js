@@ -4,7 +4,7 @@ import {expect, assert} from 'chai';
 import OptionsManager from './index';
 
 const defaultSettings = {
-    mapper: function (a) {
+    mapper(a) {
         return a * a;
     },
     color: {
@@ -16,7 +16,7 @@ const defaultSettings = {
 };
 
 const userSettings = {
-    mapper: function (a) {
+    mapper(a) {
         return a + a * a;
     },
     color: {

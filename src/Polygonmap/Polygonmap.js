@@ -16,9 +16,8 @@ import OptionsManager from './utils/optionsManager/index';
  */
 ymaps.modules.define('Polygonmap', [
     'meta',
-    'option.Manager',
     'ObjectManager'
-], (provide, meta, OptionManager, ObjectManager) => {
+], (provide, meta, ObjectManager) => {
     class Polygonmap {
         /**
          * @param {Object} [data] Polygons and points.
