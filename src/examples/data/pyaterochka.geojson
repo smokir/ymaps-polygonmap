@@ -1,0 +1,3752 @@
+{
+    "features": [
+        {
+            "geometry": {
+                "coordinates": [
+                    52.9639,
+                    36.086196
+                ],
+                "type": "Point"
+            },
+            "id": "6",
+            "properties": {
+                "description": "Oryol, Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Orlovskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "gorodskoy okrug Oryol"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "Oryol"
+                                },
+                                {
+                                    "kind": "street",
+                                    "name": "3-ya Kurskaya ulitsa"
+                                },
+                                {
+                                    "kind": "house",
+                                    "name": "35"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Oryol, 3-ya Kurskaya ulitsa, 35",
+                            "postal_code": "302004"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Oryol, 3-ya Kurskaya ulitsa, 35",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Orlovskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "Oryol",
+                                            "Thoroughfare": {
+                                                "Premise": {
+                                                    "PostalCode": {
+                                                        "PostalCodeNumber": "302004"
+                                                    },
+                                                    "PremiseNumber": "35"
+                                                },
+                                                "ThoroughfareName": "3-ya Kurskaya ulitsa"
+                                            }
+                                        },
+                                        "SubAdministrativeAreaName": "gorodskoy okrug Oryol"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "house",
+                        "precision": "exact",
+                        "text": "Russia, Oryol, 3-ya Kurskaya ulitsa, 35"
+                    }
+                },
+                "name": "3-ya Kurskaya ulitsa, 35"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    52.980099,
+                    36.080465
+                ],
+                "type": "Point"
+            },
+            "id": "9",
+            "properties": {
+                "description": "Oryol, Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Orlovskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "gorodskoy okrug Oryol"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "Oryol"
+                                },
+                                {
+                                    "kind": "street",
+                                    "name": "ulitsa 8 Marta"
+                                },
+                                {
+                                    "kind": "house",
+                                    "name": "25"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Oryol, ulitsa 8 Marta, 25",
+                            "postal_code": "302040"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Oryol, ulitsa 8 Marta, 25",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Orlovskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "Oryol",
+                                            "Thoroughfare": {
+                                                "Premise": {
+                                                    "PostalCode": {
+                                                        "PostalCodeNumber": "302040"
+                                                    },
+                                                    "PremiseNumber": "25"
+                                                },
+                                                "ThoroughfareName": "ulitsa 8 Marta"
+                                            }
+                                        },
+                                        "SubAdministrativeAreaName": "gorodskoy okrug Oryol"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "house",
+                        "precision": "exact",
+                        "text": "Russia, Oryol, ulitsa 8 Marta, 25"
+                    }
+                },
+                "name": "ulitsa 8 Marta, 25"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    52.971206,
+                    36.12548
+                ],
+                "type": "Point"
+            },
+            "id": "3",
+            "properties": {
+                "description": "Oryol, Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Orlovskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "gorodskoy okrug Oryol"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "Oryol"
+                                },
+                                {
+                                    "kind": "street",
+                                    "name": "Vysokaya ulitsa"
+                                },
+                                {
+                                    "kind": "house",
+                                    "name": "1"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Oryol, Vysokaya ulitsa, 1",
+                            "postal_code": "302011"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Oryol, Vysokaya ulitsa, 1",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Orlovskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "Oryol",
+                                            "Thoroughfare": {
+                                                "Premise": {
+                                                    "PostalCode": {
+                                                        "PostalCodeNumber": "302011"
+                                                    },
+                                                    "PremiseNumber": "1"
+                                                },
+                                                "ThoroughfareName": "Vysokaya ulitsa"
+                                            }
+                                        },
+                                        "SubAdministrativeAreaName": "gorodskoy okrug Oryol"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "house",
+                        "precision": "exact",
+                        "text": "Russia, Oryol, Vysokaya ulitsa, 1"
+                    }
+                },
+                "name": "Vysokaya ulitsa, 1"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    52.998318,
+                    36.087409
+                ],
+                "type": "Point"
+            },
+            "id": "2",
+            "properties": {
+                "description": "Oryol, Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Orlovskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "gorodskoy okrug Oryol"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "Oryol"
+                                },
+                                {
+                                    "kind": "street",
+                                    "name": "ulitsa Gaydara"
+                                },
+                                {
+                                    "kind": "house",
+                                    "name": "44"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Oryol, ulitsa Gaydara, 44",
+                            "postal_code": "302009"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Oryol, ulitsa Gaydara, 44",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Orlovskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "Oryol",
+                                            "Thoroughfare": {
+                                                "Premise": {
+                                                    "PostalCode": {
+                                                        "PostalCodeNumber": "302009"
+                                                    },
+                                                    "PremiseNumber": "44"
+                                                },
+                                                "ThoroughfareName": "ulitsa Gaydara"
+                                            }
+                                        },
+                                        "SubAdministrativeAreaName": "gorodskoy okrug Oryol"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "house",
+                        "precision": "exact",
+                        "text": "Russia, Oryol, ulitsa Gaydara, 44"
+                    }
+                },
+                "name": "ulitsa Gaydara, 44"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    52.943263,
+                    36.0518
+                ],
+                "type": "Point"
+            },
+            "id": "4",
+            "properties": {
+                "description": "Oryol, Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Orlovskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "gorodskoy okrug Oryol"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "Oryol"
+                                },
+                                {
+                                    "kind": "street",
+                                    "name": "Komsomolskaya ulitsa"
+                                },
+                                {
+                                    "kind": "house",
+                                    "name": "196"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Oryol, Komsomolskaya ulitsa, 196",
+                            "postal_code": "302016"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Oryol, Komsomolskaya ulitsa, 196",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Orlovskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "Oryol",
+                                            "Thoroughfare": {
+                                                "Premise": {
+                                                    "PostalCode": {
+                                                        "PostalCodeNumber": "302016"
+                                                    },
+                                                    "PremiseNumber": "196"
+                                                },
+                                                "ThoroughfareName": "Komsomolskaya ulitsa"
+                                            }
+                                        },
+                                        "SubAdministrativeAreaName": "gorodskoy okrug Oryol"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "house",
+                        "precision": "exact",
+                        "text": "Russia, Oryol, Komsomolskaya ulitsa, 196"
+                    }
+                },
+                "name": "Komsomolskaya ulitsa, 196"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    52.937044,
+                    36.040795
+                ],
+                "type": "Point"
+            },
+            "id": "7",
+            "properties": {
+                "description": "Oryol, Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Orlovskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "gorodskoy okrug Oryol"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "Oryol"
+                                },
+                                {
+                                    "kind": "street",
+                                    "name": "Komsomolskaya ulitsa"
+                                },
+                                {
+                                    "kind": "house",
+                                    "name": "270А"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Oryol, Komsomolskaya ulitsa, 270А",
+                            "postal_code": "302043"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Oryol, Komsomolskaya ulitsa, 270А",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Orlovskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "Oryol",
+                                            "Thoroughfare": {
+                                                "Premise": {
+                                                    "PostalCode": {
+                                                        "PostalCodeNumber": "302043"
+                                                    },
+                                                    "PremiseNumber": "270А"
+                                                },
+                                                "ThoroughfareName": "Komsomolskaya ulitsa"
+                                            }
+                                        },
+                                        "SubAdministrativeAreaName": "gorodskoy okrug Oryol"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "house",
+                        "precision": "exact",
+                        "text": "Russia, Oryol, Komsomolskaya ulitsa, 270А"
+                    }
+                },
+                "name": "Komsomolskaya ulitsa, 270А"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    52.958389,
+                    36.063945
+                ],
+                "type": "Point"
+            },
+            "id": "8",
+            "properties": {
+                "description": "Oryol, Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Orlovskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "gorodskoy okrug Oryol"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "Oryol"
+                                },
+                                {
+                                    "kind": "street",
+                                    "name": "Komsomolskaya ulitsa"
+                                },
+                                {
+                                    "kind": "house",
+                                    "name": "44"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Oryol, Komsomolskaya ulitsa, 44",
+                            "postal_code": "302001"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Oryol, Komsomolskaya ulitsa, 44",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Orlovskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "Oryol",
+                                            "Thoroughfare": {
+                                                "Premise": {
+                                                    "PostalCode": {
+                                                        "PostalCodeNumber": "302001"
+                                                    },
+                                                    "PremiseNumber": "44"
+                                                },
+                                                "ThoroughfareName": "Komsomolskaya ulitsa"
+                                            }
+                                        },
+                                        "SubAdministrativeAreaName": "gorodskoy okrug Oryol"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "house",
+                        "precision": "exact",
+                        "text": "Russia, Oryol, Komsomolskaya ulitsa, 44"
+                    }
+                },
+                "name": "Komsomolskaya ulitsa, 44"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    52.95572,
+                    36.068257
+                ],
+                "type": "Point"
+            },
+            "id": "5",
+            "properties": {
+                "description": "Oryol, Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Orlovskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "gorodskoy okrug Oryol"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "Oryol"
+                                },
+                                {
+                                    "kind": "street",
+                                    "name": "ulitsa Krasina"
+                                },
+                                {
+                                    "kind": "house",
+                                    "name": "7"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Oryol, ulitsa Krasina, 7",
+                            "postal_code": "302001"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Oryol, ulitsa Krasina, 7",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Orlovskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "Oryol",
+                                            "Thoroughfare": {
+                                                "Premise": {
+                                                    "PostalCode": {
+                                                        "PostalCodeNumber": "302001"
+                                                    },
+                                                    "PremiseNumber": "7"
+                                                },
+                                                "ThoroughfareName": "ulitsa Krasina"
+                                            }
+                                        },
+                                        "SubAdministrativeAreaName": "gorodskoy okrug Oryol"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "house",
+                        "precision": "exact",
+                        "text": "Russia, Oryol, ulitsa Krasina, 7"
+                    }
+                },
+                "name": "ulitsa Krasina, 7"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    53.011643,
+                    36.146258
+                ],
+                "type": "Point"
+            },
+            "id": "1",
+            "properties": {
+                "description": "Oryol, Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Orlovskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "gorodskoy okrug Oryol"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "Oryol"
+                                },
+                                {
+                                    "kind": "street",
+                                    "name": "ulitsa Metallurgov"
+                                },
+                                {
+                                    "kind": "house",
+                                    "name": "10"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Oryol, ulitsa Metallurgov, 10",
+                            "postal_code": "302025"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Oryol, ulitsa Metallurgov, 10",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Orlovskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "Oryol",
+                                            "Thoroughfare": {
+                                                "Premise": {
+                                                    "PostalCode": {
+                                                        "PostalCodeNumber": "302025"
+                                                    },
+                                                    "PremiseNumber": "10"
+                                                },
+                                                "ThoroughfareName": "ulitsa Metallurgov"
+                                            }
+                                        },
+                                        "SubAdministrativeAreaName": "gorodskoy okrug Oryol"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "house",
+                        "precision": "number",
+                        "text": "Russia, Oryol, ulitsa Metallurgov, 10"
+                    }
+                },
+                "name": "ulitsa Metallurgov, 10"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    52.970718,
+                    36.055195
+                ],
+                "type": "Point"
+            },
+            "id": "10",
+            "properties": {
+                "description": "Oryol, Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Orlovskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "gorodskoy okrug Oryol"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "Oryol"
+                                },
+                                {
+                                    "kind": "street",
+                                    "name": "Oktyabrskaya ulitsa"
+                                },
+                                {
+                                    "kind": "house",
+                                    "name": "27"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Oryol, Oktyabrskaya ulitsa, 27",
+                            "postal_code": "302028"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Oryol, Oktyabrskaya ulitsa, 27",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Orlovskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "Oryol",
+                                            "Thoroughfare": {
+                                                "Premise": {
+                                                    "PostalCode": {
+                                                        "PostalCodeNumber": "302028"
+                                                    },
+                                                    "PremiseNumber": "27"
+                                                },
+                                                "ThoroughfareName": "Oktyabrskaya ulitsa"
+                                            }
+                                        },
+                                        "SubAdministrativeAreaName": "gorodskoy okrug Oryol"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "house",
+                        "precision": "exact",
+                        "text": "Russia, Oryol, Oktyabrskaya ulitsa, 27"
+                    }
+                },
+                "name": "Oktyabrskaya ulitsa, 27"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    52.976439,
+                    36.066308
+                ],
+                "type": "Point"
+            },
+            "id": "14",
+            "properties": {
+                "description": "Oryol, Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Orlovskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "gorodskoy okrug Oryol"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "Oryol"
+                                },
+                                {
+                                    "kind": "street",
+                                    "name": "Oktyabrskaya ulitsa"
+                                },
+                                {
+                                    "kind": "house",
+                                    "name": "42А"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Oryol, Oktyabrskaya ulitsa, 42А",
+                            "postal_code": "302028"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Oryol, Oktyabrskaya ulitsa, 42А",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Orlovskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "Oryol",
+                                            "Thoroughfare": {
+                                                "Premise": {
+                                                    "PostalCode": {
+                                                        "PostalCodeNumber": "302028"
+                                                    },
+                                                    "PremiseNumber": "42А"
+                                                },
+                                                "ThoroughfareName": "Oktyabrskaya ulitsa"
+                                            }
+                                        },
+                                        "SubAdministrativeAreaName": "gorodskoy okrug Oryol"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "house",
+                        "precision": "exact",
+                        "text": "Russia, Oryol, Oktyabrskaya ulitsa, 42А"
+                    }
+                },
+                "name": "Oktyabrskaya ulitsa, 42А"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    52.967486,
+                    36.074509
+                ],
+                "type": "Point"
+            },
+            "id": "15",
+            "properties": {
+                "description": "Oryol, Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Orlovskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "gorodskoy okrug Oryol"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "Oryol"
+                                },
+                                {
+                                    "kind": "street",
+                                    "name": "ploshchad Mira"
+                                },
+                                {
+                                    "kind": "house",
+                                    "name": "1"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Oryol, ploshchad Mira, 1"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Oryol, ploshchad Mira, 1",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Orlovskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "Oryol",
+                                            "Thoroughfare": {
+                                                "Premise": {
+                                                    "PremiseNumber": "1"
+                                                },
+                                                "ThoroughfareName": "ploshchad Mira"
+                                            }
+                                        },
+                                        "SubAdministrativeAreaName": "gorodskoy okrug Oryol"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "house",
+                        "precision": "exact",
+                        "text": "Russia, Oryol, ploshchad Mira, 1"
+                    }
+                },
+                "name": "ploshchad Mira, 1"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    53.011177,
+                    36.12574
+                ],
+                "type": "Point"
+            },
+            "id": "11",
+            "properties": {
+                "description": "Oryol, Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Orlovskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "gorodskoy okrug Oryol"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "Oryol"
+                                },
+                                {
+                                    "kind": "street",
+                                    "name": "Razdolnaya ulitsa"
+                                },
+                                {
+                                    "kind": "house",
+                                    "name": "35"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Oryol, Razdolnaya ulitsa, 35",
+                            "postal_code": "302038"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Oryol, Razdolnaya ulitsa, 35",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Orlovskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "Oryol",
+                                            "Thoroughfare": {
+                                                "Premise": {
+                                                    "PostalCode": {
+                                                        "PostalCodeNumber": "302038"
+                                                    },
+                                                    "PremiseNumber": "35"
+                                                },
+                                                "ThoroughfareName": "Razdolnaya ulitsa"
+                                            }
+                                        },
+                                        "SubAdministrativeAreaName": "gorodskoy okrug Oryol"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "house",
+                        "precision": "exact",
+                        "text": "Russia, Oryol, Razdolnaya ulitsa, 35"
+                    }
+                },
+                "name": "Razdolnaya ulitsa, 35"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    52.962127,
+                    36.072281
+                ],
+                "type": "Point"
+            },
+            "id": "12",
+            "properties": {
+                "description": "Oryol, Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Orlovskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "gorodskoy okrug Oryol"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "Oryol"
+                                },
+                                {
+                                    "kind": "street",
+                                    "name": "Cherkasskaya ulitsa"
+                                },
+                                {
+                                    "kind": "house",
+                                    "name": "32"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Oryol, Cherkasskaya ulitsa, 32",
+                            "postal_code": "302001"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Oryol, Cherkasskaya ulitsa, 32",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Orlovskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "Oryol",
+                                            "Thoroughfare": {
+                                                "Premise": {
+                                                    "PostalCode": {
+                                                        "PostalCodeNumber": "302001"
+                                                    },
+                                                    "PremiseNumber": "32"
+                                                },
+                                                "ThoroughfareName": "Cherkasskaya ulitsa"
+                                            }
+                                        },
+                                        "SubAdministrativeAreaName": "gorodskoy okrug Oryol"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "house",
+                        "precision": "exact",
+                        "text": "Russia, Oryol, Cherkasskaya ulitsa, 32"
+                    }
+                },
+                "name": "Cherkasskaya ulitsa, 32"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    52.96857,
+                    36.064358
+                ],
+                "type": "Point"
+            },
+            "id": "19",
+            "properties": {
+                "description": "Oryol, Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Orlovskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "gorodskoy okrug Oryol"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "Oryol"
+                                },
+                                {
+                                    "kind": "street",
+                                    "name": "ulitsa Lenina"
+                                },
+                                {
+                                    "kind": "house",
+                                    "name": "30"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Oryol, ulitsa Lenina, 30",
+                            "postal_code": "302028"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Oryol, ulitsa Lenina, 30",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Orlovskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "Oryol",
+                                            "Thoroughfare": {
+                                                "Premise": {
+                                                    "PostalCode": {
+                                                        "PostalCodeNumber": "302028"
+                                                    },
+                                                    "PremiseNumber": "30"
+                                                },
+                                                "ThoroughfareName": "ulitsa Lenina"
+                                            }
+                                        },
+                                        "SubAdministrativeAreaName": "gorodskoy okrug Oryol"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "house",
+                        "precision": "number",
+                        "text": "Russia, Oryol, ulitsa Lenina, 30"
+                    }
+                },
+                "name": "ulitsa Lenina, 30"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    52.964161,
+                    36.063792
+                ],
+                "type": "Point"
+            },
+            "id": "13",
+            "properties": {
+                "description": "Oryol, Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Orlovskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "gorodskoy okrug Oryol"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "Oryol"
+                                },
+                                {
+                                    "kind": "street",
+                                    "name": "ulitsa 7 Noyabrya"
+                                },
+                                {
+                                    "kind": "house",
+                                    "name": "5"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Oryol, ulitsa 7 Noyabrya, 5",
+                            "postal_code": "302028"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Oryol, ulitsa 7 Noyabrya, 5",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Orlovskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "Oryol",
+                                            "Thoroughfare": {
+                                                "Premise": {
+                                                    "PostalCode": {
+                                                        "PostalCodeNumber": "302028"
+                                                    },
+                                                    "PremiseNumber": "5"
+                                                },
+                                                "ThoroughfareName": "ulitsa 7 Noyabrya"
+                                            }
+                                        },
+                                        "SubAdministrativeAreaName": "gorodskoy okrug Oryol"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "house",
+                        "precision": "exact",
+                        "text": "Russia, Oryol, ulitsa 7 Noyabrya, 5"
+                    }
+                },
+                "name": "ulitsa 7 Noyabrya, 5"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    52.956881,
+                    36.024015
+                ],
+                "type": "Point"
+            },
+            "id": "16",
+            "properties": {
+                "description": "poselok Zarechenskiy, Orlovskiy rayon, Orlovskaya oblast, Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Orlovskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "Orlovskiy rayon"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "poselok Zarechenskiy"
+                                },
+                                {
+                                    "kind": "street",
+                                    "name": "Prestizhnaya ulitsa"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Orlovskaya oblast, Orlovskiy rayon, poselok Zarechenskiy, Prestizhnaya ulitsa"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Orlovskaya oblast, Orlovskiy rayon, poselok Zarechenskiy, Prestizhnaya ulitsa",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Orlovskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "poselok Zarechenskiy",
+                                            "Thoroughfare": {
+                                                "ThoroughfareName": "Prestizhnaya ulitsa"
+                                            }
+                                        },
+                                        "SubAdministrativeAreaName": "Orlovskiy rayon"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "street",
+                        "precision": "street",
+                        "text": "Russia, Orlovskaya oblast, Orlovskiy rayon, poselok Zarechenskiy, Prestizhnaya ulitsa"
+                    }
+                },
+                "name": "Prestizhnaya ulitsa"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    51.125827,
+                    38.090167
+                ],
+                "type": "Point"
+            },
+            "id": "20",
+            "properties": {
+                "description": "selo Gorodishche, gorodskoy okrug Starooskolskiy, Belgorodskaya oblast, Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Belgorodskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "gorodskoy okrug Starooskolskiy"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "selo Gorodishche"
+                                },
+                                {
+                                    "kind": "street",
+                                    "name": "Sovetskaya ulitsa"
+                                },
+                                {
+                                    "kind": "house",
+                                    "name": "22"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Belgorodskaya oblast, gorodskoy okrug Starooskolskiy, selo Gorodishche, Sovetskaya ulitsa, 22",
+                            "postal_code": "309546"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Belgorodskaya oblast, gorodskoy okrug Starooskolskiy, selo Gorodishche, Sovetskaya ulitsa, 22",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Belgorodskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "selo Gorodishche",
+                                            "Thoroughfare": {
+                                                "Premise": {
+                                                    "PostalCode": {
+                                                        "PostalCodeNumber": "309546"
+                                                    },
+                                                    "PremiseNumber": "22"
+                                                },
+                                                "ThoroughfareName": "Sovetskaya ulitsa"
+                                            }
+                                        },
+                                        "SubAdministrativeAreaName": "gorodskoy okrug Starooskolskiy"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "house",
+                        "precision": "exact",
+                        "text": "Russia, Belgorodskaya oblast, gorodskoy okrug Starooskolskiy, selo Gorodishche, Sovetskaya ulitsa, 22"
+                    }
+                },
+                "name": "Sovetskaya ulitsa, 22"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    52.991565,
+                    36.091972
+                ],
+                "type": "Point"
+            },
+            "id": "17",
+            "properties": {
+                "description": "Oryol, Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Orlovskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "gorodskoy okrug Oryol"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "Oryol"
+                                },
+                                {
+                                    "kind": "street",
+                                    "name": "ulitsa Gaydara"
+                                },
+                                {
+                                    "kind": "house",
+                                    "name": "12"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Oryol, ulitsa Gaydara, 12",
+                            "postal_code": "302009"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Oryol, ulitsa Gaydara, 12",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Orlovskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "Oryol",
+                                            "Thoroughfare": {
+                                                "Premise": {
+                                                    "PostalCode": {
+                                                        "PostalCodeNumber": "302009"
+                                                    },
+                                                    "PremiseNumber": "12"
+                                                },
+                                                "ThoroughfareName": "ulitsa Gaydara"
+                                            }
+                                        },
+                                        "SubAdministrativeAreaName": "gorodskoy okrug Oryol"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "house",
+                        "precision": "near",
+                        "text": "Russia, Oryol, ulitsa Gaydara, 12"
+                    }
+                },
+                "name": "ulitsa Gaydara, 12"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    52.93325,
+                    36.068077
+                ],
+                "type": "Point"
+            },
+            "id": "18",
+            "properties": {
+                "description": "Oryol, Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Orlovskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "gorodskoy okrug Oryol"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "Oryol"
+                                },
+                                {
+                                    "kind": "street",
+                                    "name": "ulitsa Druzhby"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Oryol, ulitsa Druzhby"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Oryol, ulitsa Druzhby",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Orlovskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "Oryol",
+                                            "Thoroughfare": {
+                                                "ThoroughfareName": "ulitsa Druzhby"
+                                            }
+                                        },
+                                        "SubAdministrativeAreaName": "gorodskoy okrug Oryol"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "street",
+                        "precision": "street",
+                        "text": "Russia, Oryol, ulitsa Druzhby"
+                    }
+                },
+                "name": "ulitsa Druzhby"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    52.970371,
+                    36.063837
+                ],
+                "type": "Point"
+            },
+            "id": "21",
+            "properties": {
+                "description": "Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Orlovskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "gorodskoy okrug Oryol"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "Oryol"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Oryol"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Oryol",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Orlovskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "Oryol"
+                                        },
+                                        "SubAdministrativeAreaName": "gorodskoy okrug Oryol"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "locality",
+                        "precision": "other",
+                        "text": "Russia, Oryol"
+                    }
+                },
+                "name": "Oryol"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    52.966184,
+                    36.057531
+                ],
+                "type": "Point"
+            },
+            "id": "22",
+            "properties": {
+                "description": "Oryol, Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Orlovskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "gorodskoy okrug Oryol"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "Oryol"
+                                },
+                                {
+                                    "kind": "street",
+                                    "name": "ulitsa Maksima Gorkogo"
+                                },
+                                {
+                                    "kind": "house",
+                                    "name": "11"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Oryol, ulitsa Maksima Gorkogo, 11",
+                            "postal_code": "302040"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Oryol, ulitsa Maksima Gorkogo, 11",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Orlovskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "Oryol",
+                                            "Thoroughfare": {
+                                                "Premise": {
+                                                    "PostalCode": {
+                                                        "PostalCodeNumber": "302040"
+                                                    },
+                                                    "PremiseNumber": "11"
+                                                },
+                                                "ThoroughfareName": "ulitsa Maksima Gorkogo"
+                                            }
+                                        },
+                                        "SubAdministrativeAreaName": "gorodskoy okrug Oryol"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "house",
+                        "precision": "near",
+                        "text": "Russia, Oryol, ulitsa Maksima Gorkogo, 11"
+                    }
+                },
+                "name": "ulitsa Maksima Gorkogo, 11"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    51.130801,
+                    38.054046
+                ],
+                "type": "Point"
+            },
+            "id": "28",
+            "properties": {
+                "description": "selo Gorodishche, gorodskoy okrug Starooskolskiy, Belgorodskaya oblast, Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Belgorodskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "gorodskoy okrug Starooskolskiy"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "selo Gorodishche"
+                                },
+                                {
+                                    "kind": "street",
+                                    "name": "ulitsa Mira"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Belgorodskaya oblast, gorodskoy okrug Starooskolskiy, selo Gorodishche, ulitsa Mira"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Belgorodskaya oblast, gorodskoy okrug Starooskolskiy, selo Gorodishche, ulitsa Mira",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Belgorodskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "selo Gorodishche",
+                                            "Thoroughfare": {
+                                                "ThoroughfareName": "ulitsa Mira"
+                                            }
+                                        },
+                                        "SubAdministrativeAreaName": "gorodskoy okrug Starooskolskiy"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "street",
+                        "precision": "street",
+                        "text": "Russia, Belgorodskaya oblast, gorodskoy okrug Starooskolskiy, selo Gorodishche, ulitsa Mira"
+                    }
+                },
+                "name": "ulitsa Mira"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    52.96716,
+                    36.080276
+                ],
+                "type": "Point"
+            },
+            "id": "23",
+            "properties": {
+                "description": "Oryol, Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Orlovskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "gorodskoy okrug Oryol"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "Oryol"
+                                },
+                                {
+                                    "kind": "street",
+                                    "name": "ulitsa Pushkina"
+                                },
+                                {
+                                    "kind": "house",
+                                    "name": "20"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Oryol, ulitsa Pushkina, 20",
+                            "postal_code": "302030"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Oryol, ulitsa Pushkina, 20",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Orlovskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "Oryol",
+                                            "Thoroughfare": {
+                                                "Premise": {
+                                                    "PostalCode": {
+                                                        "PostalCodeNumber": "302030"
+                                                    },
+                                                    "PremiseNumber": "20"
+                                                },
+                                                "ThoroughfareName": "ulitsa Pushkina"
+                                            }
+                                        },
+                                        "SubAdministrativeAreaName": "gorodskoy okrug Oryol"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "house",
+                        "precision": "exact",
+                        "text": "Russia, Oryol, ulitsa Pushkina, 20"
+                    }
+                },
+                "name": "ulitsa Pushkina, 20"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    52.96332,
+                    36.006058
+                ],
+                "type": "Point"
+            },
+            "id": "27",
+            "properties": {
+                "description": "derevnya Obraztsovo, Orlovskiy rayon, Orlovskaya oblast, Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Orlovskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "Orlovskiy rayon"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "derevnya Obraztsovo"
+                                },
+                                {
+                                    "kind": "district",
+                                    "name": "mikrorayon Pervy"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Orlovskaya oblast, Orlovskiy rayon, derevnya Obraztsovo, mikrorayon Pervy"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Orlovskaya oblast, Orlovskiy rayon, derevnya Obraztsovo, mikrorayon Pervy",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Orlovskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "DependentLocality": {
+                                                "DependentLocalityName": "mikrorayon Pervy"
+                                            },
+                                            "LocalityName": "derevnya Obraztsovo"
+                                        },
+                                        "SubAdministrativeAreaName": "Orlovskiy rayon"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "district",
+                        "precision": "other",
+                        "text": "Russia, Orlovskaya oblast, Orlovskiy rayon, derevnya Obraztsovo, mikrorayon Pervy"
+                    }
+                },
+                "name": "mikrorayon Pervy"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    52.96332,
+                    36.006058
+                ],
+                "type": "Point"
+            },
+            "id": "26",
+            "properties": {
+                "description": "derevnya Obraztsovo, Orlovskiy rayon, Orlovskaya oblast, Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Orlovskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "Orlovskiy rayon"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "derevnya Obraztsovo"
+                                },
+                                {
+                                    "kind": "district",
+                                    "name": "mikrorayon Pervy"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Orlovskaya oblast, Orlovskiy rayon, derevnya Obraztsovo, mikrorayon Pervy"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Orlovskaya oblast, Orlovskiy rayon, derevnya Obraztsovo, mikrorayon Pervy",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Orlovskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "DependentLocality": {
+                                                "DependentLocalityName": "mikrorayon Pervy"
+                                            },
+                                            "LocalityName": "derevnya Obraztsovo"
+                                        },
+                                        "SubAdministrativeAreaName": "Orlovskiy rayon"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "district",
+                        "precision": "other",
+                        "text": "Russia, Orlovskaya oblast, Orlovskiy rayon, derevnya Obraztsovo, mikrorayon Pervy"
+                    }
+                },
+                "name": "mikrorayon Pervy"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    52.992394,
+                    36.07918
+                ],
+                "type": "Point"
+            },
+            "id": "25",
+            "properties": {
+                "description": "Oryol, Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Orlovskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "gorodskoy okrug Oryol"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "Oryol"
+                                },
+                                {
+                                    "kind": "street",
+                                    "name": "Bolkhovskaya ulitsa"
+                                },
+                                {
+                                    "kind": "house",
+                                    "name": "3"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Oryol, Bolkhovskaya ulitsa, 3",
+                            "postal_code": "302040"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Oryol, Bolkhovskaya ulitsa, 3",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Orlovskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "Oryol",
+                                            "Thoroughfare": {
+                                                "Premise": {
+                                                    "PostalCode": {
+                                                        "PostalCodeNumber": "302040"
+                                                    },
+                                                    "PremiseNumber": "3"
+                                                },
+                                                "ThoroughfareName": "Bolkhovskaya ulitsa"
+                                            }
+                                        },
+                                        "SubAdministrativeAreaName": "gorodskoy okrug Oryol"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "house",
+                        "precision": "near",
+                        "text": "Russia, Oryol, Bolkhovskaya ulitsa, 3"
+                    }
+                },
+                "name": "Bolkhovskaya ulitsa, 3"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    52.991505,
+                    36.147183
+                ],
+                "type": "Point"
+            },
+            "id": "24",
+            "properties": {
+                "description": "Oryol, Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Orlovskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "gorodskoy okrug Oryol"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "Oryol"
+                                },
+                                {
+                                    "kind": "street",
+                                    "name": "ulitsa Katukova"
+                                },
+                                {
+                                    "kind": "house",
+                                    "name": "8"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Oryol, ulitsa Katukova, 8"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Oryol, ulitsa Katukova, 8",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Orlovskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "Oryol",
+                                            "Thoroughfare": {
+                                                "Premise": {
+                                                    "PremiseNumber": "8"
+                                                },
+                                                "ThoroughfareName": "ulitsa Katukova"
+                                            }
+                                        },
+                                        "SubAdministrativeAreaName": "gorodskoy okrug Oryol"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "house",
+                        "precision": "exact",
+                        "text": "Russia, Oryol, ulitsa Katukova, 8"
+                    }
+                },
+                "name": "ulitsa Katukova, 8"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    52.970371,
+                    36.063837
+                ],
+                "type": "Point"
+            },
+            "id": "29",
+            "properties": {
+                "description": "Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Orlovskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "gorodskoy okrug Oryol"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "Oryol"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Oryol"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Oryol",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Orlovskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "Oryol"
+                                        },
+                                        "SubAdministrativeAreaName": "gorodskoy okrug Oryol"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "locality",
+                        "precision": "other",
+                        "text": "Russia, Oryol"
+                    }
+                },
+                "name": "Oryol"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    52.970371,
+                    36.063837
+                ],
+                "type": "Point"
+            },
+            "id": "30",
+            "properties": {
+                "description": "Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Orlovskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "gorodskoy okrug Oryol"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "Oryol"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Oryol"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Oryol",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Orlovskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "Oryol"
+                                        },
+                                        "SubAdministrativeAreaName": "gorodskoy okrug Oryol"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "locality",
+                        "precision": "other",
+                        "text": "Russia, Oryol"
+                    }
+                },
+                "name": "Oryol"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    52.970273,
+                    36.05524
+                ],
+                "type": "Point"
+            },
+            "id": "31",
+            "properties": {
+                "description": "Oryol, Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Orlovskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "gorodskoy okrug Oryol"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "Oryol"
+                                },
+                                {
+                                    "kind": "street",
+                                    "name": "ulitsa Turgeneva"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Oryol, ulitsa Turgeneva"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Oryol, ulitsa Turgeneva",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Orlovskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "Oryol",
+                                            "Thoroughfare": {
+                                                "ThoroughfareName": "ulitsa Turgeneva"
+                                            }
+                                        },
+                                        "SubAdministrativeAreaName": "gorodskoy okrug Oryol"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "street",
+                        "precision": "street",
+                        "text": "Russia, Oryol, ulitsa Turgeneva"
+                    }
+                },
+                "name": "ulitsa Turgeneva"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    52.967128,
+                    36.064493
+                ],
+                "type": "Point"
+            },
+            "id": "32",
+            "properties": {
+                "description": "Oryol, Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Orlovskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "gorodskoy okrug Oryol"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "Oryol"
+                                },
+                                {
+                                    "kind": "street",
+                                    "name": "ulitsa Lenina"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Oryol, ulitsa Lenina"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Oryol, ulitsa Lenina",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Orlovskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "Oryol",
+                                            "Thoroughfare": {
+                                                "ThoroughfareName": "ulitsa Lenina"
+                                            }
+                                        },
+                                        "SubAdministrativeAreaName": "gorodskoy okrug Oryol"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "street",
+                        "precision": "street",
+                        "text": "Russia, Oryol, ulitsa Lenina"
+                    }
+                },
+                "name": "ulitsa Lenina"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    49.19699,
+                    31.876017
+                ],
+                "type": "Point"
+            },
+            "id": "33",
+            "properties": {
+                "description": "Smila, Cherkaska oblast, Ukraine",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Ukraine"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Cherkaska oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "Smilianska miska rada"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "Smila"
+                                },
+                                {
+                                    "kind": "street",
+                                    "name": "vulytsia Vasylia Symonenka"
+                                },
+                                {
+                                    "kind": "house",
+                                    "name": "78"
+                                }
+                            ],
+                            "country_code": "UA",
+                            "formatted": "Cherkaska oblast, Smila, vulytsia Vasylia Symonenka, 78"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Cherkaska oblast, Smila, vulytsia Vasylia Symonenka, 78",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Cherkaska oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "Smila",
+                                            "Thoroughfare": {
+                                                "Premise": {
+                                                    "PremiseNumber": "78"
+                                                },
+                                                "ThoroughfareName": "vulytsia Vasylia Symonenka"
+                                            }
+                                        },
+                                        "SubAdministrativeAreaName": "Smilianska miska rada"
+                                    }
+                                },
+                                "CountryName": "Ukraine",
+                                "CountryNameCode": "UA"
+                            }
+                        },
+                        "formerName": "vulytsia Karla Marksa",
+                        "kind": "house",
+                        "precision": "exact",
+                        "text": "Ukraine, Cherkaska oblast, Smila, vulytsia Vasylia Symonenka, 78"
+                    }
+                },
+                "name": "vulytsia Vasylia Symonenka, 78"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    52.966097,
+                    36.06496
+                ],
+                "type": "Point"
+            },
+            "id": "40",
+            "properties": {
+                "description": "Oryol, Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Orlovskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "gorodskoy okrug Oryol"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "Oryol"
+                                },
+                                {
+                                    "kind": "street",
+                                    "name": "ulitsa Lenina"
+                                },
+                                {
+                                    "kind": "house",
+                                    "name": "10"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Oryol, ulitsa Lenina, 10",
+                            "postal_code": "302028"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Oryol, ulitsa Lenina, 10",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Orlovskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "Oryol",
+                                            "Thoroughfare": {
+                                                "Premise": {
+                                                    "PostalCode": {
+                                                        "PostalCodeNumber": "302028"
+                                                    },
+                                                    "PremiseNumber": "10"
+                                                },
+                                                "ThoroughfareName": "ulitsa Lenina"
+                                            }
+                                        },
+                                        "SubAdministrativeAreaName": "gorodskoy okrug Oryol"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "house",
+                        "precision": "exact",
+                        "text": "Russia, Oryol, ulitsa Lenina, 10"
+                    }
+                },
+                "name": "ulitsa Lenina, 10"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    52.966097,
+                    36.06496
+                ],
+                "type": "Point"
+            },
+            "id": "34",
+            "properties": {
+                "description": "Oryol, Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Orlovskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "gorodskoy okrug Oryol"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "Oryol"
+                                },
+                                {
+                                    "kind": "street",
+                                    "name": "ulitsa Lenina"
+                                },
+                                {
+                                    "kind": "house",
+                                    "name": "10"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Oryol, ulitsa Lenina, 10",
+                            "postal_code": "302028"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Oryol, ulitsa Lenina, 10",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Orlovskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "Oryol",
+                                            "Thoroughfare": {
+                                                "Premise": {
+                                                    "PostalCode": {
+                                                        "PostalCodeNumber": "302028"
+                                                    },
+                                                    "PremiseNumber": "10"
+                                                },
+                                                "ThoroughfareName": "ulitsa Lenina"
+                                            }
+                                        },
+                                        "SubAdministrativeAreaName": "gorodskoy okrug Oryol"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "house",
+                        "precision": "exact",
+                        "text": "Russia, Oryol, ulitsa Lenina, 10"
+                    }
+                },
+                "name": "ulitsa Lenina, 10"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    52.970371,
+                    36.063837
+                ],
+                "type": "Point"
+            },
+            "id": "35",
+            "properties": {
+                "description": "Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Orlovskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "gorodskoy okrug Oryol"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "Oryol"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Oryol"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Oryol",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Orlovskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "Oryol"
+                                        },
+                                        "SubAdministrativeAreaName": "gorodskoy okrug Oryol"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "locality",
+                        "precision": "other",
+                        "text": "Russia, Oryol"
+                    }
+                },
+                "name": "Oryol"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    53.443097,
+                    36.005087
+                ],
+                "type": "Point"
+            },
+            "id": "37",
+            "properties": {
+                "description": "Orlovskaya oblast, Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Orlovskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "Bolkhovskiy rayon"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "Bolkhov"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Orlovskaya oblast, Bolkhov"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Orlovskaya oblast, Bolkhov",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Orlovskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "Bolkhov"
+                                        },
+                                        "SubAdministrativeAreaName": "Bolkhovskiy rayon"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "locality",
+                        "precision": "other",
+                        "text": "Russia, Orlovskaya oblast, Bolkhov"
+                    }
+                },
+                "name": "Bolkhov"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    53.425764,
+                    36.023278
+                ],
+                "type": "Point"
+            },
+            "id": "39",
+            "properties": {
+                "description": "Bolkhov, Orlovskaya oblast, Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Orlovskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "Bolkhovskiy rayon"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "Bolkhov"
+                                },
+                                {
+                                    "kind": "street",
+                                    "name": "ulitsa 8 Marta"
+                                },
+                                {
+                                    "kind": "house",
+                                    "name": "25"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Orlovskaya oblast, Bolkhov, ulitsa 8 Marta, 25"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Orlovskaya oblast, Bolkhov, ulitsa 8 Marta, 25",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Orlovskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "Bolkhov",
+                                            "Thoroughfare": {
+                                                "Premise": {
+                                                    "PremiseNumber": "25"
+                                                },
+                                                "ThoroughfareName": "ulitsa 8 Marta"
+                                            }
+                                        },
+                                        "SubAdministrativeAreaName": "Bolkhovskiy rayon"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "house",
+                        "precision": "exact",
+                        "text": "Russia, Orlovskaya oblast, Bolkhov, ulitsa 8 Marta, 25"
+                    }
+                },
+                "name": "ulitsa 8 Marta, 25"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    53.443097,
+                    36.005087
+                ],
+                "type": "Point"
+            },
+            "id": "36",
+            "properties": {
+                "description": "Orlovskaya oblast, Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Orlovskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "Bolkhovskiy rayon"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "Bolkhov"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Orlovskaya oblast, Bolkhov"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Orlovskaya oblast, Bolkhov",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Orlovskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "Bolkhov"
+                                        },
+                                        "SubAdministrativeAreaName": "Bolkhovskiy rayon"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "locality",
+                        "precision": "other",
+                        "text": "Russia, Orlovskaya oblast, Bolkhov"
+                    }
+                },
+                "name": "Bolkhov"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    53.443097,
+                    36.005087
+                ],
+                "type": "Point"
+            },
+            "id": "38",
+            "properties": {
+                "description": "Orlovskaya oblast, Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Orlovskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "Bolkhovskiy rayon"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "Bolkhov"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Orlovskaya oblast, Bolkhov"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Orlovskaya oblast, Bolkhov",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Orlovskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "Bolkhov"
+                                        },
+                                        "SubAdministrativeAreaName": "Bolkhovskiy rayon"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "locality",
+                        "precision": "other",
+                        "text": "Russia, Orlovskaya oblast, Bolkhov"
+                    }
+                },
+                "name": "Bolkhov"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    53.436456,
+                    36.017664
+                ],
+                "type": "Point"
+            },
+            "id": "43",
+            "properties": {
+                "description": "Bolkhov, Orlovskaya oblast, Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Orlovskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "Bolkhovskiy rayon"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "Bolkhov"
+                                },
+                                {
+                                    "kind": "street",
+                                    "name": "Komsomolskaya ulitsa"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Orlovskaya oblast, Bolkhov, Komsomolskaya ulitsa"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Orlovskaya oblast, Bolkhov, Komsomolskaya ulitsa",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Orlovskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "Bolkhov",
+                                            "Thoroughfare": {
+                                                "ThoroughfareName": "Komsomolskaya ulitsa"
+                                            }
+                                        },
+                                        "SubAdministrativeAreaName": "Bolkhovskiy rayon"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "street",
+                        "precision": "street",
+                        "text": "Russia, Orlovskaya oblast, Bolkhov, Komsomolskaya ulitsa"
+                    }
+                },
+                "name": "Komsomolskaya ulitsa"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    53.436456,
+                    36.017664
+                ],
+                "type": "Point"
+            },
+            "id": "41",
+            "properties": {
+                "description": "Bolkhov, Orlovskaya oblast, Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Orlovskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "Bolkhovskiy rayon"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "Bolkhov"
+                                },
+                                {
+                                    "kind": "street",
+                                    "name": "Komsomolskaya ulitsa"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Orlovskaya oblast, Bolkhov, Komsomolskaya ulitsa"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Orlovskaya oblast, Bolkhov, Komsomolskaya ulitsa",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Orlovskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "Bolkhov",
+                                            "Thoroughfare": {
+                                                "ThoroughfareName": "Komsomolskaya ulitsa"
+                                            }
+                                        },
+                                        "SubAdministrativeAreaName": "Bolkhovskiy rayon"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "street",
+                        "precision": "street",
+                        "text": "Russia, Orlovskaya oblast, Bolkhov, Komsomolskaya ulitsa"
+                    }
+                },
+                "name": "Komsomolskaya ulitsa"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    53.436456,
+                    36.017664
+                ],
+                "type": "Point"
+            },
+            "id": "45",
+            "properties": {
+                "description": "Bolkhov, Orlovskaya oblast, Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Orlovskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "Bolkhovskiy rayon"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "Bolkhov"
+                                },
+                                {
+                                    "kind": "street",
+                                    "name": "Komsomolskaya ulitsa"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Orlovskaya oblast, Bolkhov, Komsomolskaya ulitsa"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Orlovskaya oblast, Bolkhov, Komsomolskaya ulitsa",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Orlovskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "Bolkhov",
+                                            "Thoroughfare": {
+                                                "ThoroughfareName": "Komsomolskaya ulitsa"
+                                            }
+                                        },
+                                        "SubAdministrativeAreaName": "Bolkhovskiy rayon"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "street",
+                        "precision": "street",
+                        "text": "Russia, Orlovskaya oblast, Bolkhov, Komsomolskaya ulitsa"
+                    }
+                },
+                "name": "Komsomolskaya ulitsa"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    53.443097,
+                    36.005087
+                ],
+                "type": "Point"
+            },
+            "id": "42",
+            "properties": {
+                "description": "Orlovskaya oblast, Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Orlovskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "Bolkhovskiy rayon"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "Bolkhov"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Orlovskaya oblast, Bolkhov"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Orlovskaya oblast, Bolkhov",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Orlovskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "Bolkhov"
+                                        },
+                                        "SubAdministrativeAreaName": "Bolkhovskiy rayon"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "locality",
+                        "precision": "other",
+                        "text": "Russia, Orlovskaya oblast, Bolkhov"
+                    }
+                },
+                "name": "Bolkhov"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    53.443097,
+                    36.005087
+                ],
+                "type": "Point"
+            },
+            "id": "44",
+            "properties": {
+                "description": "Orlovskaya oblast, Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Orlovskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "Bolkhovskiy rayon"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "Bolkhov"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Orlovskaya oblast, Bolkhov"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Orlovskaya oblast, Bolkhov",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Orlovskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "Bolkhov"
+                                        },
+                                        "SubAdministrativeAreaName": "Bolkhovskiy rayon"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "locality",
+                        "precision": "other",
+                        "text": "Russia, Orlovskaya oblast, Bolkhov"
+                    }
+                },
+                "name": "Bolkhov"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    53.45105,
+                    36.012301
+                ],
+                "type": "Point"
+            },
+            "id": "50",
+            "properties": {
+                "description": "Bolkhov, Orlovskaya oblast, Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Orlovskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "Bolkhovskiy rayon"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "Bolkhov"
+                                },
+                                {
+                                    "kind": "street",
+                                    "name": "Oktyabrskaya ulitsa"
+                                },
+                                {
+                                    "kind": "house",
+                                    "name": "27"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Orlovskaya oblast, Bolkhov, Oktyabrskaya ulitsa, 27"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Orlovskaya oblast, Bolkhov, Oktyabrskaya ulitsa, 27",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Orlovskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "Bolkhov",
+                                            "Thoroughfare": {
+                                                "Premise": {
+                                                    "PremiseNumber": "27"
+                                                },
+                                                "ThoroughfareName": "Oktyabrskaya ulitsa"
+                                            }
+                                        },
+                                        "SubAdministrativeAreaName": "Bolkhovskiy rayon"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "house",
+                        "precision": "exact",
+                        "text": "Russia, Orlovskaya oblast, Bolkhov, Oktyabrskaya ulitsa, 27"
+                    }
+                },
+                "name": "Oktyabrskaya ulitsa, 27"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    53.451157,
+                    36.013163
+                ],
+                "type": "Point"
+            },
+            "id": "47",
+            "properties": {
+                "description": "Bolkhov, Orlovskaya oblast, Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Orlovskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "Bolkhovskiy rayon"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "Bolkhov"
+                                },
+                                {
+                                    "kind": "street",
+                                    "name": "Oktyabrskaya ulitsa"
+                                },
+                                {
+                                    "kind": "house",
+                                    "name": "42"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Orlovskaya oblast, Bolkhov, Oktyabrskaya ulitsa, 42"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Orlovskaya oblast, Bolkhov, Oktyabrskaya ulitsa, 42",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Orlovskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "Bolkhov",
+                                            "Thoroughfare": {
+                                                "Premise": {
+                                                    "PremiseNumber": "42"
+                                                },
+                                                "ThoroughfareName": "Oktyabrskaya ulitsa"
+                                            }
+                                        },
+                                        "SubAdministrativeAreaName": "Bolkhovskiy rayon"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "house",
+                        "precision": "number",
+                        "text": "Russia, Orlovskaya oblast, Bolkhov, Oktyabrskaya ulitsa, 42"
+                    }
+                },
+                "name": "Oktyabrskaya ulitsa, 42"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    53.443097,
+                    36.005087
+                ],
+                "type": "Point"
+            },
+            "id": "49",
+            "properties": {
+                "description": "Orlovskaya oblast, Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Orlovskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "Bolkhovskiy rayon"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "Bolkhov"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Orlovskaya oblast, Bolkhov"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Orlovskaya oblast, Bolkhov",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Orlovskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "Bolkhov"
+                                        },
+                                        "SubAdministrativeAreaName": "Bolkhovskiy rayon"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "locality",
+                        "precision": "other",
+                        "text": "Russia, Orlovskaya oblast, Bolkhov"
+                    }
+                },
+                "name": "Bolkhov"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    53.443097,
+                    36.005087
+                ],
+                "type": "Point"
+            },
+            "id": "46",
+            "properties": {
+                "description": "Orlovskaya oblast, Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Orlovskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "Bolkhovskiy rayon"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "Bolkhov"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Orlovskaya oblast, Bolkhov"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Orlovskaya oblast, Bolkhov",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Orlovskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "Bolkhov"
+                                        },
+                                        "SubAdministrativeAreaName": "Bolkhovskiy rayon"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "locality",
+                        "precision": "other",
+                        "text": "Russia, Orlovskaya oblast, Bolkhov"
+                    }
+                },
+                "name": "Bolkhov"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    53.443097,
+                    36.005087
+                ],
+                "type": "Point"
+            },
+            "id": "48",
+            "properties": {
+                "description": "Orlovskaya oblast, Russia",
+                "metaDataProperty": {
+                    "GeocoderMetaData": {
+                        "Address": {
+                            "Components": [
+                                {
+                                    "kind": "country",
+                                    "name": "Russia"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Tsentralny federalny okrug"
+                                },
+                                {
+                                    "kind": "province",
+                                    "name": "Orlovskaya oblast"
+                                },
+                                {
+                                    "kind": "area",
+                                    "name": "Bolkhovskiy rayon"
+                                },
+                                {
+                                    "kind": "locality",
+                                    "name": "Bolkhov"
+                                }
+                            ],
+                            "country_code": "RU",
+                            "formatted": "Orlovskaya oblast, Bolkhov"
+                        },
+                        "AddressDetails": {
+                            "Country": {
+                                "AddressLine": "Orlovskaya oblast, Bolkhov",
+                                "AdministrativeArea": {
+                                    "AdministrativeAreaName": "Orlovskaya oblast",
+                                    "SubAdministrativeArea": {
+                                        "Locality": {
+                                            "LocalityName": "Bolkhov"
+                                        },
+                                        "SubAdministrativeAreaName": "Bolkhovskiy rayon"
+                                    }
+                                },
+                                "CountryName": "Russia",
+                                "CountryNameCode": "RU"
+                            }
+                        },
+                        "kind": "locality",
+                        "precision": "other",
+                        "text": "Russia, Orlovskaya oblast, Bolkhov"
+                    }
+                },
+                "name": "Bolkhov"
+            },
+            "type": "Feature"
+        }
+    ],
+    "type": "FeatureCollection"
+}
