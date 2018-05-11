@@ -38,7 +38,7 @@ parse.then((data) => {
         result.push(`${el.location}, ${el.adress}`);
     });
 
-    result = result.slice(0, 50);
+    result = result.slice(0, 550);
 
     geocoder.geocode(result, {
         lang: 'en-US'

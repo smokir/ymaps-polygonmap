@@ -119,7 +119,6 @@ ymaps.modules.define('Polygonmap', [
 
             this.polygons = new ObjectManager();
             this.polygons.add(this._data.polygons);
-
             this._map.geoObjects.add(this.polygons);
         }
     }
