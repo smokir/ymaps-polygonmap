@@ -42,23 +42,7 @@ ymaps.modules.define('Polygonmap', [
                 balloonContent: defaultBalloonContent
             });
 
-            this.options = new OptionManager(options, defaultOptions);
-
-            const mapper = this.options.get('mapper');
-            const filterEmptyPolygons = this.options.get('filterEmptyPolygons');
-
-            this.options.set('mapper', mapper.bind(this));
-
-            if (!filterEmptyPolygons) {
-                defaultOptions.unset('filter');
-            }
-
-            const filter = this.options.get('filter');
-
-            if (filter) {
-                this.options.set('filter', filter.bind(this));
-            }
-
+            this._initOptions(options, defaultOptions);
             this.setData(data);
         }
 
@@ -200,6 +184,32 @@ ymaps.modules.define('Polygonmap', [
         _render() {
             this._initInteractivity();
             this._map.geoObjects.add(this.objectManager);
+        }
+
+        /**
+         * Init Options.
+         *
+         * @param {Object} options Options.
+         * @param {Object} defaultOptions Default options.
+         * @private
+         */
+        _initOptions(options, defaultOptions) {
+            this.options = new OptionManager(options, defaultOptions);
+
+            const mapper = this.options.get('mapper');
+            const filterEmptyPolygons = this.options.get('filterEmptyPolygons');
+
+            this.options.set('mapper', mapper.bind(this));
+
+            if (!filterEmptyPolygons) {
+                defaultOptions.unset('filter');
+            }
+
+            const filter = this.options.get('filter');
+
+            if (filter) {
+                this.options.set('filter', filter.bind(this));
+            }
         }
 
         /**
