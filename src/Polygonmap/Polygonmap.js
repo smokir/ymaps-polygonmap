@@ -1,5 +1,6 @@
 import normalizeFeature from './utils/normalizeFeature';
 import defaultMapper from './utils/defaultMapper';
+import defaultFilter from './utils/defaultFilter';
 import defaultOnMouseEnter from './utils/defaultOnMouseEnter';
 import defaultOnMouseLeave from './utils/defaultOnMouseLeave';
 import defaultBalloonContent from './utils/defaultBalloonContent';
@@ -28,6 +29,8 @@ ymaps.modules.define('Polygonmap', [
         constructor(data, options) {
             const defaultOptions = new OptionManager({
                 mapper: defaultMapper,
+                filter: defaultFilter,
+                filterEmptyPolygons: false,
                 color: {
                     rangesCount: 10,
                     colormap: 'cdom',
@@ -40,8 +43,22 @@ ymaps.modules.define('Polygonmap', [
             });
 
             this.options = new OptionManager(options, defaultOptions);
+
             const mapper = this.options.get('mapper');
+            const filterEmptyPolygons = this.options.get('filterEmptyPolygons');
+
             this.options.set('mapper', mapper.bind(this));
+
+            if (!filterEmptyPolygons) {
+                defaultOptions.unset('filter');
+            }
+
+            const filter = this.options.get('filter');
+
+            if (filter) {
+                this.options.set('filter', filter.bind(this));
+            }
+
             this.setData(data);
         }
 
@@ -181,6 +198,7 @@ ymaps.modules.define('Polygonmap', [
          */
         _render() {
             const mapper = this.options.get('mapper');
+            const filter = this.options.get('filter');
 
             this.colorize = new Colorize(this.pointsCountMaximum, this.options.get('color'));
 
@@ -188,6 +206,10 @@ ymaps.modules.define('Polygonmap', [
 
             this.polygons = new ObjectManager();
             this.polygons.add(this._data.polygons);
+
+            if (filter) {
+                this.polygons.setFilter(filter);
+            }
 
             this._initInteractivity(this.polygons);
 
