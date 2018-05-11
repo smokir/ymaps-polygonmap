@@ -90,6 +90,7 @@ ymaps.modules.define('Polygonmap', [
                     polygons: {type: 'FeatureCollection', features: []}
                 };
                 this._prepare(data);
+                this._initObjectManager();
             }
 
             return this;
@@ -192,11 +193,21 @@ ymaps.modules.define('Polygonmap', [
         }
 
         /**
-         * Render Polygonmap.
+         * Render ObjectManager.
          *
          * @private
          */
         _render() {
+            this._initInteractivity();
+            this._map.geoObjects.add(this.objectManager);
+        }
+
+        /**
+         * Init ObjectManager.
+         *
+         * @private
+         */
+        _initObjectManager() {
             const mapper = this.options.get('mapper');
             const filter = this.options.get('filter');
 
@@ -204,36 +215,32 @@ ymaps.modules.define('Polygonmap', [
 
             this._data.polygons.features = this._data.polygons.features.map(mapper);
 
-            this.polygons = new ObjectManager();
-            this.polygons.add(this._data.polygons);
+            this.objectManager = new ObjectManager();
+            this.objectManager.add(this._data.polygons);
 
             if (filter) {
-                this.polygons.setFilter(filter);
+                this.objectManager.setFilter(filter);
             }
-
-            this._initInteractivity(this.polygons);
-
-            this._map.geoObjects.add(this.polygons);
         }
 
-        _initInteractivity(objectManager) {
+        _initInteractivity() {
             const balloon = new ymaps.Balloon(this._map);
             const onMouseEnter = this.options.get('onMouseEnter');
             const onMouseLeave = this.options.get('onMouseLeave');
 
-            objectManager.events.add('mouseenter', (e) => {
-                onMouseEnter(objectManager, e);
+            this.objectManager.events.add('mouseenter', (e) => {
+                onMouseEnter(this.objectManager, e);
             });
 
-            objectManager.events.add('mouseleave', (e) => {
-                onMouseLeave(objectManager, e);
+            this.objectManager.events.add('mouseleave', (e) => {
+                onMouseLeave(this.objectManager, e);
             });
 
             balloon.options.setParent(this._map.options);
 
-            objectManager.events.add('click', (e) => {
+            this.objectManager.events.add('click', (e) => {
                 const objId = e.get('objectId');
-                const object = objectManager.objects.getById(objId);
+                const object = this.objectManager.objects.getById(objId);
                 const balloonContent = this.options.get('balloonContent');
 
                 balloon.setData({
