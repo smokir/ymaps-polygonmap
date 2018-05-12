@@ -9,8 +9,46 @@
         <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&coordOrder=longlat" type="text/javascript"></script>
     </head>
     <body>
+        <style>
+            html,
+            body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+            }
+
+            #root {
+                width: 100%;
+                height: 100%;
+            }
+            .presets {
+                display: flex;
+                justify-content: center;
+            }
+
+            .presets__item {
+                padding: 10px 20px;
+                cursor: pointer;
+            }
+
+            .presets__item:hover {
+                color: red;
+            }
+
+            .presets__item.active {
+                border-bottom: 2px solid red;
+            }
+
+        </style>
         <div id="root">
-            <div id="map" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div>
+            <div id="map" style="width: 100%; height: 80%;"></div>
+            <div class="presets">
+                <span class="presets__item active">Велопарковки</span>
+                <span class="presets__item">Пятерочки</span>
+                <span class="presets__item">Отели</span>
+            </div>
+            <!-- <div id="map2" style="position: absolute; top: 0; left: 50%; width: 50%; height: 50%;"></div>
+            <div id="map3" style="position: absolute; top: 50%; left: 0; width: 50%; height: 50%;"></div> -->
         </div>
     </body>
 </html>
