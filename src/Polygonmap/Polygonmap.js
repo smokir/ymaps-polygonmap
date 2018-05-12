@@ -25,6 +25,11 @@ ymaps.modules.define('Polygonmap', [
          *  {Object} data.polygons GeoJSON FeatureCollections.
          *  {Object} data.points GeoJSON FeatureCollections.
          * @param {Object} [options] Options for customization.
+         * @param {number|array} options.colorRanges count of ranges or array of custom ranges
+         * @param {string|array} options.colorScheme preset for colorize or array of custom colors
+         * @param {number} options.colorOpacity opacity of polygon
+         * @param {string} options.strokeColor color for polygon stroke
+         * @param {number} options.strokeWidth width for polygon stroke
          */
         constructor(data, options) {
             const defaultOptions = new OptionManager({
