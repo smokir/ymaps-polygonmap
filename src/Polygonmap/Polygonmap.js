@@ -222,7 +222,10 @@ ymaps.modules.define('Polygonmap', [
             const mapper = this.options.get('mapper');
             const filter = this.options.get('filter');
 
-            this.colorize = new Colorize(this.pointsCountMaximum, this.options.getAll());
+            this.colorize = new Colorize(this.pointsCountMaximum, {
+                colorScheme: this.options.get('colorScheme'),
+                colorRanges: this.options.get('colorRanges')
+            });
 
             this._data.polygons.features = this._data.polygons.features.map(mapper);
 

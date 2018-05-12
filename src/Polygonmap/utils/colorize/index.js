@@ -30,7 +30,7 @@ class Colorize {
             nshades: this._rangesCount
         });
 
-        if (options.colorScheme.length !== this._rangesCount) {
+        if (this._colors.length !== this._rangesCount) {
             throw new Error('The length of the colormap array and rangesCount must be equal');
         }
     }
@@ -69,6 +69,7 @@ class Colorize {
         for (let i = 0; i < this._rangesCount; i++) {
             if (pointsCount <= this._ranges[i] && pointsCount > this._ranges[i + 1]) {
                 color = this._colors[i];
+                break;
             }
         }
 
