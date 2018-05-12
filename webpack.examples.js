@@ -1,12 +1,17 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const pages = [
+    'examples',
+    'examples/main',
+    'examples/filterEmptyPolygons',
+    'examples/filter'
+];
+
 module.exports = {
-    entry: {
-        index: './examples/index.html',
-        main: './examples/main/index.js',
-        filterEmptyPolygons: './examples/filterEmptyPolygons/index.js',
-        filter: './examples/filter/index.js'
-    },
+    entry: pages.reduce((acc, path) => ({
+        ...acc,
+        [path]: `./${path}/index.${path === 'examples' ? 'html' : 'js'}`
+    }), {}),
     module: {
         rules: [
             {
@@ -34,26 +39,14 @@ module.exports = {
         ]
     },
     plugins: [
-        new HtmlWebpackPlugin({
-            chunks: ['index'],
-            template: 'examples/index.html',
-            filename: 'index.html'
-        }),
-        new HtmlWebpackPlugin({
-            chunks: ['main'],
-            template: 'examples/main/index.html',
-            filename: 'main/index.html'
-        }),
-        new HtmlWebpackPlugin({
-            chunks: ['filterEmptyPolygons'],
-            template: 'examples/filterEmptyPolygons/index.html',
-            filename: 'filterEmptyPolygons/index.html'
-        }),
-        new HtmlWebpackPlugin({
-            chunks: ['filter'],
-            template: 'examples/filter/index.html',
-            filename: 'filter/index.html'
-        })
+        ...pages.map((path) => {
+            return new HtmlWebpackPlugin({
+                chunks: [path],
+                template: `${path}/index.html`,
+                filename: path === 'examples' ?
+                    'index.html' :
+                    `${path.replace('examples/', '')}/index.html`
+            });
+        }, {})
     ]
 };
-
