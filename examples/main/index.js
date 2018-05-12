@@ -2,9 +2,6 @@ import '../../src/Polygonmap';
 import points from '../data/bikeparking-moscow.geojson';
 import polygons from '../data/moscow-mo.geojson';
 
-pointsPyaterochka.features.forEach((element) => {
-    element.geometry.coordinates = element.geometry.coordinates.reverse();
-});
 
 ymaps.ready(() => {
     // eslint-disable-next-line no-unused-vars

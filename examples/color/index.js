@@ -21,7 +21,8 @@ ymaps.ready(() => {
         colorRanges: [150, 50, 10],
         strokeWidth: 1.5,
         strokeColor: '#666',
-        colorOpacity: 0.6
+        colorOpacity: 0.6,
+        interactivity: true
     }
     ymaps.modules.require(['Polygonmap'], (Polygonmap) => {
         //Demo with preset of colorize and preset stroke
@@ -48,7 +49,8 @@ ymaps.ready(() => {
                             colorScheme: 'summer',
                             strokeWidth: 1,
                             strokeColor: '#666',
-                            colorOpacity: 0.8
+                            colorOpacity: 0.8,
+                            interactivity: true
                         });
                         break;
                     case 2:
@@ -67,7 +69,8 @@ ymaps.ready(() => {
                             ],
                             colorOpacity: 0.8,
                             strokeWidth: 1,
-                            strokeColor: '#666'
+                            strokeColor: '#666',
+                            interactivity: true
                         });
                         break;
                 }
