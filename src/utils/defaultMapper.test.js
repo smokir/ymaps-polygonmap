@@ -6,6 +6,9 @@ import defaultMapper from './defaultMapper';
 const polygonmapMock = {
     colorize: {
         getColor: () => 'rgba(255,255,255,1)'
+    },
+    options: {
+        get() {}
     }
 };
 
