@@ -1,6 +1,6 @@
 module.exports = {
     mode: 'production',
-    entry: './src/Polygonmap/Polygonmap.js',
+    entry: './src/Polygonmap.js',
     output: {
         filename: 'polygonmap.min.js',
         path: __dirname + '/umd'
