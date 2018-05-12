@@ -41,7 +41,7 @@ describe('colorize', () => {
             const colorize = new Colorize(maxPointsCount, defaultOptions);
             const expected = colorize.getColorMap()[0];
             const result = colorize.getColor(maxPointsCount);
-            assert.equal(expected, result);
+            expect(result).to.be.equal(expected);
         });
 
         it('should return correct color for min value', () => {
@@ -72,7 +72,7 @@ describe('colorize', () => {
             const colorize = new Colorize(maxPointsCount, customOptions);
             const expected = colorize.getColorMap()[0];
             const result = colorize.getColor(maxPointsCount);
-            assert.equal(expected, result);
+            expect(result).to.be.equal(expected);
         });
     });
 });
