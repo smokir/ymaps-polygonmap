@@ -28,12 +28,11 @@ ymaps.modules.define('Polygonmap', [
         constructor(data, options) {
             const defaultOptions = new OptionManager({
                 mapper: defaultMapper,
-                color: {
-                    rangesCount: 10,
-                    colormap: 'cdom',
-                    format: 'rgbaString',
-                    alpha: 0.7
-                },
+                colorRanges: 10,
+                colorScheme: 'cdom',
+                colorOpacity: 1,
+                strokeColor: '#222',
+                strokeWidth: 2,
                 onMouseEnter: defaultOnMouseEnter,
                 onMouseLeave: defaultOnMouseLeave,
                 balloonContent: defaultBalloonContent
@@ -182,7 +181,7 @@ ymaps.modules.define('Polygonmap', [
         _render() {
             const mapper = this.options.get('mapper');
 
-            this.colorize = new Colorize(this.pointsCountMaximum, this.options.get('color'));
+            this.colorize = new Colorize(this.pointsCountMaximum, this.options.getAll());
 
             this._data.polygons.features = this._data.polygons.features.map(mapper);
 
