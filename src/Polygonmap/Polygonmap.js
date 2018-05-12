@@ -1,5 +1,6 @@
 import normalizeFeature from './utils/normalizeFeature';
 import defaultMapper from './utils/defaultMapper';
+import defaultFilter from './utils/defaultFilter';
 import defaultOnMouseEnter from './utils/defaultOnMouseEnter';
 import defaultOnMouseLeave from './utils/defaultOnMouseLeave';
 import defaultBalloonContent from './utils/defaultBalloonContent';
@@ -33,14 +34,22 @@ ymaps.modules.define('Polygonmap', [
                 colorOpacity: 1,
                 strokeColor: '#222',
                 strokeWidth: 2,
+                // Since the default filter for empty polygons is disabled by default,
+                // this option will be undefined.
+                filter: undefined,
+                filterEmptyPolygons: false,
+                color: {
+                    rangesCount: 10,
+                    colormap: 'cdom',
+                    format: 'rgbaString',
+                    alpha: 0.7
+                },
                 onMouseEnter: defaultOnMouseEnter,
                 onMouseLeave: defaultOnMouseLeave,
                 balloonContent: defaultBalloonContent
             });
 
-            this.options = new OptionManager(options, defaultOptions);
-            const mapper = this.options.get('mapper');
-            this.options.set('mapper', mapper.bind(this));
+            this._initOptions(options, defaultOptions);
             this.setData(data);
         }
 
@@ -72,6 +81,7 @@ ymaps.modules.define('Polygonmap', [
                     polygons: {type: 'FeatureCollection', features: []}
                 };
                 this._prepare(data);
+                this._initObjectManager();
             }
 
             return this;
@@ -174,43 +184,74 @@ ymaps.modules.define('Polygonmap', [
         }
 
         /**
-         * Render Polygonmap.
+         * Render ObjectManager.
          *
          * @private
          */
         _render() {
+            this._initInteractivity();
+            this._map.geoObjects.add(this.objectManager);
+        }
+
+        /**
+         * Init Options.
+         *
+         * @param {Object} options Options.
+         * @param {Object} defaultOptions Default options.
+         * @private
+         */
+        _initOptions(options, defaultOptions) {
+            this.options = new OptionManager(options, defaultOptions);
+
             const mapper = this.options.get('mapper');
+            const filterEmptyPolygons = this.options.get('filterEmptyPolygons');
+
+            this.options.set('mapper', mapper.bind(this));
+
+            if (filterEmptyPolygons) {
+                this.options.set('filter', defaultFilter.bind(this));
+            }
+        }
+
+        /**
+         * Init ObjectManager.
+         *
+         * @private
+         */
+        _initObjectManager() {
+            const mapper = this.options.get('mapper');
+            const filter = this.options.get('filter');
 
             this.colorize = new Colorize(this.pointsCountMaximum, this.options.getAll());
 
             this._data.polygons.features = this._data.polygons.features.map(mapper);
 
-            this.polygons = new ObjectManager();
-            this.polygons.add(this._data.polygons);
+            this.objectManager = new ObjectManager();
+            this.objectManager.add(this._data.polygons);
 
-            this._initInteractivity(this.polygons);
-
-            this._map.geoObjects.add(this.polygons);
+            if (filter) {
+                this.objectManager.setFilter(filter);
+            }
         }
 
-        _initInteractivity(objectManager) {
+        _initInteractivity() {
             const balloon = new ymaps.Balloon(this._map);
             const onMouseEnter = this.options.get('onMouseEnter');
             const onMouseLeave = this.options.get('onMouseLeave');
 
-            objectManager.events.add('mouseenter', (e) => {
-                onMouseEnter(objectManager, e);
+            this.objectManager.events.add('mouseenter', (e) => {
+                onMouseEnter(this.objectManager, e);
             });
 
-            objectManager.events.add('mouseleave', (e) => {
-                onMouseLeave(objectManager, e);
+            this.objectManager.events.add('mouseleave', (e) => {
+                onMouseLeave(this.objectManager, e);
             });
 
             balloon.options.setParent(this._map.options);
 
-            objectManager.events.add('click', (e) => {
+            this.objectManager.events.add('click', (e) => {
                 const objId = e.get('objectId');
-                const object = objectManager.objects.getById(objId);
+                const object = this.objectManager.objects.getById(objId);
                 const balloonContent = this.options.get('balloonContent');
 
                 balloon.setData({
