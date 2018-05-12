@@ -29,7 +29,7 @@ ymaps.modules.define('Polygonmap', [
         constructor(data, options) {
             const defaultOptions = new OptionManager({
                 mapper: defaultMapper,
-                filter: defaultFilter,
+                // filter: undefined,
                 filterEmptyPolygons: false,
                 color: {
                     rangesCount: 10,
@@ -201,14 +201,8 @@ ymaps.modules.define('Polygonmap', [
 
             this.options.set('mapper', mapper.bind(this));
 
-            if (!filterEmptyPolygons) {
-                defaultOptions.unset('filter');
-            }
-
-            const filter = this.options.get('filter');
-
-            if (filter) {
-                this.options.set('filter', filter.bind(this));
+            if (filterEmptyPolygons) {
+                this.options.set('filter', defaultFilter.bind(this));
             }
         }
 
