@@ -1,11 +1,17 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const pages = [
+    'examples',
+    'examples/main',
+    'examples/filterEmptyPolygons',
+    'examples/filter'
+];
+
 module.exports = {
-    mode: 'production',
-    entry: './src/examples/index.js',
-    output: {
-        path: __dirname + '/examples'
-    },
+    entry: pages.reduce((acc, path) => ({
+        ...acc,
+        [path]: `./${path}/index.${path === 'examples' ? 'html' : 'js'}`
+    }), {}),
     module: {
         rules: [
             {
@@ -33,10 +39,14 @@ module.exports = {
         ]
     },
     plugins: [
-        new HtmlWebpackPlugin({
-            template: 'src/examples/index.html',
-            filename: 'index.html'
-        })
+        ...pages.map((path) => {
+            return new HtmlWebpackPlugin({
+                chunks: [path],
+                template: `${path}/index.html`,
+                filename: path === 'examples' ?
+                    'index.html' :
+                    `${path.replace('examples/', '')}/index.html`
+            });
+        }, {})
     ]
 };
-
