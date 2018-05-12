@@ -4,7 +4,8 @@ module.exports = {
     mode: 'production',
     entry: {
         index: './examples/index.html',
-        main: './examples/main/index.js'
+        main: './examples/main/index.js',
+        filter: './examples/filter/index.js'
     },
     module: {
         rules: [
@@ -42,6 +43,11 @@ module.exports = {
             chunks: ['main'],
             template: 'examples/main/index.html',
             filename: 'main/index.html'
+        }),
+        new HtmlWebpackPlugin({
+            chunks: ['filter'],
+            template: 'examples/filter/index.html',
+            filename: 'filter/index.html'
         })
     ]
 };

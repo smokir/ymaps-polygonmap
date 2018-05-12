@@ -1,6 +1,6 @@
-import '../src/Polygonmap';
-import points from './data/bikeparking-moscow.geojson';
-import polygons from './data/moscow-mo.geojson';
+import '../../src/Polygonmap';
+import points from '../data/bikeparking-moscow.geojson';
+import polygons from '../data/moscow-mo.geojson';
 
 ymaps.ready(() => {
     // eslint-disable-next-line no-unused-vars
@@ -11,7 +11,9 @@ ymaps.ready(() => {
     });
 
     ymaps.modules.require(['Polygonmap'], (Polygonmap) => {
-        const polygonmap = new Polygonmap({polygons, points});
+        const polygonmap = new Polygonmap({polygons, points}, {
+            filterEmptyPolygons: true
+        });
 
         polygonmap.setMap(myMap);
     });
