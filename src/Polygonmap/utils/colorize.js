@@ -8,14 +8,16 @@ class Colorize {
     /**
      * @param {number} maxPointsCount max points
      * @param {object} options setting for generate colormap
-     * @param {string|array} options.colormap sheme of colormap or array of custom colors (from dark to light)
+     * @param {string|array} options.colorScheme sheme of colormap or array of custom colors (from dark to light)
+     * @param {number|array} options.colorRanges count of ranges to automaticly generate or custom array
+     * of ranges (from dark to light)
      */
     constructor(maxPointsCount, options) {
-        if (typeof maxPointsCount === 'number') {
-            this._maxPointsCount = maxPointsCount;
-        } else {
+        if (typeof maxPointsCount !== 'number') {
             throw new Error('Wrong "maxPointsCount" value');
         }
+
+        this._maxPointsCount = maxPointsCount;
 
         if (typeof options.colorRanges === 'object') {
             this._ranges = options.colorRanges;
@@ -31,7 +33,7 @@ class Colorize {
         });
 
         if (this._colors.length !== this._rangesCount) {
-            throw new Error('The length of the colormap array and rangesCount must be equal');
+            throw new Error('The length of the colorScheme array and ranges must be equal');
         }
     }
 
