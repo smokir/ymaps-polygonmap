@@ -4,7 +4,9 @@ const pages = [
     'examples',
     'examples/main',
     'examples/filterEmptyPolygons',
-    'examples/filter'
+    'examples/filter',
+    'examples/customBalloon',
+    'examples/offInteractivity'
 ];
 
 module.exports = {

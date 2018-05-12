@@ -184,7 +184,10 @@ ymaps.modules.define('Polygonmap', [
          * @private
          */
         _render() {
-            this._initInteractivity();
+            if (this.options.get('interactivity')) {
+                this._initInteractivity();
+            }
+
             this._map.geoObjects.add(this.objectManager);
         }
 
