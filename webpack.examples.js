@@ -4,8 +4,8 @@ module.exports = {
     entry: {
         index: './examples/index.html',
         main: './examples/main/index.js',
-        filter: './examples/filter/index.js',
-        filter2: './examples/filter-2/index.js'
+        filterEmptyPolygons: './examples/filterEmptyPolygons/index.js',
+        filter: './examples/filter/index.js'
     },
     module: {
         rules: [
@@ -45,14 +45,14 @@ module.exports = {
             filename: 'main/index.html'
         }),
         new HtmlWebpackPlugin({
+            chunks: ['filterEmptyPolygons'],
+            template: 'examples/filterEmptyPolygons/index.html',
+            filename: 'filterEmptyPolygons/index.html'
+        }),
+        new HtmlWebpackPlugin({
             chunks: ['filter'],
             template: 'examples/filter/index.html',
             filename: 'filter/index.html'
-        }),
-        new HtmlWebpackPlugin({
-            chunks: ['filter2'],
-            template: 'examples/filter-2/index.html',
-            filename: 'filter-2/index.html'
         })
     ]
 };

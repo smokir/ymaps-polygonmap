@@ -12,7 +12,9 @@ ymaps.ready(() => {
 
     ymaps.modules.require(['Polygonmap'], (Polygonmap) => {
         const polygonmap = new Polygonmap({polygons, points}, {
-            filterEmptyPolygons: true
+            filter: function (object) {
+                return object.properties.pointsCount > 10;
+            }
         });
 
         polygonmap.setMap(myMap);
