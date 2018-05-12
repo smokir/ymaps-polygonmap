@@ -1,5 +1,4 @@
 module.exports = {
-    mode: 'production',
     entry: './src/Polygonmap.js',
     output: {
         filename: 'polygonmap.min.js',
