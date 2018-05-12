@@ -5,7 +5,7 @@ import defaultOnMouseEnter from './utils/defaultOnMouseEnter';
 import defaultOnMouseLeave from './utils/defaultOnMouseLeave';
 import defaultBalloonContent from './utils/defaultBalloonContent';
 import inside from './utils/inside';
-import Colorize from './utils/colorize/index';
+import Colorize from './utils/colorize';
 
 /**
  * Polygonmap module.
