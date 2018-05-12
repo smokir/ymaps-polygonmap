@@ -49,7 +49,8 @@ ymaps.modules.define('Polygonmap', [
                 filterEmptyPolygons: false,
                 onMouseEnter: defaultOnMouseEnter,
                 onMouseLeave: defaultOnMouseLeave,
-                balloonContent: defaultBalloonContent
+                balloonContent: defaultBalloonContent,
+                interactivity: true
             });
 
             this._initOptions(options, defaultOptions);
@@ -227,7 +228,10 @@ ymaps.modules.define('Polygonmap', [
          * @private
          */
         _render() {
-            this._initInteractivity();
+            if (this.options.get('interactivity')) {
+                this._initInteractivity();
+            }
+
             this._map.geoObjects.add(this.objectManager);
         }
 
@@ -286,16 +290,17 @@ ymaps.modules.define('Polygonmap', [
         }
 
         _initInteractivity() {
+            let prevObjectId = null;
             const balloon = new ymaps.Balloon(this._map);
             const onMouseEnter = this.options.get('onMouseEnter');
             const onMouseLeave = this.options.get('onMouseLeave');
 
             this.objectManager.events.add('mouseenter', (e) => {
-                onMouseEnter(this.objectManager, e);
+                onMouseEnter(this.objectManager, e, prevObjectId);
             });
 
             this.objectManager.events.add('mouseleave', (e) => {
-                onMouseLeave(this.objectManager, e);
+                onMouseLeave(this.objectManager, e, prevObjectId);
             });
 
             balloon.options.setParent(this._map.options);
@@ -310,6 +315,29 @@ ymaps.modules.define('Polygonmap', [
                 });
 
                 balloon.open(e.get('coords'));
+
+                if (prevObjectId) {
+                    this.objectManager.objects.setObjectOptions(prevObjectId, {
+                        fillOpacity: 1,
+                        strokeWidth: 1
+                    });
+                }
+
+                this.objectManager.objects.setObjectOptions(objId, {
+                    fillOpacity: 1,
+                    strokeWidth: 3
+                });
+
+                prevObjectId = objId;
+
+                balloon.events.add('close', () => {
+                    this.objectManager.objects.setObjectOptions(prevObjectId, {
+                        fillOpacity: 1,
+                        strokeWidth: 1
+                    });
+
+                    prevObjectId = null;
+                });
             });
         }
     }

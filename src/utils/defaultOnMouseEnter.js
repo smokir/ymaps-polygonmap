@@ -1,9 +1,12 @@
-const defaultOnMouseEnter = (objectManager, e) => {
+const defaultOnMouseEnter = (objectManager, e, prevObjectId) => {
     const objId = e.get('objectId');
-    objectManager.objects.setObjectOptions(objId, {
-        fillOpacity: 0.5,
-        strokeWidth: 2
-    });
+
+    if (prevObjectId !== objId) {
+        objectManager.objects.setObjectOptions(objId, {
+            fillOpacity: 0.9,
+            strokeWidth: 2
+        });
+    }
 };
 
 export default defaultOnMouseEnter;
