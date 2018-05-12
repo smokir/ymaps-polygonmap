@@ -29,7 +29,9 @@ ymaps.modules.define('Polygonmap', [
         constructor(data, options) {
             const defaultOptions = new OptionManager({
                 mapper: defaultMapper,
-                // filter: undefined,
+                // Since the default filter for empty polygons is disabled by default,
+                // this option will be undefined.
+                filter: undefined,
                 filterEmptyPolygons: false,
                 color: {
                     rangesCount: 10,
