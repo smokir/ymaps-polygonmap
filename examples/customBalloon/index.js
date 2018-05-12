@@ -18,7 +18,8 @@ ymaps.ready(() => {
                         <div>${object.properties.NAME}</div>
                         <div>Количество парковок: <b>${object.properties.pointsCount}</b></div>
                 </div>`;
-            }
+            },
+            interactivity: true
         });
 
         polygonmap.setMap(myMap);
