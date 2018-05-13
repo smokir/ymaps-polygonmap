@@ -60,6 +60,7 @@
   },
   "dependencies": {
     "colormap": "^2.3.0",
+    "lodash": "^4.17.10",
     "robust-point-in-polygon": "^1.0.3"
   }
 }
