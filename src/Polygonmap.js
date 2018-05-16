@@ -128,6 +128,7 @@ ymaps.modules.define('Polygonmap', [
          */
         destroy() {
             this.setData(null);
+            this.objectManager.removeAll();
             this.setMap(null);
         }
 
