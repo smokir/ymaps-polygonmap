@@ -5,7 +5,7 @@ import defaultOnMouseEnter from './utils/defaultOnMouseEnter';
 import defaultOnMouseLeave from './utils/defaultOnMouseLeave';
 import defaultBalloonContent from './utils/defaultBalloonContent';
 import inside from './utils/inside';
-import Colorize from './utils/colorize/index';
+import Colorize from './utils/colorize';
 
 /**
  * Polygonmap module.
@@ -25,10 +25,20 @@ ymaps.modules.define('Polygonmap', [
          *  {Object} data.polygons GeoJSON FeatureCollections.
          *  {Object} data.points GeoJSON FeatureCollections.
          * @param {Object} [options] Options for customization.
+         * @param {number|array} options.colorRanges count of ranges or array of custom ranges
+         * @param {string|array} options.colorScheme preset for colorize or array of custom colors
+         * @param {number} options.colorOpacity opacity of polygon
+         * @param {string} options.strokeColor color for polygon stroke
+         * @param {number} options.strokeWidth width for polygon stroke
          */
         constructor(data, options) {
             const defaultOptions = new OptionManager({
                 mapper: defaultMapper,
+                colorRanges: 10,
+                colorScheme: 'cdom',
+                colorOpacity: 1,
+                strokeColor: '#222',
+                strokeWidth: 2,
                 // Since the default filter for empty polygons is disabled by default,
                 // this option will be undefined.
                 filter: undefined,
@@ -217,7 +227,10 @@ ymaps.modules.define('Polygonmap', [
             const mapper = this.options.get('mapper');
             const filter = this.options.get('filter');
 
-            this.colorize = new Colorize(this.pointsCountMaximum, this.options.get('color'));
+            this.colorize = new Colorize(this.pointsCountMaximum, {
+                colorScheme: this.options.get('colorScheme'),
+                colorRanges: this.options.get('colorRanges')
+            });
 
             this._data.polygons.features = this._data.polygons.features.map(mapper);
 
