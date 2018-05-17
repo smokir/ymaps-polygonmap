@@ -4,6 +4,7 @@ import defaultFilter from './utils/defaultFilter';
 import defaultOnMouseEnter from './utils/defaultOnMouseEnter';
 import defaultOnMouseLeave from './utils/defaultOnMouseLeave';
 import defaultBalloonContent from './utils/defaultBalloonContent';
+import defaultOnClick from './utils/defaultOnClick';
 import inside from './utils/inside';
 import Colorize from './utils/colorize';
 
@@ -49,7 +50,14 @@ ymaps.modules.define('Polygonmap', [
                 filterEmptyPolygons: false,
                 onMouseEnter: defaultOnMouseEnter,
                 onMouseLeave: defaultOnMouseLeave,
+                onClick: defaultOnClick,
                 balloonContent: defaultBalloonContent,
+                initialOpacity: 0.8,
+                initialStrokeWidth: 1,
+                hoverOpacity: 0.9,
+                hoverStrokeWidth: 2,
+                activeOpacity: 1,
+                activeStrokeWidth: 3,
                 interactivity: true
             });
 
@@ -294,46 +302,28 @@ ymaps.modules.define('Polygonmap', [
             const balloon = new ymaps.Balloon(this._map);
             const onMouseEnter = this.options.get('onMouseEnter');
             const onMouseLeave = this.options.get('onMouseLeave');
+            const onClickDefault = this.options.get('onClick');
 
             this.objectManager.events.add('mouseenter', (e) => {
-                onMouseEnter(this.objectManager, e, prevObjectId);
+                onMouseEnter(this.objectManager, e, prevObjectId, this.options);
             });
 
             this.objectManager.events.add('mouseleave', (e) => {
-                onMouseLeave(this.objectManager, e, prevObjectId);
+                onMouseLeave(this.objectManager, e, prevObjectId, this.options);
             });
 
             balloon.options.setParent(this._map.options);
 
             this.objectManager.events.add('click', (e) => {
                 const objId = e.get('objectId');
-                const object = this.objectManager.objects.getById(objId);
-                const balloonContent = this.options.get('balloonContent');
-
-                balloon.setData({
-                    content: balloonContent(object)
-                });
-
-                balloon.open(e.get('coords'));
-
-                if (prevObjectId) {
-                    this.objectManager.objects.setObjectOptions(prevObjectId, {
-                        fillOpacity: 1,
-                        strokeWidth: 1
-                    });
-                }
-
-                this.objectManager.objects.setObjectOptions(objId, {
-                    fillOpacity: 1,
-                    strokeWidth: 3
-                });
+                onClickDefault(this.objectManager, e, prevObjectId, balloon, this.options);
 
                 prevObjectId = objId;
 
                 balloon.events.add('close', () => {
                     this.objectManager.objects.setObjectOptions(prevObjectId, {
-                        fillOpacity: 1,
-                        strokeWidth: 1
+                        fillOpacity: this.options.get('initialOpacity'),
+                        strokeWidth: this.options.get('initialStrokeWidth')
                     });
 
                     prevObjectId = null;

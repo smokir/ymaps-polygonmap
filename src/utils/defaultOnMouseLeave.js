@@ -1,10 +1,10 @@
-const defaultOnMouseLeave = (objectManager, e, prevObjectId) => {
+const defaultOnMouseLeave = (objectManager, e, prevObjectId, options) => {
     const objId = e.get('objectId');
 
     if (prevObjectId !== objId) {
         objectManager.objects.setObjectOptions(objId, {
-            fillOpacity: 1,
-            strokeWidth: 1
+            fillOpacity: options.get('initialOpacity'),
+            strokeWidth: options.get('initialStrokeWidth')
         });
     }
 };
