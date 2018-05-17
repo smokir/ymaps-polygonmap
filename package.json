@@ -1,5 +1,5 @@
 {
-  "name": "mapsapi-polygonmap",
+  "name": "ymaps-polygonmap",
   "version": "0.0.1",
   "description": "Yandex.Maps API module for data visualization.",
   "keywords": [
@@ -55,13 +55,13 @@
   },
   "author": "",
   "license": "MIT",
-  "homepage": "https://github.com/yandex-shri-fx-team/mapsapi-polygonmap#readme",
+  "homepage": "https://github.com/yandex-shri-fx-team/ymaps-polygonmap#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yandex-shri-fx-team/mapsapi-polygonmap.git"
+    "url": "git+https://github.com/yandex-shri-fx-team/ymaps-polygonmap.git"
   },
   "bugs": {
-    "url": "https://github.com/yandex-shri-fx-team/mapsapi-polygonmap/issues"
+    "url": "https://github.com/yandex-shri-fx-team/ymaps-polygonmap/issues"
   },
   "dependencies": {
     "colormap": "^2.3.0",
