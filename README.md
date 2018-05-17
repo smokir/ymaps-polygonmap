@@ -50,176 +50,94 @@ Yandex.Maps API module for data visualization.
    });
    ```
 
-## Constructor
+<a name="module_Polygonmap"></a>
 
-| Parameter | Default value | Decription |
-|-|-|-|
-| data | - | Type: Object.<br> Data. |
-| data.polygons | - | Type: Object.<br>Object described using of following formats:<ul><li>[GeoQueryResult](http://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/GeoQueryResult.xml) - result of [geoQuery](http://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/geoQuery.xml) execution;</li><li>[GeoJSON](http://geojson.org) - a format for encoding a variety of geographic data structures.</li> |
-| data.points | - | Type: Object.<br>Object described using of following formats:<ul><li>[GeoQueryResult](http://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/GeoQueryResult.xml) - result of [geoQuery](http://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/geoQuery.xml) execution;</li><li>[GeoJSON](http://geojson.org) - a format for encoding a variety of geographic data structures.</li> |
-| options | - | Type: Object.<br>Representation options. |
-| options.mapper | `defaultMapper` | Type: Function.<br>Function for transformation of data object with type `Feature` for polygons. |
+## Polygonmap
+Polygonmap module.
 
-## Properties
+**Requires**: <code>module:option.Manager</code>, <code>module:ObjectManager</code>
 
-| Name | Type | Description |
-|-|-|-|
-| options | [option.Manager](http://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/option.Manager.xml) | `Polygonmap` instance options manager. |
+* [Polygonmap](#module_Polygonmap)
+    * [Polygonmap](#exp_module_Polygonmap--Polygonmap) ⏏
+        * [new Polygonmap([data], [options])](#new_module_Polygonmap--Polygonmap_new)
+        * [.getData()](#module_Polygonmap--Polygonmap+getData) ⇒ <code>Object</code>
+        * [.setData(data)](#module_Polygonmap--Polygonmap+setData) ⇒ <code>Polygonmap</code>
+        * [.getMap()](#module_Polygonmap--Polygonmap+getMap) ⇒ <code>Map</code>
+        * [.setMap(map)](#module_Polygonmap--Polygonmap+setMap) ⇒ <code>Polygonmap</code>
+        * [.destroy()](#module_Polygonmap--Polygonmap+destroy)
 
-## Methods
+<a name="exp_module_Polygonmap--Polygonmap"></a>
 
-| Name | Returns | Description |
-|-|-|-|
-| [getData](#getdata) | Object&nbsp;&#124;&nbsp;null | Returns reference to data provided to constructor or [setData](#setdata) method. |
-| [setData](#setdata) | Polygonmap | Adds new data. If `Polygonmap` instance is already rendered, it will be re-rendered. |
-| [getMap](#getmap) | Map&nbsp;&#124;&nbsp;null | Returns reference to [Map](http://api.yandex.com/maps/doc/jsapi/2.1/ref/reference/Map.xml) object. |
-| [setMap](#setmap) | Polygonmap | Sets [Map](http://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/Map.xml) instance to render polygonmap layer over it. |
-| [destroy](#destroy) | - | Destroys `Polygonmap` instance. |
+### Polygonmap ⏏
+**Kind**: Exported class
+<a name="new_module_Polygonmap--Polygonmap_new"></a>
 
-### getData
+#### new Polygonmap([data], [options])
 
-Returns: reference to data provided to constructor or [setData](#setdata) method.
+| Param | Type | Description |
+| --- | --- | --- |
+| [data] | <code>Object</code> | Polygons and points. |
+| data.polygons | <code>Object</code> | GeoJSON FeatureCollections. |
+| data.points | <code>Object</code> | GeoJSON FeatureCollections. |
+| [options] | <code>Object</code> | Options for customization. |
+| options.colorRanges | <code>number</code> \| <code>array</code> | count of ranges or array of custom ranges |
+| options.colorScheme | <code>string</code> \| <code>array</code> | preset for colorize or array of custom colors |
+| options.colorOpacity | <code>number</code> | opacity of polygon |
+| options.strokeColor | <code>string</code> | color for polygon stroke |
+| options.strokeWidth | <code>number</code> | width for polygon stroke |
 
-### setData
+<a name="module_Polygonmap--Polygonmap+getData"></a>
 
-Sets new data. If `Polygonmap` instance is already rendered, it will be re-rendered.
+#### polygonmap.getData() ⇒ <code>Object</code>
+Get the data, polygons and points.
 
-Returns: self-reference.
+**Kind**: instance method of [<code>Polygonmap</code>](#exp_module_Polygonmap--Polygonmap)
+**Returns**: <code>Object</code> - Polygons and points.
+**Access**: public
+<a name="module_Polygonmap--Polygonmap+setData"></a>
 
-Parameters:
+#### polygonmap.setData(data) ⇒ <code>Polygonmap</code>
+Set the data, polygons and points.
 
-| Parameter | Default value | Description |
-|-|-|-|
-| data | - | Type: Object.<br> Data. |
-| data.polygons | - | Type: Object.<br>Object described using of following formats:<ul><li>[GeoQueryResult](http://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/GeoQueryResult.xml) - result of [geoQuery](http://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/geoQuery.xml) execution;</li><li>[GeoJSON](http://geojson.org) - a format for encoding a variety of geographic data structures.</li> |
-| data.points | - | Type: Object.<br>Object described using of following formats:<ul><li>[GeoQueryResult](http://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/GeoQueryResult.xml) - result of [geoQuery](http://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/geoQuery.xml) execution;</li><li>[GeoJSON](http://geojson.org) - a format for encoding a variety of geographic data structures.</li> |
+**Kind**: instance method of [<code>Polygonmap</code>](#exp_module_Polygonmap--Polygonmap)
+**Returns**: <code>Polygonmap</code> - Self-reference.
+**Access**: public
 
-### getMap
+| Param | Type | Description |
+| --- | --- | --- |
+| data | <code>Object</code> | Polygons and points. |
+| data.polygons | <code>Object</code> | GeoJSON FeatureCollections. |
+| data.points | <code>Object</code> | GeoJSON FeatureCollections. |
 
-Returns: reference to [Map](http://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/Map.xml) object.
+<a name="module_Polygonmap--Polygonmap+getMap"></a>
 
-### setMap
+#### polygonmap.getMap() ⇒ <code>Map</code>
+Get the Map instance.
 
-Sets [Map](http://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/Map.xml) instance to render `Polygonmap` object over it.
+**Kind**: instance method of [<code>Polygonmap</code>](#exp_module_Polygonmap--Polygonmap)
+**Returns**: <code>Map</code> - Reference to Map instance.
+**Access**: public
+<a name="module_Polygonmap--Polygonmap+setMap"></a>
 
-Returns: self-reference.
+#### polygonmap.setMap(map) ⇒ <code>Polygonmap</code>
+Set Map instance to render Polygonmap object.
 
-Parameters:
+**Kind**: instance method of [<code>Polygonmap</code>](#exp_module_Polygonmap--Polygonmap)
+**Returns**: <code>Polygonmap</code> - Self-reference.
+**Access**: public
 
-| Parameter | Default value | Description |
-|-|-|-|
-| map | - | Type: Map<br/>[Map](http://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/Map.xml) instance to render `Polygonmap` object over it. |
+| Param | Type | Description |
+| --- | --- | --- |
+| map | <code>Map</code> | Map instance. |
 
-### destroy
+<a name="module_Polygonmap--Polygonmap+destroy"></a>
 
-Destroys `Polygonmap` instance.
+#### polygonmap.destroy()
+Destructs Polygonmap instance.
 
-## Examples
-
-### Displaying polygonmap over geographical map
-
-```js
-ymaps.modules.require(['Polygonmap'], function (Polygonmap) {
-    const dataPolygons = {
-            type: 'FeatureCollection',
-            features: [{
-                id: 'id3',
-                type: 'Feature',
-                geometry: {
-                    type: 'Polygon',
-                    coordinates: [
-                        [37.782051, -122.445068]
-                        [37.782051, -122.445568]
-                        [37.782951, -122.445068]
-                        [37.782951, -122.445568]
-                    ]
-                }
-            }]
-        };
-    const dataPoints = {
-            type: 'FeatureCollection',
-            features: [{
-                id: 'id1',
-                type: 'Feature',
-                geometry: {
-                    type: 'Point',
-                    coordinates: [37.782551, -122.445368]
-                }
-            }, {
-                id: 'id2',
-                type: 'Feature',
-                geometry: {
-                    type: 'Point',
-                    coordinates: [37.782745, -122.444586]
-                }
-            }]
-        };
-    const data = {polygons: dataPolygons, points: dataPoints};
-    const polygonmap = new Polygonmap(data);
-
-    polygonmap.setMap(myMap);
-});
-```
-
-### Updating polygonmap data
-
-```js
-ymaps.modules.require(['Polygonmap'], function (Polygonmap) {
-    const data = {polygons: dataPolygons, points: dataPoints};
-    const polygonmap = new Polygonmap(data);
-
-    polygonmap.setMap(myMap);
-
-    const data = {polygons: newDataPolygons, points: newDataPoints};
-
-    polygonmap.setData(newData);
-});
-```
-
-### Changing polygonmap representation options
-
-```js
-ymaps.modules.require(['Polygonmap'], function (Polygonmap) {
-    const data = {polygons: dataPolygons, points: dataPoints};
-    const polygonmap = new Polygonmap(data);
-
-    polygonmap.options.set('mapper', (feature) => {
-        const {pointsCount, pointsCountMaximum} = feature.properties;
-        const k = pointsCount / pointsCountMaximum;
-
-        feature.options = {fillColor: `rgba(0, 0, 0, ${k})`};
-
-        return feature;
-    });
-    polygonmap.setMap(myMap);
-});
-```
+**Kind**: instance method of [<code>Polygonmap</code>](#exp_module_Polygonmap--Polygonmap)
+**Access**: public
 
 ## Demo
 
-* [Moscow bikeparking](https://yandex-shri-fx-team.github.io/ymaps-polygonmap/)
-
-## Development
-
-```bash
-npm i
-npm run build
-```
-
-For development:
-
-```bash
-npm run dev
-```
-
-For linting:
-
-```bash
-npm run lint
-```
-
-For testing:
-
-```bash
-npmr test
-```
+- https://yandex-shri-fx-team.github.io/mapsapi-polygonmap
