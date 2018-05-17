@@ -54,4 +54,4 @@ Yandex.Maps API module for data visualization.
 
 ## Demo
 
-- https://yandex-shri-fx-team.github.io/mapsapi-polygonmap/
+- https://yandex-shri-fx-team.github.io/mapsapi-polygonmap
