@@ -52,6 +52,87 @@ Yandex.Maps API module for data visualization.
 
 {{>main}}
 
+## Examples
+
+### Displaying polygonmap over geographical map
+
+```js
+ymaps.modules.require(['Polygonmap'], function (Polygonmap) {
+    const dataPolygons = {
+            type: 'FeatureCollection',
+            features: [{
+                id: 'id3',
+                type: 'Feature',
+                geometry: {
+                    type: 'Polygon',
+                    coordinates: [
+                        [37.782051, -122.445068]
+                        [37.782051, -122.445568]
+                        [37.782951, -122.445068]
+                        [37.782951, -122.445568]
+                    ]
+                }
+            }]
+        };
+    const dataPoints = {
+            type: 'FeatureCollection',
+            features: [{
+                id: 'id1',
+                type: 'Feature',
+                geometry: {
+                    type: 'Point',
+                    coordinates: [37.782551, -122.445368]
+                }
+            }, {
+                id: 'id2',
+                type: 'Feature',
+                geometry: {
+                    type: 'Point',
+                    coordinates: [37.782745, -122.444586]
+                }
+            }]
+        };
+    const data = {polygons: dataPolygons, points: dataPoints};
+    const polygonmap = new Polygonmap(data);
+
+    polygonmap.setMap(myMap);
+});
+```
+
+### Updating polygonmap data
+
+```js
+ymaps.modules.require(['Polygonmap'], function (Polygonmap) {
+    const data = {polygons: dataPolygons, points: dataPoints};
+    const polygonmap = new Polygonmap(data);
+
+    polygonmap.setMap(myMap);
+
+    const data = {polygons: newDataPolygons, points: newDataPoints};
+
+    polygonmap.setData(newData);
+});
+```
+
+### Changing polygonmap representation options
+
+```js
+ymaps.modules.require(['Polygonmap'], function (Polygonmap) {
+    const data = {polygons: dataPolygons, points: dataPoints};
+    const polygonmap = new Polygonmap(data);
+
+    polygonmap.options.set('mapper', (feature) => {
+        const {pointsCount, pointsCountMaximum} = feature.properties;
+        const k = pointsCount / pointsCountMaximum;
+
+        feature.options = {fillColor: `rgba(0, 0, 0, ${k})`};
+
+        return feature;
+    });
+    polygonmap.setMap(myMap);
+});
+```
+
 ## Demo
 
 - https://yandex-shri-fx-team.github.io/mapsapi-polygonmap
