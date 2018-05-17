@@ -7,7 +7,7 @@ Yandex.Maps API module for data visualization.
 
 ## Loading
 
-1. Put module source code ([polygonmap.min.js](https://github.com/yandex-shri-fx-team/mapsapi-polygonmap/blob/master/umd/polygonmap.min.js)) on your CDN.
+1. Put module source code ([polygonmap.min.js](https://github.com/yandex-shri-fx-team/ymaps-polygonmap/blob/master/umd/polygonmap.min.js)) on your CDN.
 
 2. Load both [Yandex Maps JS API 2.1](http://api.yandex.com/maps/doc/jsapi/) and module source code by adding following code into &lt;head&gt; section of your page:
 
@@ -32,14 +32,14 @@ Yandex.Maps API module for data visualization.
    ```
 
    ```bash
-   npm i --save git+https://github.com/yandex-shri-fx-team/mapsapi-polygonmap.git
+   npm i --save git+https://github.com/yandex-shri-fx-team/ymaps-polygonmap.git
    ```
 
    ```js
-   require('mapsapi-polygonmap');
+   require('ymaps-polygonmap');
 
    // Or with babel
-   import 'mapsapi-polygonmap';
+   import 'ymaps-polygonmap';
    ```
 
 3. Get access to module functions by using [ymaps.modules.require](http://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/modules.require.xml) method:
@@ -197,7 +197,7 @@ ymaps.modules.require(['Polygonmap'], function (Polygonmap) {
 
 ## Demo
 
-* [Moscow bikeparking](https://yandex-shri-fx-team.github.io/mapsapi-polygonmap/)
+* [Moscow bikeparking](https://yandex-shri-fx-team.github.io/ymaps-polygonmap/)
 
 ## Development
 
