@@ -61,6 +61,13 @@ class Colorize {
     }
 
     /**
+     * @returns {Array} Return generated array of ranges
+     */
+    getColorRanges() {
+        return this._ranges;
+    }
+
+    /**
      * Return color depending on count of points inside polygon
      * @param {number} pointsCount - count of point inside polygon
      * @returns {string} return color

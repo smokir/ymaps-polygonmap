@@ -1,4 +1,4 @@
-/* eslint-disable no-invalid-this */
+/* eslint-disable no-invalid-this max-len */
 import '../../src/Polygonmap';
 import points from '../data/bikeparking-moscow.geojson';
 import pointsPyaterochka from '../data/pyaterochka-moscow.geojson';
@@ -28,22 +28,48 @@ const customBaloonContent = (object) => {
             <div>Цвет ${object.options.fillColor}<span style="background: ${object.options.fillColor}; width: 20px; height: 20px;"></div>
             <div>Opacity ${object.options.fillOpacity}<span style="background: ${object.options.fillOpacity}; width: 20px; height: 20px;"></div>
         </div>
+    `
+}
+
+const template = (colors) => {
+    return `
+        <div class="legend">
+            ${colors.map((color, i) => `
+                <div class="legend__color" style="background: ${color.name}; width: ${100 / colors.length}%">
+                    <div class="legend__tooltip">
+                        <span class="legend__tooltip__inner">
+                            ${
+                                colors[i - 1] ?
+                                    `${colors[i - 1].value} - ${color.value}`
+                                    :
+                                    `0 - ${color.value}`
+                            }
+                        </span>
+                    </div>
+                </div>
+            `).join('\n')}
+        </div>
     `;
 };
 
 
 ymaps.ready(() => {
     // eslint-disable-next-line no-unused-vars
-    const myMap = new ymaps.Map('map', {
+    var myMap = new ymaps.Map("map", {
         center: [37.64, 55.76],
         zoom: 10,
-        controls: ['zoomControl', 'typeSelector']
+        controls: []
     });
+        
     const defaultSettings = {
         strokeWidth: 1.5,
         strokeColor: '#666',
-        colorOpacity: 0.6
+        colorOpacity: 0.6,
+        showLegend: true,
+        legendTemplate: template
     }
+
+
     ymaps.modules.require(['Polygonmap'], (Polygonmap) => {
         //Demo with preset of colorize and preset stroke
         let polygonmap = new Polygonmap({polygons, points }, defaultSettings);
@@ -65,8 +91,11 @@ ymaps.ready(() => {
                         polygonmap = new Polygonmap({polygons, points}, defaultSettings);
                         break;
                     case 1:
+                    console.log('asdasd');
+                    
                         polygonmap = new Polygonmap({polygons, points: pointsPyaterochka}, {
                             colorScheme: 'summer',
+                            colorRanges: 10,
                             strokeWidth: 1,
                             strokeColor: '#666',
                             colorOpacity: 0.8
@@ -86,6 +115,7 @@ ymaps.ready(() => {
                                 '#e1bee7',
                                 '#f3e5f5'
                             ],
+                            colorRanges: 10,
                             colorOpacity: 0.8,
                             strokeWidth: 1,
                             strokeColor: '#666'
@@ -96,6 +126,7 @@ ymaps.ready(() => {
                             colorBy: 'weight',
                             colorByWeightType: 'middle',
                             colorScheme: 'cdom',
+                            colorRanges: 10,
                             strokeWidth: 1,
                             strokeColor: '#666',
                             colorOpacity: 0.8,
@@ -106,6 +137,7 @@ ymaps.ready(() => {
                         polygonmap = new Polygonmap({ polygons, points: weightPoints }, {
                             colorBy: 'weight',
                             colorScheme: 'freesurface-blue',
+                            colorRanges: 15,
                             colorByWeightType: 'maximum',
                             strokeWidth: 1,
                             strokeColor: '#666',
