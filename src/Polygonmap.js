@@ -233,14 +233,23 @@ ymaps.modules.define('Polygonmap', [
                 colorRanges: this.options.get('colorRanges')
             });
 
-            this._data.polygons.features = this._data.polygons.features.map(mapper);
+            if (mapper && filter) {
+                const reducer = (acc, feature) => {
+                    if (filter(feature)) {
+                        acc.push(mapper(feature));
+                    }
+
+                    return acc;
+                };
+                this._data.polygons.features = this._data.polygons.features.reduce(reducer, []);
+            } else if (mapper && !filter) {
+                this._data.polygons.features = this._data.polygons.features.map(mapper);
+            } else if (!mapper && filter) {
+                this._data.polygons.features = this._data.polygons.features.filter(filter);
+            }
 
             this.objectManager = new ObjectManager();
             this.objectManager.add(this._data.polygons);
-
-            if (filter) {
-                this.objectManager.setFilter(filter);
-            }
         }
 
         _initInteractivity() {
