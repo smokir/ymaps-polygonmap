@@ -144,6 +144,7 @@ ymaps.modules.define('Polygonmap', [
         _prepare(data) {
             const polygonFeatures = data.polygons.features;
             let pointFeatures = data.points.features;
+            let pointsCountMinimum = 0;
             let pointsCountMaximum = 0;
 
             if (
@@ -175,6 +176,10 @@ ymaps.modules.define('Polygonmap', [
 
                     pointFeatures = restPointFeatures;
 
+                    if (pointsCount < pointsCountMinimum) {
+                        pointsCountMinimum = pointsCount;
+                    }
+
                     if (pointsCount > pointsCountMaximum) {
                         pointsCountMaximum = pointsCount;
                     }
@@ -186,6 +191,7 @@ ymaps.modules.define('Polygonmap', [
                 }
             }
 
+            this.pointsCountMinimum = pointsCountMinimum;
             this.pointsCountMaximum = pointsCountMaximum;
         }
 
