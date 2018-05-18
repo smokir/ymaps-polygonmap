@@ -144,6 +144,7 @@ ymaps.modules.define('Polygonmap', [
 
             const colorBy = this.options.get('colorBy');
             const colorByWeightType = this.options.get('colorByWeightType');
+            const colorByWeightProp = this.options.get('colorByWeightProp');
 
             let pointFeatures = data.points.features;
             let pointsCountMinimum = 0;
@@ -173,7 +174,7 @@ ymaps.modules.define('Polygonmap', [
 
                         if (inside(polygonFeature.geometry, pointFeature.geometry)) {
                             pointsCount++;
-                            pointsWeight += pointFeature.properties[this.options.get('colorByWeightProp')];
+                            pointsWeight += pointFeature.properties[colorByWeightProp];
                         } else {
                             restPointFeatures.push(pointFeature);
                         }
