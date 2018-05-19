@@ -144,6 +144,7 @@ ymaps.modules.define('Polygonmap', [
         _prepare(data) {
             const polygonFeatures = data.polygons.features;
             let pointFeatures = data.points.features;
+            let pointsCountMinimum = 0;
             let pointsCountMaximum = 0;
 
             if (
@@ -175,6 +176,10 @@ ymaps.modules.define('Polygonmap', [
 
                     pointFeatures = restPointFeatures;
 
+                    if (pointsCount < pointsCountMinimum) {
+                        pointsCountMinimum = pointsCount;
+                    }
+
                     if (pointsCount > pointsCountMaximum) {
                         pointsCountMaximum = pointsCount;
                     }
@@ -186,6 +191,7 @@ ymaps.modules.define('Polygonmap', [
                 }
             }
 
+            this.pointsCountMinimum = pointsCountMinimum;
             this.pointsCountMaximum = pointsCountMaximum;
         }
 
@@ -233,14 +239,23 @@ ymaps.modules.define('Polygonmap', [
                 colorRanges: this.options.get('colorRanges')
             });
 
-            this._data.polygons.features = this._data.polygons.features.map(mapper);
+            if (mapper && filter) {
+                const reducer = (acc, feature) => {
+                    if (filter(feature)) {
+                        acc.push(mapper(feature));
+                    }
+
+                    return acc;
+                };
+                this._data.polygons.features = this._data.polygons.features.reduce(reducer, []);
+            } else if (mapper && !filter) {
+                this._data.polygons.features = this._data.polygons.features.map(mapper);
+            } else if (!mapper && filter) {
+                this._data.polygons.features = this._data.polygons.features.filter(filter);
+            }
 
             this.objectManager = new ObjectManager();
             this.objectManager.add(this._data.polygons);
-
-            if (filter) {
-                this.objectManager.setFilter(filter);
-            }
         }
 
         _initInteractivity() {
