@@ -148,6 +148,7 @@ ymaps.modules.define('Polygonmap', [
             this.setData(null);
             this.objectManager.removeAll();
             this._legendControl.setParent(null);
+            this.balloon.close();
             this.setMap(null);
         }
 
