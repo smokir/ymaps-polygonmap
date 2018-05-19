@@ -19,18 +19,19 @@ ymaps.modules.define('Polygonmap', [
     'option.Manager',
     'ObjectManager'
 ], (provide, meta, OptionManager, ObjectManager) => {
+    /**
+     * @param {Object} [data] Polygons and points.
+     * @param {Object} data.polygons GeoJSON FeatureCollections.
+     * @param {Object} data.points GeoJSON FeatureCollections.
+     * @param {Object} [options] Options for customization.
+     * @param {number|array} options.colorRanges count of ranges or array of custom ranges
+     * @param {string|array} options.colorScheme preset for colorize or array of custom colors
+     * @param {number} options.colorOpacity opacity of polygon
+     * @param {string} options.strokeColor color for polygon stroke
+     * @param {number} options.strokeWidth width for polygon stroke
+     * @alias module:Polygonmap
+     */
     class Polygonmap {
-        /**
-         * @param {Object} [data] Polygons and points.
-         *  {Object} data.polygons GeoJSON FeatureCollections.
-         *  {Object} data.points GeoJSON FeatureCollections.
-         * @param {Object} [options] Options for customization.
-         * @param {number|array} options.colorRanges count of ranges or array of custom ranges
-         * @param {string|array} options.colorScheme preset for colorize or array of custom colors
-         * @param {number} options.colorOpacity opacity of polygon
-         * @param {string} options.strokeColor color for polygon stroke
-         * @param {number} options.strokeWidth width for polygon stroke
-         */
         constructor(data, options) {
             const defaultOptions = new OptionManager({
                 mapper: defaultMapper,
@@ -73,8 +74,8 @@ ymaps.modules.define('Polygonmap', [
          *
          * @public
          * @param {Object} data Polygons and points.
-         *  {Object} data.polygons GeoJSON FeatureCollections.
-         *  {Object} data.points GeoJSON FeatureCollections.
+         * @param {Object} data.polygons GeoJSON FeatureCollections.
+         * @param {Object} data.points GeoJSON FeatureCollections.
          * @returns {Polygonmap} Self-reference.
          */
         setData(data) {
@@ -107,7 +108,7 @@ ymaps.modules.define('Polygonmap', [
          *
          * @public
          * @param {Map} map Map instance.
-         * @returns {Heatmap} Self-reference.
+         * @returns {Polygonmap} Self-reference.
          */
         setMap(map) {
             if (this._map !== map) {
@@ -137,8 +138,8 @@ ymaps.modules.define('Polygonmap', [
          *
          * @private
          * @param {Object} data Polygons and points.
-         *  {Object} data.polygons GeoJSON FeatureCollections.
-         *  {Object} data.points GeoJSON FeatureCollections.
+         * @param {Object} data.polygons GeoJSON FeatureCollections.
+         * @param {Object} data.points GeoJSON FeatureCollections.
          * @returns {undefined}
          */
         _prepare(data) {
