@@ -91,8 +91,6 @@ ymaps.ready(() => {
                         polygonmap = new Polygonmap({polygons, points}, defaultSettings);
                         break;
                     case 1:
-                    console.log('asdasd');
-                    
                         polygonmap = new Polygonmap({polygons, points: pointsPyaterochka}, {
                             colorScheme: 'summer',
                             colorRanges: 10,
