@@ -29,6 +29,7 @@ ymaps.modules.define('Polygonmap', [
      * @param {number|array} options.colorRanges count of ranges or array of custom ranges
      * @param {string|array} options.colorScheme preset for colorize or array of custom colors
      * @param {number} options.colorOpacity opacity of polygon
+     * @param {string} options.colorEmptyPolygon color of polygon where points count equal 0
      * @param {string} options.strokeColor color for polygon stroke
      * @param {number} options.strokeWidth width for polygon stroke
      * @param {boolean} options.showLegend flag to show color legend
@@ -47,6 +48,7 @@ ymaps.modules.define('Polygonmap', [
                 colorRanges: 3,
                 colorScheme: ['rgb(255, 90, 76)', 'rgb(224, 194, 91)', 'rgb(108, 206, 92)'],
                 colorOpacity: 1,
+                colorEmptyPolygon: 'rgba(255, 255, 255, 0)',
                 strokeColor: '#222',
                 strokeWidth: 2,
                 showLegend: true,
