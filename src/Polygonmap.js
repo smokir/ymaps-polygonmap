@@ -4,6 +4,7 @@ import defaultFilter from './utils/defaultFilter';
 import defaultOnMouseEnter from './utils/defaultOnMouseEnter';
 import defaultOnMouseLeave from './utils/defaultOnMouseLeave';
 import defaultBalloonContent from './utils/defaultBalloonContent';
+import defaultOnClick from './utils/defaultOnClick';
 import inside from './utils/inside';
 import Colorize from './utils/colorize';
 
@@ -49,7 +50,13 @@ ymaps.modules.define('Polygonmap', [
                 filterEmptyPolygons: false,
                 onMouseEnter: defaultOnMouseEnter,
                 onMouseLeave: defaultOnMouseLeave,
-                balloonContent: defaultBalloonContent
+                onClick: defaultOnClick,
+                balloonContent: defaultBalloonContent,
+                opacityHover: 0.9,
+                strokeWidthHover: 2,
+                opacityActive: 1,
+                strokeWidthActive: 3,
+                interactivity: true
             });
 
             this._initOptions(options, defaultOptions);
@@ -227,7 +234,10 @@ ymaps.modules.define('Polygonmap', [
          * @private
          */
         _render() {
-            this._initInteractivity();
+            if (this.options.get('interactivity')) {
+                this._initInteractivity();
+            }
+
             this._map.geoObjects.add(this.objectManager);
         }
 
@@ -243,12 +253,19 @@ ymaps.modules.define('Polygonmap', [
 
             const mapper = this.options.get('mapper');
             const filterEmptyPolygons = this.options.get('filterEmptyPolygons');
+            const onMouseEnter = this.options.get('onMouseEnter');
+            const onMouseLeave = this.options.get('onMouseLeave');
+            const onClick = this.options.get('onClick');
 
             this.options.set('mapper', mapper.bind(this));
 
             if (filterEmptyPolygons) {
                 this.options.set('filter', defaultFilter.bind(this));
             }
+
+            this.options.set('onMouseEnter', onMouseEnter.bind(this));
+            this.options.set('onMouseLeave', onMouseLeave.bind(this));
+            this.options.set('onClick', onClick.bind(this));
         }
 
         /**
@@ -285,32 +302,25 @@ ymaps.modules.define('Polygonmap', [
             this.objectManager.add(this._data.polygons);
         }
 
+        /**
+         * Init interactivity.
+         *
+         * @private
+         */
         _initInteractivity() {
-            const balloon = new ymaps.Balloon(this._map);
+            this._prevObjectId = null;
+            this.balloon = new ymaps.Balloon(this._map);
             const onMouseEnter = this.options.get('onMouseEnter');
             const onMouseLeave = this.options.get('onMouseLeave');
+            const onClick = this.options.get('onClick');
 
-            this.objectManager.events.add('mouseenter', (e) => {
-                onMouseEnter(this.objectManager, e);
-            });
+            this.objectManager.events.add('mouseenter', onMouseEnter);
 
-            this.objectManager.events.add('mouseleave', (e) => {
-                onMouseLeave(this.objectManager, e);
-            });
+            this.objectManager.events.add('mouseleave', onMouseLeave);
 
-            balloon.options.setParent(this._map.options);
+            this.balloon.options.setParent(this._map.options);
 
-            this.objectManager.events.add('click', (e) => {
-                const objId = e.get('objectId');
-                const object = this.objectManager.objects.getById(objId);
-                const balloonContent = this.options.get('balloonContent');
-
-                balloon.setData({
-                    content: balloonContent(object)
-                });
-
-                balloon.open(e.get('coords'));
-            });
+            this.objectManager.events.add('click', onClick);
         }
     }
 

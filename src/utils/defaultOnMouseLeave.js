@@ -1,9 +1,18 @@
-const defaultOnMouseLeave = (objectManager, e) => {
+/**
+ * Default handler for mouseLeave event.
+ *
+ * @param {Object} e Event object.
+ * @this Polygonmap
+ */
+const defaultOnMouseLeave = function (e) {
     const objId = e.get('objectId');
-    objectManager.objects.setObjectOptions(objId, {
-        fillOpacity: 1,
-        strokeWidth: 1
-    });
+
+    if (this._prevObjectId !== objId) {
+        this.objectManager.objects.setObjectOptions(objId, {
+            fillOpacity: this.options.get('colorOpacity'),
+            strokeWidth: this.options.get('strokeWidth')
+        });
+    }
 };
 
 export default defaultOnMouseLeave;
