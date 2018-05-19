@@ -54,7 +54,7 @@ ymaps.modules.define('Polygonmap', [
                 showLegend: true,
                 legendTemplate: colorLegend.defaultTemplate,
                 legendPosition: {
-                    bottom: 30,
+                    top: 10,
                     right: 10
                 },
                 // Since the default filter for empty polygons is disabled by default,

@@ -69,8 +69,7 @@ ymaps.ready(() => {
         strokeWidth: 1.5,
         strokeColor: '#666',
         colorOpacity: 0.6,
-        showLegend: true,
-        legendTemplate: template
+        showLegend: true
     }
 
 

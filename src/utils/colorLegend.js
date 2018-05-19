@@ -56,12 +56,11 @@ const defaultTemplate = (colors) => {
     return `
         <div class="legend">
             ${colors.map((color, i) => `
-                <div class="legend__color" style="background: ${color.name}; width: ${100 / colors.length}%">
-                    <div class="legend__tooltip">
-                        <span class="legend__tooltip__inner">
-                            ${colors[i - 1] ? `${colors[i - 1].value} - ${color.value}` : `0 - ${color.value}`}
-                        </span>
-                    </div>
+                <div class="legend__row">
+                    <span class="legend__value">
+                        ${colors[i - 1] ? `${colors[i - 1].value} - ${color.value}` : `0 - ${color.value}`}
+                    </span>
+                    <span class="legend__color" style="background: ${color.name};"></span>
                 </div>
             `).join('\n')}
         </div>
