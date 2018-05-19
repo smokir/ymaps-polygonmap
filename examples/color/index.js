@@ -9,6 +9,29 @@ pointsPyaterochka.features.forEach((element) => {
     element.geometry.coordinates = element.geometry.coordinates.reverse();
 });
 
+const arr = [100, 200, 300, 400, 500, 600, 700];
+let weightPoints = {};
+weightPoints.features = pointsPyaterochka.features.map((el) => {
+    let rand = Math.floor(Math.random() * arr.length);
+    el.properties.weight = arr[rand];
+
+    return el;
+});
+
+weightPoints.type = 'FeatureCollection';
+
+const customBaloonContent = (object) => {
+    return `
+        <div>
+            <h3>Данные об объекте</h3>
+            <div>Веса точек: ${object.properties.pointsWeight}</div>
+            <div>Цвет ${object.options.fillColor}<span style="background: ${object.options.fillColor}; width: 20px; height: 20px;"></div>
+            <div>Opacity ${object.options.fillOpacity}<span style="background: ${object.options.fillOpacity}; width: 20px; height: 20px;"></div>
+        </div>
+    `;
+};
+
+
 ymaps.ready(() => {
     // eslint-disable-next-line no-unused-vars
     const myMap = new ymaps.Map('map', {
@@ -17,8 +40,6 @@ ymaps.ready(() => {
         controls: ['zoomControl', 'typeSelector']
     });
     const defaultSettings = {
-        colorScheme: ['rgba(234, 72, 58, 1)', 'rgba(255, 255, 0, 1)', 'rgba(128, 255, 0, 1)'],
-        colorRanges: [150, 50, 10],
         strokeWidth: 1.5,
         strokeColor: '#666',
         colorOpacity: 0.6
@@ -68,6 +89,28 @@ ymaps.ready(() => {
                             colorOpacity: 0.8,
                             strokeWidth: 1,
                             strokeColor: '#666'
+                        });
+                        break;
+                    case 3:
+                        polygonmap = new Polygonmap({ polygons, points: weightPoints }, {
+                            colorBy: 'weight',
+                            colorByWeightType: 'middle',
+                            colorScheme: 'cdom',
+                            strokeWidth: 1,
+                            strokeColor: '#666',
+                            colorOpacity: 0.8,
+                            balloonContent: customBaloonContent
+                        });
+                        break;
+                    case 4:
+                        polygonmap = new Polygonmap({ polygons, points: weightPoints }, {
+                            colorBy: 'weight',
+                            colorScheme: 'freesurface-blue',
+                            colorByWeightType: 'maximum',
+                            strokeWidth: 1,
+                            strokeColor: '#666',
+                            colorOpacity: 0.6,
+                            balloonContent: customBaloonContent
                         });
                         break;
                 }

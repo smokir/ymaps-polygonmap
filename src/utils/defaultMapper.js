@@ -7,7 +7,9 @@
  */
 const defaultMapper = function (feature) {
     feature.options = {
-        fillColor: this.colorize.getColor(feature.properties.pointsCount),
+        fillColor: this.colorize.getColor(this.options.get('colorBy') === 'weight' ?
+            feature.properties.pointsWeight :
+            feature.properties.pointsCount),
         fillOpacity: this.options.get('colorOpacity'),
         strokeWidth: this.options.get('strokeWidth'),
         strokeColor: this.options.get('strokeColor')

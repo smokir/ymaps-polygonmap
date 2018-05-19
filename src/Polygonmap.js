@@ -35,8 +35,11 @@ ymaps.modules.define('Polygonmap', [
         constructor(data, options) {
             const defaultOptions = new OptionManager({
                 mapper: defaultMapper,
-                colorRanges: 10,
-                colorScheme: 'cdom',
+                colorBy: 'points',
+                colorByWeightProp: 'weight',
+                colorByWeightType: 'middle',
+                colorRanges: 3,
+                colorScheme: ['rgb(255, 90, 76)', 'rgb(224, 194, 91)', 'rgb(108, 206, 92)'],
                 colorOpacity: 1,
                 strokeColor: '#222',
                 strokeWidth: 2,
@@ -44,12 +47,6 @@ ymaps.modules.define('Polygonmap', [
                 // this option will be undefined.
                 filter: undefined,
                 filterEmptyPolygons: false,
-                color: {
-                    rangesCount: 10,
-                    colormap: 'cdom',
-                    format: 'rgbaString',
-                    alpha: 0.7
-                },
                 onMouseEnter: defaultOnMouseEnter,
                 onMouseLeave: defaultOnMouseLeave,
                 balloonContent: defaultBalloonContent
@@ -144,9 +141,15 @@ ymaps.modules.define('Polygonmap', [
          */
         _prepare(data) {
             const polygonFeatures = data.polygons.features;
+
+            const colorBy = this.options.get('colorBy');
+            const colorByWeightType = this.options.get('colorByWeightType');
+            const colorByWeightProp = this.options.get('colorByWeightProp');
+
             let pointFeatures = data.points.features;
             let pointsCountMinimum = 0;
             let pointsCountMaximum = 0;
+            let pointsWeightMaximum = 0;
 
             if (
                 data.polygons.type === 'FeatureCollection' &&
@@ -157,6 +160,7 @@ ymaps.modules.define('Polygonmap', [
                     const polygonFeature = normalizeFeature(polygonFeatures[i], meta, {id: i});
 
                     let pointsCount = 0;
+                    let pointsWeight = 0;
 
                     for (let j = 0; j < pointFeatures.length; j++) {
                         let pointFeature;
@@ -170,6 +174,7 @@ ymaps.modules.define('Polygonmap', [
 
                         if (inside(polygonFeature.geometry, pointFeature.geometry)) {
                             pointsCount++;
+                            pointsWeight += pointFeature.properties[colorByWeightProp];
                         } else {
                             restPointFeatures.push(pointFeature);
                         }
@@ -188,12 +193,32 @@ ymaps.modules.define('Polygonmap', [
                     polygonFeature.properties = polygonFeature.properties || {};
                     polygonFeature.properties.pointsCount = pointsCount;
 
+                    if (colorBy === 'weight') {
+                        if (colorByWeightType === 'middle') {
+                            pointsWeight = pointsWeight === 0 && pointsCount === 0 ? 0 : pointsWeight / pointsCount;
+
+                            if (pointsWeight > pointsWeightMaximum) {
+                                pointsWeightMaximum = pointsWeight / pointsCount;
+                            }
+                        } else {
+                            if (pointsWeight > pointsWeightMaximum) {
+                                pointsWeightMaximum = pointsWeight;
+                            }
+                        }
+
+                        polygonFeature.properties.pointsWeight = pointsWeight;
+                    }
+
                     this._data.polygons.features.push(polygonFeature);
                 }
             }
 
             this.pointsCountMinimum = pointsCountMinimum;
             this.pointsCountMaximum = pointsCountMaximum;
+
+            if (colorBy === 'weight') {
+                this.pointsWeightMaximum = pointsWeightMaximum;
+            }
         }
 
         /**
@@ -234,8 +259,9 @@ ymaps.modules.define('Polygonmap', [
         _initObjectManager() {
             const mapper = this.options.get('mapper');
             const filter = this.options.get('filter');
+            const colorByWeight = this.options.get('colorBy') === 'weight';
 
-            this.colorize = new Colorize(this.pointsCountMaximum, {
+            this.colorize = new Colorize(colorByWeight ? this.pointsWeightMaximum : this.pointsCountMaximum, {
                 colorScheme: this.options.get('colorScheme'),
                 colorRanges: this.options.get('colorRanges')
             });
