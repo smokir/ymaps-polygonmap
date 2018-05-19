@@ -52,12 +52,10 @@ ymaps.modules.define('Polygonmap', [
                 onMouseLeave: defaultOnMouseLeave,
                 onClick: defaultOnClick,
                 balloonContent: defaultBalloonContent,
-                initialOpacity: 0.8,
-                initialStrokeWidth: 1,
-                hoverOpacity: 0.9,
-                hoverStrokeWidth: 2,
-                activeOpacity: 1,
-                activeStrokeWidth: 3,
+                opacityHover: 0.9,
+                strokeWidthHover: 2,
+                opacityActive: 1,
+                strokeWidthActive: 3,
                 interactivity: true
             });
 
@@ -255,12 +253,19 @@ ymaps.modules.define('Polygonmap', [
 
             const mapper = this.options.get('mapper');
             const filterEmptyPolygons = this.options.get('filterEmptyPolygons');
+            const onMouseEnter = this.options.get('onMouseEnter');
+            const onMouseLeave = this.options.get('onMouseLeave');
+            const onClick = this.options.get('onClick');
 
             this.options.set('mapper', mapper.bind(this));
 
             if (filterEmptyPolygons) {
                 this.options.set('filter', defaultFilter.bind(this));
             }
+
+            this.options.set('onMouseEnter', onMouseEnter.bind(this));
+            this.options.set('onMouseLeave', onMouseLeave.bind(this));
+            this.options.set('onClick', onClick.bind(this));
         }
 
         /**
@@ -297,38 +302,25 @@ ymaps.modules.define('Polygonmap', [
             this.objectManager.add(this._data.polygons);
         }
 
+        /**
+         * Init interactivity.
+         *
+         * @private
+         */
         _initInteractivity() {
-            let prevObjectId = null;
-            const balloon = new ymaps.Balloon(this._map);
+            this._prevObjectId = null;
+            this.balloon = new ymaps.Balloon(this._map);
             const onMouseEnter = this.options.get('onMouseEnter');
             const onMouseLeave = this.options.get('onMouseLeave');
             const onClickDefault = this.options.get('onClick');
 
-            this.objectManager.events.add('mouseenter', (e) => {
-                onMouseEnter(this.objectManager, e, prevObjectId, this.options);
-            });
+            this.objectManager.events.add('mouseenter', onMouseEnter);
 
-            this.objectManager.events.add('mouseleave', (e) => {
-                onMouseLeave(this.objectManager, e, prevObjectId, this.options);
-            });
+            this.objectManager.events.add('mouseleave', onMouseLeave);
 
-            balloon.options.setParent(this._map.options);
+            this.balloon.options.setParent(this._map.options);
 
-            this.objectManager.events.add('click', (e) => {
-                const objId = e.get('objectId');
-                onClickDefault(this.objectManager, e, prevObjectId, balloon, this.options);
-
-                prevObjectId = objId;
-
-                balloon.events.add('close', () => {
-                    this.objectManager.objects.setObjectOptions(prevObjectId, {
-                        fillOpacity: this.options.get('initialOpacity'),
-                        strokeWidth: this.options.get('initialStrokeWidth')
-                    });
-
-                    prevObjectId = null;
-                });
-            });
+            this.objectManager.events.add('click', onClickDefault);
         }
     }
 

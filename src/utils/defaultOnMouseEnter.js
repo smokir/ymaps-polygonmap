@@ -1,10 +1,16 @@
-const defaultOnMouseEnter = (objectManager, e, prevObjectId, options) => {
+/**
+ * Default handler for mouseEnter event.
+ *
+ * @param {Object} e Event object.
+ * @this Polygonmap
+ */
+const defaultOnMouseEnter = function (e) {
     const objId = e.get('objectId');
 
-    if (prevObjectId !== objId) {
-        objectManager.objects.setObjectOptions(objId, {
-            fillOpacity: options.get('hoverOpacity'),
-            strokeWidth: options.get('hoverStrokeWidth')
+    if (this._prevObjectId !== objId) {
+        this.objectManager.objects.setObjectOptions(objId, {
+            fillOpacity: this.options.get('opacityHover'),
+            strokeWidth: this.options.get('strokeWidthHover')
         });
     }
 };
