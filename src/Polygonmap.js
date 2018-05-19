@@ -312,7 +312,7 @@ ymaps.modules.define('Polygonmap', [
             this.balloon = new ymaps.Balloon(this._map);
             const onMouseEnter = this.options.get('onMouseEnter');
             const onMouseLeave = this.options.get('onMouseLeave');
-            const onClickDefault = this.options.get('onClick');
+            const onClick = this.options.get('onClick');
 
             this.objectManager.events.add('mouseenter', onMouseEnter);
 
@@ -320,7 +320,7 @@ ymaps.modules.define('Polygonmap', [
 
             this.balloon.options.setParent(this._map.options);
 
-            this.objectManager.events.add('click', onClickDefault);
+            this.objectManager.events.add('click', onClick);
         }
     }
 
