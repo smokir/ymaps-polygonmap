@@ -2,7 +2,7 @@ import './colorLegend.css';
 
 /**
  * init colorLegend
- * @param {object} polygonmap instance of polygonemap
+ * @param {Polygonmap} polygonmap instance of polygonemap
  */
 const init = (polygonmap) => {
     const show = polygonmap.options.get('showLegend');

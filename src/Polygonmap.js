@@ -32,7 +32,7 @@ ymaps.modules.define('Polygonmap', [
      * @param {string} options.strokeColor color for polygon stroke
      * @param {number} options.strokeWidth width for polygon stroke
      * @param {boolean} options.showLegend flag to show color legend
-     * @param {function} options.legendtemplate receives object {color: value} returns html legend template
+     * @param {function} options.legendTemplate receives object {color: value} returns html legend template
      * @param {object} options.legendPosition position of legend,
      * you can only change the top or bottom and right or left
      * @alias module:Polygonmap

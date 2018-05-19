@@ -1,4 +1,4 @@
-/* eslint-disable no-invalid-this max-len */
+/* eslint-disable no-invalid-this */
 import '../../src/Polygonmap';
 import points from '../data/bikeparking-moscow.geojson';
 import pointsPyaterochka from '../data/pyaterochka-moscow.geojson';
@@ -21,12 +21,16 @@ weightPoints.features = pointsPyaterochka.features.map((el) => {
 weightPoints.type = 'FeatureCollection';
 
 const customBaloonContent = (object) => {
+    const pointsWeight = object.properties.pointsWeight;
+    const fillColor = object.options.fillColor;
+    const fillOpacity = object.options.fillOpacity;
+
     return `
         <div>
             <h3>Данные об объекте</h3>
-            <div>Веса точек: ${object.properties.pointsWeight}</div>
-            <div>Цвет ${object.options.fillColor}<span style="background: ${object.options.fillColor}; width: 20px; height: 20px;"></div>
-            <div>Opacity ${object.options.fillOpacity}<span style="background: ${object.options.fillOpacity}; width: 20px; height: 20px;"></div>
+            <div>Веса точек: ${pointsWeight}</div>
+            <div>Цвет ${fillColor}</div>
+            <div>Opacity ${fillOpacity}</div>
         </div>
     `
 }
