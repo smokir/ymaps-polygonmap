@@ -29,6 +29,7 @@ const init = (polygonmap) => {
         onAddToMap(map) {
             CustomControlClass.superclass.onAddToMap.call(this, map);
             this.getParent().getChildElement(this).then(this._onGetChildElement, this);
+            polygonmap._legendControl = this;
         },
         _onGetChildElement(parentDomContainer) {
             const legend = document.createElement('div');

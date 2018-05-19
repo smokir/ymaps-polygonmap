@@ -147,6 +147,7 @@ ymaps.modules.define('Polygonmap', [
         destroy() {
             this.setData(null);
             this.objectManager.removeAll();
+            this._legendControl.setParent(null);
             this.setMap(null);
         }
 
