@@ -1,3 +1,5 @@
+import './colorLegend.css';
+
 /**
  * init colorLegend
  * @param {object} polygonmap instance of polygonemap

@@ -250,7 +250,6 @@ ymaps.modules.define('Polygonmap', [
             }
 
             this._map.geoObjects.add(this.objectManager);
-
             colorLegend.init(this);
         }
 

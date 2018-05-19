@@ -40,43 +40,6 @@
             .presets__item.active {
                 border-bottom: 2px solid red;
             }
-
-            .legend {
-                width: 300px;
-                height: 30px;
-                font-size: 0;
-            }
-            
-            .legend__color {
-                position: relative;
-                display: inline-block;
-                width: 33%;
-                height: 100%;
-            }
-            
-            .legend__color:hover .legend__tooltip {
-                opacity: 1;
-                transform: translateY(35px);
-            }
-            
-            .legend__tooltip {
-                opacity: 0;
-                position: absolute;
-                top: -60px;
-                left: -5px;             
-                min-width: 150px;
-                text-align: left;
-                transition: All .3s ease;
-            }
-            
-            .legend__tooltip__inner {
-                padding: 5px 10px;
-                color: #222;
-                background: #fff;
-                border-radius: 15px;
-                font-size: 14px;
-                border: 1px solid #666;
-            }
         </style>
         <div id="root">
             <div id="map" style="width: 100%; height: 80%;"></div>
