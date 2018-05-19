@@ -6,11 +6,18 @@
  * @this Polygonmap
  */
 const defaultMapper = function (feature) {
-    const fillColor = feature.properties.pointsCount === 0 ?
-        this.options.get('colorEmptyPolygon') :
-        this.colorize.getColor(this.options.get('colorBy') === 'weight' ?
-            feature.properties.pointsWeight :
-            feature.properties.pointsCount);
+    const {pointsCount, pointsWeight} = feature.properties;
+    let fillColor;
+
+    if (pointsCount === 0) {
+        fillColor = this.options.get('colorEmptyPolygon');
+    } else {
+        const colorNumber = this.options.get('colorBy') === 'weight' ?
+            pointsWeight :
+            pointsCount;
+
+        fillColor = this.colorize.getColor(colorNumber);
+    }
 
     feature.options = {
         fillColor,
