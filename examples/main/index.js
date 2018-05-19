@@ -11,16 +11,7 @@ ymaps.ready(() => {
     });
 
     ymaps.modules.require(['Polygonmap'], (Polygonmap) => {
-        const polygonmap = new Polygonmap({polygons, points}, {
-            balloonContent(object) {
-                return `<div>
-                        <h3>Велопарковки Москвы</h3>
-                        <div>${object.properties.NAME}</div>
-                        <div>Количество парковок: <b>${object.properties.pointsCount}</b></div>
-                </div>`;
-            },
-            interactivity: true
-        });
+        const polygonmap = new Polygonmap({polygons, points});
 
         polygonmap.setMap(myMap);
     });
