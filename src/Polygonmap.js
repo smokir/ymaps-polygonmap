@@ -7,6 +7,7 @@ import defaultBalloonContent from './utils/defaultBalloonContent';
 import defaultOnClick from './utils/defaultOnClick';
 import inside from './utils/inside';
 import Colorize from './utils/colorize';
+import colorLegend from './utils/colorLegend';
 
 /**
  * Polygonmap module.
@@ -30,6 +31,10 @@ ymaps.modules.define('Polygonmap', [
      * @param {number} options.colorOpacity opacity of polygon
      * @param {string} options.strokeColor color for polygon stroke
      * @param {number} options.strokeWidth width for polygon stroke
+     * @param {boolean} options.showLegend flag to show color legend
+     * @param {function} options.legendTemplate receives object {color: value} returns html legend template
+     * @param {object} options.legendPosition position of legend,
+     * you can only change the top or bottom and right or left
      * @alias module:Polygonmap
      */
     class Polygonmap {
@@ -44,6 +49,12 @@ ymaps.modules.define('Polygonmap', [
                 colorOpacity: 1,
                 strokeColor: '#222',
                 strokeWidth: 2,
+                showLegend: true,
+                legendTemplate: colorLegend.defaultTemplate,
+                legendPosition: {
+                    bottom: 30,
+                    right: 10
+                },
                 // Since the default filter for empty polygons is disabled by default,
                 // this option will be undefined.
                 filter: undefined,
@@ -239,6 +250,7 @@ ymaps.modules.define('Polygonmap', [
             }
 
             this._map.geoObjects.add(this.objectManager);
+            colorLegend.init(this);
         }
 
         /**
