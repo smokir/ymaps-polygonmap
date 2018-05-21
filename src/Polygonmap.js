@@ -49,7 +49,7 @@ ymaps.modules.define('Polygonmap', [
                 colorScheme: ['rgb(255, 90, 76)', 'rgb(224, 194, 91)', 'rgb(108, 206, 92)'],
                 colorOpacity: 1,
                 colorEmptyPolygon: 'rgba(255, 255, 255, 0)',
-                strokeColor: '#222',
+                strokeColor: '#fff',
                 strokeWidth: 2,
                 showLegend: true,
                 legendTemplate: colorLegend.defaultTemplate,
