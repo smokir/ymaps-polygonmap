@@ -49,12 +49,12 @@ ymaps.modules.define('Polygonmap', [
                 colorScheme: ['rgb(255, 90, 76)', 'rgb(224, 194, 91)', 'rgb(108, 206, 92)'],
                 colorOpacity: 1,
                 colorEmptyPolygon: 'rgba(255, 255, 255, 0)',
-                strokeColor: '#222',
+                strokeColor: '#fff',
                 strokeWidth: 2,
                 showLegend: true,
                 legendTemplate: colorLegend.defaultTemplate,
                 legendPosition: {
-                    bottom: 30,
+                    top: 10,
                     right: 10
                 },
                 // Since the default filter for empty polygons is disabled by default,
@@ -147,6 +147,8 @@ ymaps.modules.define('Polygonmap', [
         destroy() {
             this.setData(null);
             this.objectManager.removeAll();
+            this._legendControl.setParent(null);
+            this.balloon.close();
             this.setMap(null);
         }
 

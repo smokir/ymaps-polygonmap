@@ -17,7 +17,8 @@ const init = (polygonmap) => {
     const colors = colorScheme.map((el, i) => {
         return {
             name: el,
-            value: colorRanges[i]
+            value: colorRanges[i],
+            opacity: polygonmap.options.get('colorOpacity')
         };
     });
 
@@ -29,6 +30,7 @@ const init = (polygonmap) => {
         onAddToMap(map) {
             CustomControlClass.superclass.onAddToMap.call(this, map);
             this.getParent().getChildElement(this).then(this._onGetChildElement, this);
+            polygonmap._legendControl = this;
         },
         _onGetChildElement(parentDomContainer) {
             const legend = document.createElement('div');
@@ -56,12 +58,11 @@ const defaultTemplate = (colors) => {
     return `
         <div class="legend">
             ${colors.map((color, i) => `
-                <div class="legend__color" style="background: ${color.name}; width: ${100 / colors.length}%">
-                    <div class="legend__tooltip">
-                        <span class="legend__tooltip__inner">
-                            ${colors[i - 1] ? `${colors[i - 1].value} - ${color.value}` : `0 - ${color.value}`}
-                        </span>
-                    </div>
+                <div class="legend__row">
+                    <span class="legend__value">
+                        ${colors[i - 1] ? `${colors[i - 1].value + 1} - ${color.value}` : `1 - ${color.value}`}
+                    </span>
+                    <span class="legend__color" style="background: ${color.name}; opacity: ${color.opacity}"></span>
                 </div>
             `).join('\n')}
         </div>

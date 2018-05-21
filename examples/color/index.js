@@ -67,10 +67,8 @@ ymaps.ready(() => {
         
     const defaultSettings = {
         strokeWidth: 1.5,
-        strokeColor: '#666',
         colorOpacity: 0.6,
-        showLegend: true,
-        legendTemplate: template
+        showLegend: true
     }
 
 
@@ -96,10 +94,9 @@ ymaps.ready(() => {
                         break;
                     case 1:
                         polygonmap = new Polygonmap({polygons, points: pointsPyaterochka}, {
-                            colorScheme: 'summer',
-                            colorRanges: 10,
+                            colorScheme: ['#33691e', '#7cb342', '#aed581', '#dce775', '#e6ee9c'],
+                            colorRanges: 5,
                             strokeWidth: 1,
-                            strokeColor: '#666',
                             colorOpacity: 0.8
                         });
                         break;
@@ -119,8 +116,7 @@ ymaps.ready(() => {
                             ],
                             colorRanges: 10,
                             colorOpacity: 0.8,
-                            strokeWidth: 1,
-                            strokeColor: '#666'
+                            strokeWidth: 1
                         });
                         break;
                     case 3:
@@ -130,7 +126,6 @@ ymaps.ready(() => {
                             colorScheme: 'cdom',
                             colorRanges: 10,
                             strokeWidth: 1,
-                            strokeColor: '#666',
                             colorOpacity: 0.8,
                             balloonContent: customBaloonContent
                         });
@@ -142,7 +137,6 @@ ymaps.ready(() => {
                             colorRanges: 15,
                             colorByWeightType: 'maximum',
                             strokeWidth: 1,
-                            strokeColor: '#666',
                             colorOpacity: 0.6,
                             balloonContent: customBaloonContent
                         });
