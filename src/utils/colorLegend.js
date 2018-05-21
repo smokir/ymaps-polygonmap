@@ -17,7 +17,8 @@ const init = (polygonmap) => {
     const colors = colorScheme.map((el, i) => {
         return {
             name: el,
-            value: colorRanges[i]
+            value: colorRanges[i],
+            opacity: polygonmap.options.get('colorOpacity')
         };
     });
 
@@ -59,9 +60,9 @@ const defaultTemplate = (colors) => {
             ${colors.map((color, i) => `
                 <div class="legend__row">
                     <span class="legend__value">
-                        ${colors[i - 1] ? `${colors[i - 1].value} - ${color.value}` : `0 - ${color.value}`}
+                        ${colors[i - 1] ? `${colors[i - 1].value + 1} - ${color.value}` : `1 - ${color.value}`}
                     </span>
-                    <span class="legend__color" style="background: ${color.name};"></span>
+                    <span class="legend__color" style="background: ${color.name}; opacity: ${color.opacity}"></span>
                 </div>
             `).join('\n')}
         </div>
