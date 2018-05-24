@@ -7,7 +7,7 @@ ymaps.ready(() => {
     const myMap = new ymaps.Map('map', {
         center: [37.64, 55.76],
         zoom: 10,
-        controls: ['zoomControl', 'typeSelector']
+        controls: ['zoomControl']
     });
 
     ymaps.modules.require(['Polygonmap'], (Polygonmap) => {
