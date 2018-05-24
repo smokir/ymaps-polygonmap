@@ -62,9 +62,9 @@ ymaps.ready(() => {
     var myMap = new ymaps.Map("map", {
         center: [37.64, 55.76],
         zoom: 10,
-        controls: []
+        controls: ['zoomControl']
     });
-        
+
     const defaultSettings = {
         strokeWidth: 1.5,
         colorOpacity: 0.6,
