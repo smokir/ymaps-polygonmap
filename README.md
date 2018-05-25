@@ -85,25 +85,25 @@ Polygonmap module.
 | [options.colorByWeightProp] | <code>string</code> | <code>&quot;weight&quot;</code> | Prop name in data object, for weight value. If colorBy is "weight". |
 | [options.colorByWeightType] | <code>string</code> | <code>&quot;middle&quot;</code> | Type of calculate color by weight. Can be middle | maximum |
 | [options.colorRanges] | <code>number</code> \| <code>array</code> | <code>3</code> | Count of ranges or array of custom ranges. |
-| [options.colorScheme] | <code>string</code> \| <code>array</code> | <code>&quot;[\&quot;rgb(255, 90, 76)\&quot;, \&quot;rgb(224, 194, 91)\&quot;, \&quot;rgb(108, 206, 92)\&quot;]&quot;</code> | Preset for colorize or array of custom colors. |
-| options.colorOpacity | <code>number</code> | <code>1</code> | Opacity of polygon. |
+| [options.colorScheme] | <code>string</code> \| <code>array</code> | <code>&quot;[rgb(255, 90, 76), rgb(224, 194, 91), rgb(108, 206, 92)]&quot;</code> | Preset for colorize or array of custom colors. |
+| [options.colorOpacity] | <code>number</code> | <code>1</code> | Opacity of polygon. |
 | [options.colorEmptyPolygon] | <code>string</code> | <code>&quot;rgba(255, 255, 255, 0)&quot;</code> | Color of polygon where points count equal 0. |
-| options.strokeColor | <code>string</code> | <code>&quot;#fff&quot;</code> | Color of polygon stroke. |
-| options.strokeWidth | <code>number</code> | <code>2</code> | Width of polygon stroke. |
-| options.showLegend | <code>boolean</code> | <code>true</code> | Flag to show color legend. |
+| [options.strokeColor] | <code>string</code> | <code>&quot;#fff&quot;</code> | Color of polygon stroke. |
+| [options.strokeWidth] | <code>number</code> | <code>2</code> | Width of polygon stroke. |
+| [options.showLegend] | <code>boolean</code> | <code>true</code> | Flag to show color legend. |
 | options.legendTemplate | <code>function</code> |  | Receives object {color: value} returns html legend template. |
-| options.legendPosition | <code>object</code> | <code>{top:</code> | 10, right: 10} Position of legend, you can only change the top or bottom and right or left. |
-| options.filter | <code>function</code> |  | Function for custom filter polygons with points. |
-| options.filterEmptyPolygons | <code>boolean</code> | <code>false</code> | Flag for show polygon with count of points equal 0. |
+| [options.legendPosition] | <code>object</code> | <code>top: 10, right: 10</code> | Position of legend, you can only change the top or bottom and right or left. |
+| [options.filter] | <code>function</code> |  | Function for custom filter polygons with points. |
+| [options.filterEmptyPolygons] | <code>boolean</code> | <code>false</code> | Flag for show polygon with count of points equal 0. |
 | options.onMouseEnter | <code>function</code> |  | Handler for mouseEnter event. |
 | options.onMouseLeave | <code>function</code> |  | Handler for mouseLeave event. |
 | options.onClick | <code>function</code> |  | Handler for click event. |
 | options.balloonContent | <code>function</code> |  | Function for render content of baloon. Recieves object with properties of polygon. |
-| options.opacityHover | <code>number</code> | <code>0.9</code> | Number of opacity on polygon hover. |
-| options.strokeWidthHover | <code>number</code> | <code>2</code> | Number of stroke width on polygon hover. |
-| options.opacityActive | <code>number</code> | <code>1</code> | Number of opacity on polygon active. |
-| options.strokeWidthActive | <code>number</code> | <code>3</code> | Number of stroke width on polygon active. |
-| options.interactivity | <code>boolean</code> | <code>true</code> | Flag for enable interactivity. |
+| [options.opacityHover] | <code>number</code> | <code>0.9</code> | Number of opacity on polygon hover. |
+| [options.strokeWidthHover] | <code>number</code> | <code>2</code> | Number of stroke width on polygon hover. |
+| [options.opacityActive] | <code>number</code> | <code>1</code> | Number of opacity on polygon active. |
+| [options.strokeWidthActive] | <code>number</code> | <code>3</code> | Number of stroke width on polygon active. |
+| [options.interactivity] | <code>boolean</code> | <code>true</code> | Flag for enable interactivity. |
 
 <a name="module_Polygonmap--Polygonmap+getData"></a>
 

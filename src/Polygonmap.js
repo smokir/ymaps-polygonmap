@@ -32,7 +32,7 @@ ymaps.modules.define('Polygonmap', [
      * If colorBy is "weight".
      * @param {string} [options.colorByWeightType=middle] Type of calculate color by weight. Can be middle | maximum
      * @param {number|array} [options.colorRanges=3] Count of ranges or array of custom ranges.
-     * @param {string|array} [options.colorScheme=["rgb(255, 90, 76)", "rgb(224, 194, 91)", "rgb(108, 206, 92)"]]
+     * @param {string|array} [options.colorScheme=[rgb(255, 90, 76), rgb(224, 194, 91), rgb(108, 206, 92)]]
      * Preset for colorize or array of custom colors.
      * @param {number} [options.colorOpacity=1] Opacity of polygon.
      * @param {string} [options.colorEmptyPolygon=rgba(255, 255, 255, 0)] Color of polygon where points count equal 0.
@@ -40,7 +40,7 @@ ymaps.modules.define('Polygonmap', [
      * @param {number} [options.strokeWidth=2] Width of polygon stroke.
      * @param {boolean} [options.showLegend=true] Flag to show color legend.
      * @param {function} options.legendTemplate Receives object {color: value} returns html legend template.
-     * @param {object} [options.legendPosition={top: 10, right: 10}] Position of legend,
+     * @param {object} [options.legendPosition=top: 10, right: 10] Position of legend,
      * you can only change the top or bottom and right or left.
      * @param {function} [options.filter=undefined] Function for custom filter polygons with points.
      * @param {boolean} [options.filterEmptyPolygons=false] Flag for show polygon with count of points equal 0.
