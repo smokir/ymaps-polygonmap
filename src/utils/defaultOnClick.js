@@ -18,13 +18,13 @@ const defaultOnClick = function (e) {
 
     if (this._prevObjectId) {
         this.objectManager.objects.setObjectOptions(this._prevObjectId, {
-            fillOpacity: this.options.get('colorOpacity'),
+            fillOpacity: this.options.get('fillOpacity'),
             strokeWidth: this.options.get('strokeWidth')
         });
     }
 
     this.objectManager.objects.setObjectOptions(objId, {
-        fillOpacity: this.options.get('opacityActive'),
+        fillOpacity: this.options.get('fillOpacityActive'),
         strokeWidth: this.options.get('strokeWidthActive')
     });
 
@@ -32,7 +32,7 @@ const defaultOnClick = function (e) {
 
     this.balloon.events.add('close', () => {
         this.objectManager.objects.setObjectOptions(this._prevObjectId, {
-            fillOpacity: this.options.get('colorOpacity'),
+            fillOpacity: this.options.get('fillOpacity'),
             strokeWidth: this.options.get('strokeWidth')
         });
 

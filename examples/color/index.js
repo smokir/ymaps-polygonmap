@@ -67,7 +67,7 @@ ymaps.ready(() => {
 
     const defaultSettings = {
         strokeWidth: 1.5,
-        colorOpacity: 0.6,
+        fillOpacity: 0.6,
         showLegend: true
     }
 
@@ -97,7 +97,7 @@ ymaps.ready(() => {
                             colorScheme: ['#33691e', '#7cb342', '#aed581', '#dce775', '#e6ee9c'],
                             colorRanges: 5,
                             strokeWidth: 1,
-                            colorOpacity: 0.8
+                            fillOpacity: 0.8
                         });
                         break;
                     case 2:
@@ -115,29 +115,29 @@ ymaps.ready(() => {
                                 '#f3e5f5'
                             ],
                             colorRanges: 10,
-                            colorOpacity: 0.8,
+                            fillOpacity: 0.8,
                             strokeWidth: 1
                         });
                         break;
                     case 3:
                         polygonmap = new Polygonmap({ polygons, points: weightPoints }, {
-                            colorBy: 'weight',
-                            colorByWeightType: 'middle',
+                            fillBy: 'weight',
+                            fillByWeightType: 'middle',
                             colorScheme: 'cdom',
                             colorRanges: 10,
                             strokeWidth: 1,
-                            colorOpacity: 0.8,
+                            fillOpacity: 0.8,
                             balloonContent: customBaloonContent
                         });
                         break;
                     case 4:
                         polygonmap = new Polygonmap({ polygons, points: weightPoints }, {
-                            colorBy: 'weight',
+                            fillBy: 'weight',
                             colorScheme: 'freesurface-blue',
                             colorRanges: 15,
-                            colorByWeightType: 'maximum',
+                            fillByWeightType: 'maximum',
                             strokeWidth: 1,
-                            colorOpacity: 0.6,
+                            fillOpacity: 0.6,
                             balloonContent: customBaloonContent
                         });
                         break;

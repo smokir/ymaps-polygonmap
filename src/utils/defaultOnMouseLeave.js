@@ -9,7 +9,7 @@ const defaultOnMouseLeave = function (e) {
 
     if (this._prevObjectId !== objId) {
         this.objectManager.objects.setObjectOptions(objId, {
-            fillOpacity: this.options.get('colorOpacity'),
+            fillOpacity: this.options.get('fillOpacity'),
             strokeWidth: this.options.get('strokeWidth')
         });
     }
