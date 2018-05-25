@@ -2,15 +2,15 @@ import Colormap from 'colormap';
 
 /**
  * Polygon colorize.
- * Needed for coloring polygons as you need
+ * Needed for coloring polygons as you need.
  */
 class Colorize {
     /**
-     * @param {number} maxPointsCount max points
-     * @param {object} options setting for generate colormap
-     * @param {string|array} options.colorScheme sheme of colormap or array of custom colors (from dark to light)
-     * @param {number|array} options.colorRanges count of ranges to automaticly generate or custom array
-     * of ranges (from dark to light)
+     * @param {number} maxPointsCount Max points.
+     * @param {object} options Setting for generate colormap.
+     * @param {string|array} options.colorScheme Sheme of colormap or array of custom colors (from dark to light).
+     * @param {number|array} options.colorRanges Count of ranges to automaticly generate or custom array
+     * of ranges (from dark to light).
      */
     constructor(maxPointsCount, options) {
         if (typeof maxPointsCount !== 'number') {
@@ -38,8 +38,8 @@ class Colorize {
     }
 
     /**
-     * Create array for ranges depending on rangesCount
-     * @returns {Array.<*>} return array of ranges
+     * Create array for ranges depending on rangesCount.
+     * @returns {Array.<*>} Return array of ranges.
      * @private
      */
     _createRangesArray() {
@@ -54,14 +54,14 @@ class Colorize {
     }
 
     /**
-     * @returns {Array} Return generated array of colors
+     * @returns {Array} Return generated array of colors.
      */
     getColorMap() {
         return this._colors;
     }
 
     /**
-     * @returns {Array} Return generated array of ranges
+     * @returns {Array} Return generated array of ranges.
      */
     getColorRanges() {
         return this._ranges;
@@ -69,8 +69,8 @@ class Colorize {
 
     /**
      * Return color depending on count of points inside polygon
-     * @param {number} pointsCount - count of point inside polygon
-     * @returns {string} return color
+     * @param {number} pointsCount=0 Count of point inside polygon.
+     * @returns {string} Return color.
      */
     getColor(pointsCount = 0) {
         let color = this._colors[this._rangesCount - 1];

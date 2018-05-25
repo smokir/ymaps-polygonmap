@@ -3,7 +3,7 @@
  *
  * @param {Object} feature GeoJSON feature data.
  * @param {Object} meta Ymaps metadata.
- * @param {Object} props={} Additional options for the feature.
+ * @param {Object} props={}. Additional options for the feature.
  * @returns {Object} Normalized ymaps feature data.
  */
 const normalizeFeature = (feature, meta, props = {}) => {
