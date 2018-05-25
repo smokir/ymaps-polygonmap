@@ -27,16 +27,16 @@ ymaps.modules.define('Polygonmap', [
      * @param {Object} data.points GeoJSON FeatureCollections.
      * @param {Object} [options] Options for customization.
      * @param {function} options.mapper Function of iterative transformation of features.
-     * @param {string} options.colorBy="points" Calculate the color by points | weight.
-     * @param {string} options.colorByWeightProp="weight" Prop name in data object, for weight value.
+     * @param {string} options.colorBy=points Calculate the color by points | weight.
+     * @param {string} options.colorByWeightProp=weight Prop name in data object, for weight value.
      * If colorBy is "weight".
-     * @param {string} options.colorByWeightType="middle" Type of calculate color by weight. Can be middle | maximum
+     * @param {string} options.colorByWeightType=middle Type of calculate color by weight. Can be middle | maximum
      * @param {number|array} options.colorRanges=3 Count of ranges or array of custom ranges.
-     * @param {string|array} options.colorScheme=['rgb(255, 90, 76)', 'rgb(224, 194, 91)', 'rgb(108, 206, 92)']
+     * @param {string|array} options.colorScheme=["rgb(255, 90, 76)", "rgb(224, 194, 91)", "rgb(108, 206, 92)"]
      * Preset for colorize or array of custom colors.
      * @param {number} options.colorOpacity=1 Opacity of polygon.
-     * @param {string} options.colorEmptyPolygon="rgba(255, 255, 255, 0)" Color of polygon where points count equal 0.
-     * @param {string} options.strokeColor="#fff" Color of polygon stroke.
+     * @param {string} options.colorEmptyPolygon=rgba(255, 255, 255, 0) Color of polygon where points count equal 0.
+     * @param {string} options.strokeColor=#fff Color of polygon stroke.
      * @param {number} options.strokeWidth=2 Width of polygon stroke.
      * @param {boolean} options.showLegend=true Flag to show color legend.
      * @param {function} options.legendTemplate Receives object {color: value} returns html legend template.

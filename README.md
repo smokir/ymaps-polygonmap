@@ -81,14 +81,14 @@ Polygonmap module.
 | data.points | <code>Object</code> |  | GeoJSON FeatureCollections. |
 | [options] | <code>Object</code> |  | Options for customization. |
 | options.mapper | <code>function</code> |  | Function of iterative transformation of features. |
-| options.colorBy | <code>string</code> | <code>&quot;\&quot;points\&quot;&quot;</code> | Calculate the color by points | weight. |
-| options.colorByWeightProp | <code>string</code> | <code>&quot;\&quot;weight\&quot;&quot;</code> | Prop name in data object, for weight value. If colorBy is "weight". |
-| options.colorByWeightType | <code>string</code> | <code>&quot;\&quot;middle\&quot;&quot;</code> | Type of calculate color by weight. Can be middle | maximum |
+| options.colorBy | <code>string</code> | <code>&quot;points&quot;</code> | Calculate the color by points | weight. |
+| options.colorByWeightProp | <code>string</code> | <code>&quot;weight&quot;</code> | Prop name in data object, for weight value. If colorBy is "weight". |
+| options.colorByWeightType | <code>string</code> | <code>&quot;middle&quot;</code> | Type of calculate color by weight. Can be middle | maximum |
 | options.colorRanges | <code>number</code> \| <code>array</code> | <code>3</code> | Count of ranges or array of custom ranges. |
-| options.colorScheme | <code>string</code> \| <code>array</code> | <code>&quot;[&#x27;rgb(255,&quot;</code> | 90, 76)', 'rgb(224, 194, 91)', 'rgb(108, 206, 92)'] Preset for colorize or array of custom colors. |
+| options.colorScheme | <code>string</code> \| <code>array</code> | <code>&quot;[\&quot;rgb(255,&quot;</code> | 90, 76)", "rgb(224, 194, 91)", "rgb(108, 206, 92)"] Preset for colorize or array of custom colors. |
 | options.colorOpacity | <code>number</code> | <code>1</code> | Opacity of polygon. |
-| options.colorEmptyPolygon | <code>string</code> | <code>&quot;\&quot;rgba(255,&quot;</code> | 255, 255, 0)" Color of polygon where points count equal 0. |
-| options.strokeColor | <code>string</code> | <code>&quot;\&quot;#fff\&quot;&quot;</code> | Color of polygon stroke. |
+| options.colorEmptyPolygon | <code>string</code> | <code>&quot;rgba(255,&quot;</code> | 255, 255, 0) Color of polygon where points count equal 0. |
+| options.strokeColor | <code>string</code> | <code>&quot;#fff&quot;</code> | Color of polygon stroke. |
 | options.strokeWidth | <code>number</code> | <code>2</code> | Width of polygon stroke. |
 | options.showLegend | <code>boolean</code> | <code>true</code> | Flag to show color legend. |
 | options.legendTemplate | <code>function</code> |  | Receives object {color: value} returns html legend template. |
