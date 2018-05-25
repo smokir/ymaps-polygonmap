@@ -6,6 +6,7 @@ const pages = [
     'examples/filterEmptyPolygons',
     'examples/filter',
     'examples/color',
+    'examples/colorDemo',
     'examples/onClick',
     'examples/interactivity'
 ];
