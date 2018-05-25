@@ -1,8 +1,13 @@
 import './colorLegend.css';
 
 /**
- * init colorLegend
- * @param {Polygonmap} polygonmap instance of polygonemap
+ * @module colorLegend
+ * Add color legend to map.
+ */
+
+/**
+ * Init colorLegend.
+ * @param {Polygonmap} polygonmap Instance of polygonemap.
  */
 const init = (polygonmap) => {
     const show = polygonmap.options.get('showLegend');
@@ -49,12 +54,11 @@ const init = (polygonmap) => {
 };
 
 /**
- * function for generate html template of legend
- * @param {Object} colors object of colors and values
- * @returns {string} rendered html template
+ * Function for generate html template of legend.
+ * @param {Object} colors Object of colors and values.
+ * @returns {string} Rendered html template.
  */
 const defaultTemplate = (colors) => {
-    /* eslint-disable max-len */
     return `
         <div class="legend">
             ${colors.map((color, i) => `

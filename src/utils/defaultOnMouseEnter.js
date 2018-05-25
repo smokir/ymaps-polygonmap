@@ -9,7 +9,7 @@ const defaultOnMouseEnter = function (e) {
 
     if (this._prevObjectId !== objId) {
         this.objectManager.objects.setObjectOptions(objId, {
-            fillOpacity: this.options.get('opacityHover'),
+            fillOpacity: this.options.get('fillOpacityHover'),
             strokeWidth: this.options.get('strokeWidthHover')
         });
     }

@@ -10,9 +10,9 @@ const defaultMapper = function (feature) {
     let fillColor;
 
     if (pointsCount === 0) {
-        fillColor = this.options.get('colorEmptyPolygon');
+        fillColor = this.options.get('fillColorEmptyPolygon');
     } else {
-        const colorNumber = this.options.get('colorBy') === 'weight' ?
+        const colorNumber = this.options.get('fillBy') === 'weight' ?
             pointsWeight :
             pointsCount;
 
@@ -21,7 +21,7 @@ const defaultMapper = function (feature) {
 
     feature.options = {
         fillColor,
-        fillOpacity: this.options.get('colorOpacity'),
+        fillOpacity: this.options.get('fillOpacity'),
         strokeWidth: this.options.get('strokeWidth'),
         strokeColor: this.options.get('strokeColor')
     };
