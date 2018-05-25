@@ -108,7 +108,7 @@ ymaps.modules.require(['Polygonmap'], function (Polygonmap) {
 
     polygonmap.setMap(myMap);
 
-    const data = {polygons: newDataPolygons, points: newDataPoints};
+    const newData = {polygons: newDataPolygons, points: newDataPoints};
 
     polygonmap.setData(newData);
 });
