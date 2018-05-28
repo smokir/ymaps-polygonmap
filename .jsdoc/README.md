@@ -32,7 +32,7 @@ Yandex.Maps API module for data visualization.
    ```
 
    ```bash
-   npm i --save git+https://github.com/yandex-shri-fx-team/ymaps-polygonmap.git
+   npm i --save ymaps-polygonmap
    ```
 
    ```js

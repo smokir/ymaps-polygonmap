@@ -32,7 +32,7 @@ Yandex.Maps API module for data visualization.
    ```
 
    ```bash
-   npm i --save git+https://github.com/yandex-shri-fx-team/ymaps-polygonmap.git
+   npm i --save ymaps-polygonmap
    ```
 
    ```js
@@ -55,7 +55,7 @@ Yandex.Maps API module for data visualization.
 ## Polygonmap
 Polygonmap module.
 
-**Requires**: <code>module:option.Manager</code>, <code>module:ObjectManager</code>  
+**Requires**: <code>module:option.Manager</code>, <code>module:ObjectManager</code>
 
 * [Polygonmap](#module_Polygonmap)
     * [Polygonmap](#exp_module_Polygonmap--Polygonmap) ⏏
@@ -69,7 +69,7 @@ Polygonmap module.
 <a name="exp_module_Polygonmap--Polygonmap"></a>
 
 ### Polygonmap ⏏
-**Kind**: Exported class  
+**Kind**: Exported class
 <a name="new_module_Polygonmap--Polygonmap_new"></a>
 
 #### new Polygonmap([data], [options])
@@ -110,17 +110,17 @@ Polygonmap module.
 #### polygonmap.getData() ⇒ <code>Object</code>
 Get the data, polygons and points.
 
-**Kind**: instance method of [<code>Polygonmap</code>](#exp_module_Polygonmap--Polygonmap)  
-**Returns**: <code>Object</code> - Polygons and points.  
-**Access**: public  
+**Kind**: instance method of [<code>Polygonmap</code>](#exp_module_Polygonmap--Polygonmap)
+**Returns**: <code>Object</code> - Polygons and points.
+**Access**: public
 <a name="module_Polygonmap--Polygonmap+setData"></a>
 
 #### polygonmap.setData(data) ⇒ <code>Polygonmap</code>
 Set the data, polygons and points.
 
-**Kind**: instance method of [<code>Polygonmap</code>](#exp_module_Polygonmap--Polygonmap)  
-**Returns**: <code>Polygonmap</code> - Self-reference.  
-**Access**: public  
+**Kind**: instance method of [<code>Polygonmap</code>](#exp_module_Polygonmap--Polygonmap)
+**Returns**: <code>Polygonmap</code> - Self-reference.
+**Access**: public
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -133,17 +133,17 @@ Set the data, polygons and points.
 #### polygonmap.getMap() ⇒ <code>Map</code>
 Get the Map instance.
 
-**Kind**: instance method of [<code>Polygonmap</code>](#exp_module_Polygonmap--Polygonmap)  
-**Returns**: <code>Map</code> - Reference to Map instance.  
-**Access**: public  
+**Kind**: instance method of [<code>Polygonmap</code>](#exp_module_Polygonmap--Polygonmap)
+**Returns**: <code>Map</code> - Reference to Map instance.
+**Access**: public
 <a name="module_Polygonmap--Polygonmap+setMap"></a>
 
 #### polygonmap.setMap(map) ⇒ <code>Polygonmap</code>
 Set Map instance to render Polygonmap object.
 
-**Kind**: instance method of [<code>Polygonmap</code>](#exp_module_Polygonmap--Polygonmap)  
-**Returns**: <code>Polygonmap</code> - Self-reference.  
-**Access**: public  
+**Kind**: instance method of [<code>Polygonmap</code>](#exp_module_Polygonmap--Polygonmap)
+**Returns**: <code>Polygonmap</code> - Self-reference.
+**Access**: public
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -154,8 +154,8 @@ Set Map instance to render Polygonmap object.
 #### polygonmap.destroy()
 Destructs Polygonmap instance.
 
-**Kind**: instance method of [<code>Polygonmap</code>](#exp_module_Polygonmap--Polygonmap)  
-**Access**: public  
+**Kind**: instance method of [<code>Polygonmap</code>](#exp_module_Polygonmap--Polygonmap)
+**Access**: public
 
 ## Examples
 
