@@ -11,7 +11,9 @@ ymaps.ready(() => {
     });
 
     ymaps.modules.require(['Polygonmap'], (Polygonmap) => {
-        const polygonmap = new Polygonmap({polygons, points});
+        const polygonmap = new Polygonmap({polygons, points}, {
+            strokeColor: '#666'
+        });
 
         polygonmap.setMap(myMap);
     });
