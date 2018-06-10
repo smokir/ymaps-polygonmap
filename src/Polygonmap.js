@@ -66,12 +66,17 @@ ymaps.modules.define('Polygonmap', [
                 fillBy: 'points',
                 fillByWeightProp: 'weight',
                 fillByWeightType: 'middle',
-                colorRanges: 3,
-                colorScheme: ['rgb(255, 90, 76)', 'rgb(224, 194, 91)', 'rgb(108, 206, 92)'],
-                fillOpacity: 1,
-                fillColorEmptyPolygon: 'rgba(255, 255, 255, 0)',
+                colorRanges: 4,
+                colorScheme: [
+                    '#e66a54',
+                    '#ce4356',
+                    '#ab2960',
+                    '#571756'
+                ],
+                fillOpacity: 0.8,
+                fillColorEmptyPolygon: '#f4f6f8',
                 strokeColor: '#fff',
-                strokeWidth: 2,
+                strokeWidth: 1,
                 showLegend: true,
                 legendTemplate: colorLegend.defaultTemplate,
                 legendPosition: {
@@ -88,8 +93,8 @@ ymaps.modules.define('Polygonmap', [
                 balloonContent: defaultBalloonContent,
                 fillOpacityHover: 0.9,
                 strokeWidthHover: 2,
-                fillOpacityActive: 1,
-                strokeWidthActive: 3,
+                fillOpacityActive: 0.9,
+                strokeWidthActive: 2,
                 interactivity: true
             });
 
