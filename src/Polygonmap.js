@@ -31,14 +31,14 @@ ymaps.modules.define('Polygonmap', [
      * @param {string} [options.fillByWeightProp=weight] Prop name in data object, for weight value.
      * If fillBy is "weight".
      * @param {string} [options.fillByWeightType=middle] Type of calculate color by weight. Can be middle | maximum
-     * @param {number|array} [options.colorRanges=3] Count of ranges or array of custom ranges.
-     * @param {string|array} [options.colorScheme=[rgb(255, 90, 76), rgb(224, 194, 91), rgb(108, 206, 92)]]
+     * @param {number|array} [options.colorRanges=4] Count of ranges or array of custom ranges.
+     * @param {string|array} [options.colorScheme=['#e66a54', '#ce4356', '#ab2960', '#571756']]
      * Preset for colorize or array of custom colors.
-     * @param {number} [options.fillOpacity=1] Opacity of polygon.
-     * @param {string} [options.fillColorEmptyPolygon=rgba(255, 255, 255, 0)] Color of polygon
+     * @param {number} [options.fillOpacity=0.8] Opacity of polygon.
+     * @param {string} [options.fillColorEmptyPolygon=#f4f6f8] Color of polygon
      * where points count equal 0.
      * @param {string} [options.strokeColor=#fff] Color of polygon stroke.
-     * @param {number} [options.strokeWidth=2] Width of polygon stroke.
+     * @param {number} [options.strokeWidth=1] Width of polygon stroke.
      * @param {boolean} [options.showLegend=true] Flag to show color legend.
      * @param {function} [options.legendTemplate=colorLegend.defaultTemplate] Receives object {color: value}
      * returns html legend template.
@@ -53,8 +53,8 @@ ymaps.modules.define('Polygonmap', [
      * Recieves object with properties of polygon.
      * @param {number} [options.fillOpacityHover=0.9] Number of opacity on polygon hover.
      * @param {number} [options.strokeWidthHover=2] Number of stroke width on polygon hover.
-     * @param {number} [options.fillOpacityActive=1] Number of opacity on polygon active.
-     * @param {number} [options.strokeWidthActive=3] Number of stroke width on polygon active.
+     * @param {number} [options.fillOpacityActive=0.9] Number of opacity on polygon active.
+     * @param {number} [options.strokeWidthActive=2] Number of stroke width on polygon active.
      * @param {boolean} [options.interactivity=true] Flag for enable interactivity.
      *
      * @alias module:Polygonmap
