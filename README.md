@@ -84,12 +84,12 @@ Polygonmap module.
 | [options.fillBy] | <code>string</code> | <code>&quot;points&quot;</code> | Calculate the color by points | weight. |
 | [options.fillByWeightProp] | <code>string</code> | <code>&quot;weight&quot;</code> | Prop name in data object, for weight value. If fillBy is "weight". |
 | [options.fillByWeightType] | <code>string</code> | <code>&quot;middle&quot;</code> | Type of calculate color by weight. Can be middle | maximum |
-| [options.colorRanges] | <code>number</code> \| <code>array</code> | <code>3</code> | Count of ranges or array of custom ranges. |
-| [options.colorScheme] | <code>string</code> \| <code>array</code> | <code>&quot;[rgb(255, 90, 76), rgb(224, 194, 91), rgb(108, 206, 92)]&quot;</code> | Preset for colorize or array of custom colors. |
-| [options.fillOpacity] | <code>number</code> | <code>1</code> | Opacity of polygon. |
-| [options.fillColorEmptyPolygon] | <code>string</code> | <code>&quot;rgba(255, 255, 255, 0)&quot;</code> | Color of polygon where points count equal 0. |
+| [options.colorRanges] | <code>number</code> \| <code>array</code> | <code>4</code> | Count of ranges or array of custom ranges. |
+| [options.colorScheme] | <code>string</code> \| <code>array</code> | <code>&quot;[&#x27;#e66a54&#x27;, &#x27;#ce4356&#x27;, &#x27;#ab2960&#x27;, &#x27;#571756&#x27;]&quot;</code> | Preset for colorize or array of custom colors. |
+| [options.fillOpacity] | <code>number</code> | <code>0.8</code> | Opacity of polygon. |
+| [options.fillColorEmptyPolygon] | <code>string</code> | <code>&quot;#f4f6f8&quot;</code> | Color of polygon where points count equal 0. |
 | [options.strokeColor] | <code>string</code> | <code>&quot;#fff&quot;</code> | Color of polygon stroke. |
-| [options.strokeWidth] | <code>number</code> | <code>2</code> | Width of polygon stroke. |
+| [options.strokeWidth] | <code>number</code> | <code>1</code> | Width of polygon stroke. |
 | [options.showLegend] | <code>boolean</code> | <code>true</code> | Flag to show color legend. |
 | [options.legendTemplate] | <code>function</code> | <code>colorLegend.defaultTemplate</code> | Receives object {color: value} returns html legend template. |
 | [options.legendPosition] | <code>object</code> | <code>top: 10, right: 10</code> | Position of legend, you can only change the top or bottom and right or left. |
@@ -101,8 +101,8 @@ Polygonmap module.
 | [options.balloonContent] | <code>function</code> | <code>defaultBalloonContent</code> | Function for render content of baloon. Recieves object with properties of polygon. |
 | [options.fillOpacityHover] | <code>number</code> | <code>0.9</code> | Number of opacity on polygon hover. |
 | [options.strokeWidthHover] | <code>number</code> | <code>2</code> | Number of stroke width on polygon hover. |
-| [options.fillOpacityActive] | <code>number</code> | <code>1</code> | Number of opacity on polygon active. |
-| [options.strokeWidthActive] | <code>number</code> | <code>3</code> | Number of stroke width on polygon active. |
+| [options.fillOpacityActive] | <code>number</code> | <code>0.9</code> | Number of opacity on polygon active. |
+| [options.strokeWidthActive] | <code>number</code> | <code>2</code> | Number of stroke width on polygon active. |
 | [options.interactivity] | <code>boolean</code> | <code>true</code> | Flag for enable interactivity. |
 
 <a name="module_Polygonmap--Polygonmap+getData"></a>
