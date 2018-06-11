@@ -26,7 +26,7 @@ ymaps.modules.define('Polygonmap', [
      * @param {Object} data.polygons GeoJSON FeatureCollections.
      * @param {Object} data.points GeoJSON FeatureCollections.
      * @param {Object} [options] Options for customization.
-     * @param {function} options.mapper Function of iterative transformation of features.
+     * @param {function} [options.mapper=defaultMapper] Function of iterative transformation of features.
      * @param {string} [options.fillBy=points] Calculate the color by points | weight.
      * @param {string} [options.fillByWeightProp=weight] Prop name in data object, for weight value.
      * If fillBy is "weight".
@@ -40,16 +40,17 @@ ymaps.modules.define('Polygonmap', [
      * @param {string} [options.strokeColor=#fff] Color of polygon stroke.
      * @param {number} [options.strokeWidth=2] Width of polygon stroke.
      * @param {boolean} [options.showLegend=true] Flag to show color legend.
-     * @param {function} options.legendTemplate Receives object {color: value} returns html legend template.
+     * @param {function} [options.legendTemplate=colorLegend.defaultTemplate] Receives object {color: value}
+     * returns html legend template.
      * @param {object} [options.legendPosition=top: 10, right: 10] Position of legend,
      * you can only change the top or bottom and right or left.
      * @param {function} [options.filter=undefined] Function for custom filter polygons with points.
      * @param {boolean} [options.filterEmptyPolygons=false] Flag for show polygon with count of points equal 0.
-     * @param {function} options.onMouseEnter Handler for mouseEnter event.
-     * @param {function} options.onMouseLeave Handler for mouseLeave event.
-     * @param {function} options.onClick Handler for click event.
-     * @param {function} options.balloonContent Function for render content of baloon. Recieves object with
-     * properties of polygon.
+     * @param {function} [options.onMouseEnter=defaultOnMouseEnter] Handler for mouseEnter event.
+     * @param {function} [options.onMouseLeave=defaultOnMouseLeave] Handler for mouseLeave event.
+     * @param {function} [options.onClick=defaultOnClick] Handler for click event.
+     * @param {function} [options.balloonContent=defaultBalloonContent] Function for render content of baloon.
+     * Recieves object with properties of polygon.
      * @param {number} [options.fillOpacityHover=0.9] Number of opacity on polygon hover.
      * @param {number} [options.strokeWidthHover=2] Number of stroke width on polygon hover.
      * @param {number} [options.fillOpacityActive=1] Number of opacity on polygon active.

@@ -80,7 +80,7 @@ Polygonmap module.
 | data.polygons | <code>Object</code> |  | GeoJSON FeatureCollections. |
 | data.points | <code>Object</code> |  | GeoJSON FeatureCollections. |
 | [options] | <code>Object</code> |  | Options for customization. |
-| options.mapper | <code>function</code> |  | Function of iterative transformation of features. |
+| [options.mapper] | <code>function</code> | <code>defaultMapper</code> | Function of iterative transformation of features. |
 | [options.fillBy] | <code>string</code> | <code>&quot;points&quot;</code> | Calculate the color by points | weight. |
 | [options.fillByWeightProp] | <code>string</code> | <code>&quot;weight&quot;</code> | Prop name in data object, for weight value. If fillBy is "weight". |
 | [options.fillByWeightType] | <code>string</code> | <code>&quot;middle&quot;</code> | Type of calculate color by weight. Can be middle | maximum |
@@ -91,14 +91,14 @@ Polygonmap module.
 | [options.strokeColor] | <code>string</code> | <code>&quot;#fff&quot;</code> | Color of polygon stroke. |
 | [options.strokeWidth] | <code>number</code> | <code>2</code> | Width of polygon stroke. |
 | [options.showLegend] | <code>boolean</code> | <code>true</code> | Flag to show color legend. |
-| options.legendTemplate | <code>function</code> |  | Receives object {color: value} returns html legend template. |
+| [options.legendTemplate] | <code>function</code> | <code>colorLegend.defaultTemplate</code> | Receives object {color: value} returns html legend template. |
 | [options.legendPosition] | <code>object</code> | <code>top: 10, right: 10</code> | Position of legend, you can only change the top or bottom and right or left. |
 | [options.filter] | <code>function</code> |  | Function for custom filter polygons with points. |
 | [options.filterEmptyPolygons] | <code>boolean</code> | <code>false</code> | Flag for show polygon with count of points equal 0. |
-| options.onMouseEnter | <code>function</code> |  | Handler for mouseEnter event. |
-| options.onMouseLeave | <code>function</code> |  | Handler for mouseLeave event. |
-| options.onClick | <code>function</code> |  | Handler for click event. |
-| options.balloonContent | <code>function</code> |  | Function for render content of baloon. Recieves object with properties of polygon. |
+| [options.onMouseEnter] | <code>function</code> | <code>defaultOnMouseEnter</code> | Handler for mouseEnter event. |
+| [options.onMouseLeave] | <code>function</code> | <code>defaultOnMouseLeave</code> | Handler for mouseLeave event. |
+| [options.onClick] | <code>function</code> | <code>defaultOnClick</code> | Handler for click event. |
+| [options.balloonContent] | <code>function</code> | <code>defaultBalloonContent</code> | Function for render content of baloon. Recieves object with properties of polygon. |
 | [options.fillOpacityHover] | <code>number</code> | <code>0.9</code> | Number of opacity on polygon hover. |
 | [options.strokeWidthHover] | <code>number</code> | <code>2</code> | Number of stroke width on polygon hover. |
 | [options.fillOpacityActive] | <code>number</code> | <code>1</code> | Number of opacity on polygon active. |
