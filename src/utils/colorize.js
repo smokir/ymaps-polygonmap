@@ -8,9 +8,9 @@ class Colorize {
     /**
      * @param {number} maxPointsCount Max points.
      * @param {object} options Setting for generate colormap.
-     * @param {string|array} options.colorScheme Sheme of colormap or array of custom colors (from dark to light).
+     * @param {string|array} options.colorScheme Sheme of colormap or array of custom colors (from light to dark).
      * @param {number|array} options.colorRanges Count of ranges to automaticly generate or custom array
-     * of ranges (from dark to light).
+     * of ranges (from light to dark).
      */
     constructor(maxPointsCount, options) {
         if (typeof maxPointsCount !== 'number') {
@@ -27,10 +27,12 @@ class Colorize {
             this._ranges = this._createRangesArray();
         }
 
-        this._colors = typeof options.colorScheme === 'object' ? options.colorScheme : Colormap({
-            colormap: options.colorScheme,
-            nshades: this._rangesCount
-        });
+        this._colors = typeof options.colorScheme === 'object' ?
+            options.colorScheme :
+            Colormap({
+                colormap: options.colorScheme,
+                nshades: this._rangesCount
+            }).reverse();
 
         if (this._colors.length !== this._rangesCount) {
             throw new Error('The length of the colorScheme array and ranges must be equal');
@@ -44,13 +46,14 @@ class Colorize {
      */
     _createRangesArray() {
         const arr = [];
+
         for (let i = 1; i < this._rangesCount; i++) {
             arr.push(i * Math.floor(this._maxPointsCount / this._rangesCount, 10));
         }
 
         arr.push(this._maxPointsCount + 1);
 
-        return arr.reverse();
+        return arr;
     }
 
     /**
@@ -73,10 +76,10 @@ class Colorize {
      * @returns {string} Return color.
      */
     getColor(pointsCount = 0) {
-        let color = this._colors[this._rangesCount - 1];
+        let color = this._colors[0];
 
         for (let i = 0; i < this._rangesCount; i++) {
-            if (pointsCount <= this._ranges[i] && pointsCount > this._ranges[i + 1]) {
+            if (pointsCount > this._ranges[i - 1] && pointsCount <= this._ranges[i]) {
                 color = this._colors[i];
                 break;
             }

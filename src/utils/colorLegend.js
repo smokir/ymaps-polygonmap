@@ -40,13 +40,14 @@ const init = (polygonmap) => {
         _onGetChildElement(parentDomContainer) {
             const legend = document.createElement('div');
             legend.className = 'ymaps-color-legend';
-            legend.innerHTML = template(colors.reverse());
+            legend.innerHTML = template(colors);
 
             parentDomContainer.appendChild(legend);
         }
     });
 
     const customControl = new CustomControlClass();
+
     map.controls.add(customControl, {
         float: 'none',
         position: polygonmap.options.get('legendPosition')
