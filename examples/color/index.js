@@ -94,7 +94,13 @@ ymaps.ready(() => {
                         break;
                     case 1:
                         polygonmap = new Polygonmap({polygons, points: pointsPyaterochka}, {
-                            colorScheme: ['#33691e', '#7cb342', '#aed581', '#dce775', '#e6ee9c'],
+                            colorScheme: [
+                                '#e6ee9c',
+                                '#dce775',
+                                '#aed581',
+                                '#7cb342',
+                                '#33691e'
+                            ],
                             colorRanges: 5,
                             strokeWidth: 1,
                             fillOpacity: 0.8
@@ -103,16 +109,16 @@ ymaps.ready(() => {
                     case 2:
                         polygonmap = new Polygonmap({polygons, points: pointsHotels}, {
                             colorScheme: [
-                                '#4a148c',
-                                '#6a1b9a',
-                                '#7b1fa2',
-                                '#8e24aa',
-                                '#9c27b0',
-                                '#ab47bc',
-                                '#ba68c8',
-                                '#ce93d8',
+                                '#f3e5f5',
                                 '#e1bee7',
-                                '#f3e5f5'
+                                '#ce93d8',
+                                '#ba68c8',
+                                '#ab47bc',
+                                '#9c27b0',
+                                '#8e24aa',
+                                '#7b1fa2',
+                                '#6a1b9a',
+                                '#4a148c'
                             ],
                             colorRanges: 10,
                             fillOpacity: 0.8,
