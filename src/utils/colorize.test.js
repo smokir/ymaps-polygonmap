@@ -17,8 +17,8 @@ describe('colorize', () => {
         };
 
         customOptions = {
-            colorRanges: [150, 50, 20],
-            colorScheme: ['#eee', '#ddd', '#fff']
+            colorRanges: [20, 50, 150],
+            colorScheme: ['#fff', '#ddd', '#eee']
         };
     });
 
@@ -53,14 +53,15 @@ describe('colorize', () => {
     describe('check returned color value', () => {
         it('should return correct color for max value', () => {
             const colorize = new Colorize(maxPointsCount, defaultOptions);
-            const expected = colorize.getColorMap()[0];
+            const colors = colorize.getColorMap();
+            const expected = colors[colors.length - 1];
             const result = colorize.getColor(maxPointsCount);
             expect(result).to.be.equal(expected);
         });
 
         it('should return correct color for min value', () => {
             const colorize = new Colorize(maxPointsCount, defaultOptions);
-            const expected = colorize.getColorMap()[9];
+            const expected = colorize.getColorMap()[0];
             const result = colorize.getColor(minPointsCount);
             expect(result).to.be.equal(expected);
         });
@@ -77,14 +78,14 @@ describe('colorize', () => {
 
         it('should return correct color for min value', () => {
             const colorize = new Colorize(maxPointsCount, customOptions);
-            const expected = colorize.getColorMap()[customOptions.colorScheme.length - 1];
+            const expected = colorize.getColorMap()[0];
             const result = colorize.getColor(minPointsCount);
             expect(result).to.be.equal(expected);
         });
 
         it('should return correct color for max value', () => {
             const colorize = new Colorize(maxPointsCount, customOptions);
-            const expected = colorize.getColorMap()[0];
+            const expected = colorize.getColorMap()[customOptions.colorScheme.length - 1];
             const result = colorize.getColor(maxPointsCount);
             expect(result).to.be.equal(expected);
         });
