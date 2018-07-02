@@ -7,6 +7,7 @@ const pages = [
     'examples/filter',
     'examples/color',
     'examples/colorDemo',
+    'examples/colorRangesMinimum',
     'examples/onClick',
     'examples/interactivity'
 ];
@@ -43,8 +44,8 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: [
-                    {   
-                        loader: 'style-loader'     
+                    {
+                        loader: 'style-loader'
                     },
                     {
                         loader: 'css-loader'
