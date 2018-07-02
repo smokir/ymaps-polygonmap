@@ -66,6 +66,7 @@ ymaps.modules.define('Polygonmap', [
                 fillBy: 'points',
                 fillByWeightProp: 'weight',
                 fillByWeightType: 'middle',
+                colorRangesMinimum: 0,
                 colorRanges: 4,
                 colorScheme: [
                     '#e66a54',
@@ -188,21 +189,18 @@ ymaps.modules.define('Polygonmap', [
          * @returns {undefined}
          */
         _prepare(data) {
-            const polygonFeatures = data.polygons.features;
-
-            const fillBy = this.options.get('fillBy');
-            const fillByWeightType = this.options.get('fillByWeightType');
-            const fillByWeightProp = this.options.get('fillByWeightProp');
-
-            let pointFeatures = data.points.features;
-            let pointsCountMinimum = 0;
-            let pointsCountMaximum = 0;
-            let pointsWeightMaximum = 0;
-
             if (
                 data.polygons.type === 'FeatureCollection' &&
                 data.points.type === 'FeatureCollection'
             ) {
+                const polygonFeatures = data.polygons.features;
+
+                const fillBy = this.options.get('fillBy');
+                const fillByWeightType = this.options.get('fillByWeightType');
+                const fillByWeightProp = this.options.get('fillByWeightProp');
+
+                let pointFeatures = data.points.features;
+
                 for (let i = 0; i < polygonFeatures.length; i++) {
                     const restPointFeatures = [];
                     const polygonFeature = normalizeFeature(polygonFeatures[i], meta, {id: i});
@@ -230,42 +228,65 @@ ymaps.modules.define('Polygonmap', [
 
                     pointFeatures = restPointFeatures;
 
-                    if (pointsCount < pointsCountMinimum) {
-                        pointsCountMinimum = pointsCount;
-                    }
-
-                    if (pointsCount > pointsCountMaximum) {
-                        pointsCountMaximum = pointsCount;
+                    if (fillBy === 'weight') {
+                        pointsWeight = fillByWeightType === 'middle' ?
+                            pointsWeight === 0 && pointsCount === 0 ?
+                                0 :
+                                pointsWeight / pointsCount :
+                            pointsWeight;
                     }
 
                     polygonFeature.properties = polygonFeature.properties || {};
                     polygonFeature.properties.pointsCount = pointsCount;
+                    polygonFeature.properties.pointsWeight = pointsWeight;
 
-                    if (fillBy === 'weight') {
-                        if (fillByWeightType === 'middle') {
-                            pointsWeight = pointsWeight === 0 && pointsCount === 0 ? 0 : pointsWeight / pointsCount;
-
-                            if (pointsWeight > pointsWeightMaximum) {
-                                pointsWeightMaximum = pointsWeight / pointsCount;
-                            }
-                        } else {
-                            if (pointsWeight > pointsWeightMaximum) {
-                                pointsWeightMaximum = pointsWeight;
-                            }
-                        }
-
-                        polygonFeature.properties.pointsWeight = pointsWeight;
-                    }
+                    this._calculator(polygonFeature, {fillBy});
 
                     this._data.polygons.features.push(polygonFeature);
                 }
             }
+        }
 
-            this.pointsCountMinimum = pointsCountMinimum;
-            this.pointsCountMaximum = pointsCountMaximum;
+        /**
+         * Calculator for feture values.
+         *
+         * @param {Object} feature GeoJSON FeatureCollection.
+         * @param {Object} options Options for calculating.
+         * @private
+         */
+        _calculator(feature, options) {
+            const {pointsCount} = feature.properties;
+            const {pointsWeight} = feature.properties;
+            const {fillBy} = options;
+
+            if (
+                typeof this.pointsCountMinimum === 'undefined' ||
+                pointsCount <= this.pointsCountMinimum
+            ) {
+                this.pointsCountMinimum = pointsCount;
+            }
+
+            if (
+                typeof this.pointsCountMaximum === 'undefined' ||
+                pointsCount >= this.pointsCountMaximum
+            ) {
+                this.pointsCountMaximum = pointsCount;
+            }
 
             if (fillBy === 'weight') {
-                this.pointsWeightMaximum = pointsWeightMaximum;
+                if (
+                    typeof this.pointsWeightMinimum === 'undefined' ||
+                    pointsWeight <= this.pointsWeightMinimum
+                ) {
+                    this.pointsWeightMinimum = pointsWeight;
+                }
+
+                if (
+                    typeof this.pointsWeightMaximum === 'undefined' ||
+                    pointsWeight >= this.pointsWeightMaximum
+                ) {
+                    this.pointsWeightMaximum = pointsWeight;
+                }
             }
         }
 
@@ -318,27 +339,53 @@ ymaps.modules.define('Polygonmap', [
         _initObjectManager() {
             const mapper = this.options.get('mapper');
             const filter = this.options.get('filter');
-            const fillByWeight = this.options.get('fillBy') === 'weight';
+            const fillBy = this.options.get('fillBy');
+            const fillByWeight = fillBy === 'weight';
+            const colorRangesMinimum = this.options.get('colorRangesMinimum');
 
-            this.colorize = new Colorize(fillByWeight ? this.pointsWeightMaximum : this.pointsCountMaximum, {
-                colorScheme: this.options.get('colorScheme'),
-                colorRanges: this.options.get('colorRanges')
-            });
+            if (colorRangesMinimum === 'min') {
+                delete this.pointsCountMinimum;
+                delete this.pointsWeightMinimum;
 
-            if (mapper && filter) {
                 const reducer = (acc, feature) => {
-                    if (filter(feature)) {
-                        acc.push(mapper(feature));
+                    if (!filter || filter(feature)) {
+                        this._calculator(feature, {fillBy});
+
+                        acc.push(feature);
                     }
 
                     return acc;
                 };
+
                 this._data.polygons.features = this._data.polygons.features.reduce(reducer, []);
-            } else if (mapper && !filter) {
-                this._data.polygons.features = this._data.polygons.features.map(mapper);
-            } else if (!mapper && filter) {
-                this._data.polygons.features = this._data.polygons.features.filter(filter);
             }
+
+            this.colorize = new Colorize(
+                colorRangesMinimum === 'min' ?
+                    fillByWeight ? this.pointsWeightMinimum : this.pointsCountMinimum :
+                    colorRangesMinimum,
+                fillByWeight ? this.pointsWeightMaximum : this.pointsCountMaximum,
+                {
+                    colorScheme: this.options.get('colorScheme'),
+                    colorRanges: this.options.get('colorRanges')
+                }
+            );
+
+            const reducer = (acc, feature) => {
+                if (colorRangesMinimum !== 'min' || !filter || filter(feature)) {
+                    if (mapper) {
+                        acc.push(mapper(feature));
+                    } else {
+                        acc.push(feature);
+                    }
+
+                    this._calculator(feature, {fillBy});
+                }
+
+                return acc;
+            };
+
+            this._data.polygons.features = this._data.polygons.features.reduce(reducer, []);
 
             this.objectManager = new ObjectManager();
             this.objectManager.add(this._data.polygons);
@@ -352,6 +399,7 @@ ymaps.modules.define('Polygonmap', [
         _initInteractivity() {
             this._prevObjectId = null;
             this.balloon = new ymaps.Balloon(this._map);
+
             const onMouseEnter = this.options.get('onMouseEnter');
             const onMouseLeave = this.options.get('onMouseLeave');
             const onClick = this.options.get('onClick');

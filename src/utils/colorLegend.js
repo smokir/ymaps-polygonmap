@@ -40,7 +40,7 @@ const init = (polygonmap) => {
         _onGetChildElement(parentDomContainer) {
             const legend = document.createElement('div');
             legend.className = 'ymaps-color-legend';
-            legend.innerHTML = template(colors);
+            legend.innerHTML = template.call(polygonmap, colors);
 
             parentDomContainer.appendChild(legend);
         }
@@ -58,14 +58,22 @@ const init = (polygonmap) => {
  * Function for generate html template of legend.
  * @param {Object} colors Object of colors and values.
  * @returns {string} Rendered html template.
+ * @this Polygonmap
  */
-const defaultTemplate = (colors) => {
+const defaultTemplate = function (colors) {
+    const fillBy = this.options.get('fillBy');
+    const fillByWeight = fillBy === 'weight';
+    const colorRangesMinimum = this.options.get('colorRangesMinimum');
+    const min = colorRangesMinimum === 'min' ?
+        fillByWeight ? this.pointsWeightMinimum : this.pointsCountMinimum :
+        colorRangesMinimum;
+
     return `
         <div class="legend">
             ${colors.map((color, i) => `
                 <div class="legend__row">
                     <span class="legend__value">
-                        ${colors[i - 1] ? `${colors[i - 1].value + 1} - ${color.value}` : `1 - ${color.value}`}
+                        ${colors[i - 1] ? `${colors[i - 1].value + 1} - ${color.value}` : `${min} - ${color.value}`}
                     </span>
                     <span class="legend__color" style="background: ${color.name}; opacity: ${color.opacity}"></span>
                 </div>

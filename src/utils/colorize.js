@@ -6,18 +6,23 @@ import Colormap from 'colormap';
  */
 class Colorize {
     /**
-     * @param {number} maxPointsCount Max points.
+     * @param {number} min Min value.
+     * @param {number} max Max value.
      * @param {object} options Setting for generate colormap.
      * @param {string|array} options.colorScheme Sheme of colormap or array of custom colors (from light to dark).
      * @param {number|array} options.colorRanges Count of ranges to automaticly generate or custom array
      * of ranges (from light to dark).
      */
-    constructor(maxPointsCount, options) {
-        if (typeof maxPointsCount !== 'number') {
-            throw new Error('Wrong "maxPointsCount" value');
+    constructor(min, max, options) {
+        if (typeof min !== 'number') {
+            throw new Error('Wrong "min" value');
+        }
+        if (typeof max !== 'number') {
+            throw new Error('Wrong "max" value');
         }
 
-        this._maxPointsCount = maxPointsCount;
+        this._min = min;
+        this._max = max;
 
         if (typeof options.colorRanges === 'object') {
             this._ranges = options.colorRanges;
@@ -46,12 +51,13 @@ class Colorize {
      */
     _createRangesArray() {
         const arr = [];
+        const step = Math.floor((this._max - this._min) / this._rangesCount, 10);
 
         for (let i = 1; i < this._rangesCount; i++) {
-            arr.push(i * Math.floor(this._maxPointsCount / this._rangesCount, 10));
+            arr.push(this._min + i * step);
         }
 
-        arr.push(this._maxPointsCount + 1);
+        arr.push(this._max + 1);
 
         return arr;
     }
