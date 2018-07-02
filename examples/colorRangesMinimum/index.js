@@ -12,6 +12,9 @@ ymaps.ready(() => {
 
     ymaps.modules.require(['Polygonmap'], (Polygonmap) => {
         const polygonmap = new Polygonmap({polygons, points}, {
+            filter: function (object) {
+                return object.properties.pointsCount > 15;
+            },
             colorRangesMinimum: 'min'
         });
 
