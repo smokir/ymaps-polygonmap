@@ -331,6 +331,13 @@ ymaps.modules.define('Polygonmap', [
             this.options.set('onClick', onClick.bind(this));
         }
 
+        /**
+         * Prepare otions
+         * @param {Object} options Options.
+         * @param {Object} defaultOptions Default options.
+         * @private
+         * @returns {OptionManager} OptionManager with options
+         */
         _prepareOptions(options, defaultOptions) {
             const colorScheme = options.colorScheme;
             const colorRanges = options.colorRanges;
