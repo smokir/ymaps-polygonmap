@@ -312,7 +312,7 @@ ymaps.modules.define('Polygonmap', [
          * @private
          */
         _initOptions(options, defaultOptions) {
-            this.options = new OptionManager(options, defaultOptions);
+            this.options = this._prepareOptions(options, defaultOptions);
 
             const mapper = this.options.get('mapper');
             const filterEmptyPolygons = this.options.get('filterEmptyPolygons');
@@ -329,6 +329,41 @@ ymaps.modules.define('Polygonmap', [
             this.options.set('onMouseEnter', onMouseEnter.bind(this));
             this.options.set('onMouseLeave', onMouseLeave.bind(this));
             this.options.set('onClick', onClick.bind(this));
+        }
+
+        _prepareOptions(options, defaultOptions) {
+            const colorScheme = options.colorScheme;
+            const colorRanges = options.colorRanges;
+
+            if (colorScheme && !colorRanges) {
+                if (typeof colorScheme === 'object') {
+                    /* eslint-disable-next-line no-console */
+                    console.warn('You specified a colorScheme, but did not specify the colorRanges,' +
+                    'we did this for you automatically');
+
+                    options.colorRanges = colorScheme.length;
+                } else {
+                    //eslint-disable-next-line no-console
+                    console.warn('You specified a colorScheme as default preset,' +
+                    ' but in this case colorRanges should be at least 10, we did it for you automatically');
+
+                    options.colorRanges = 10; // value 10 set before module "colormap" don't support values less than 10
+                }
+            } else if (colorRanges && !colorScheme) {
+                const defaultColorSheme = defaultOptions.get('colorScheme');
+
+                if (typeof defaultColorSheme === 'object') {
+                    options.colorRanges = defaultColorSheme.length;
+                } else {
+                    options.colorRanges = 10; // value 10 set before module "colormap" don't support values less than 10
+                }
+
+                //eslint-disable-next-line no-console
+                console.warn('You specified a colorRanges but did not specify a colorScheme,' +
+                ' we are forced to align colorRanges to the default value');
+            }
+
+            return new OptionManager(options, defaultOptions);
         }
 
         /**
