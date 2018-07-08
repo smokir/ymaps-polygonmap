@@ -13,29 +13,40 @@ const defaultOnClick = function (e) {
     this.balloon.setData({
         content: balloonContent(object)
     });
-
     this.balloon.open(e.get('coords'));
 
-    if (this._prevObjectId) {
-        this.objectManager.objects.setObjectOptions(this._prevObjectId, {
-            fillOpacity: this.options.get('fillOpacity'),
-            strokeWidth: this.options.get('strokeWidth')
-        });
+    const fillColor = this.options.get('fillColorActive');
+    const options = {
+        fillOpacity: this.options.get('fillOpacityActive'),
+        strokeColor: this.options.get('strokeColorActive'),
+        strokeWidth: this.options.get('strokeWidthActive')
+    };
+
+    if (fillColor) {
+        options.fillColor = fillColor;
     }
 
-    this.objectManager.objects.setObjectOptions(objId, {
-        fillOpacity: this.options.get('fillOpacityActive'),
-        strokeWidth: this.options.get('strokeWidthActive')
-    });
+    this.objectManager.objects.setObjectOptions(objId, options);
 
+    const onClose = () => {
+        if (this._prevObjectId) {
+            const object = this.objectManager.objects.getById(this._prevObjectId);
+            const fillColor = object.properties.fillColor;
+
+            this.objectManager.objects.setObjectOptions(this._prevObjectId, {
+                fillColor,
+                fillOpacity: this.options.get('fillOpacity'),
+                strokeColor: this.options.get('strokeColor'),
+                strokeWidth: this.options.get('strokeWidth')
+            });
+        }
+    };
+
+    onClose();
     this._prevObjectId = objId;
 
     this.balloon.events.add('close', () => {
-        this.objectManager.objects.setObjectOptions(this._prevObjectId, {
-            fillOpacity: this.options.get('fillOpacity'),
-            strokeWidth: this.options.get('strokeWidth')
-        });
-
+        onClose();
         this._prevObjectId = null;
     });
 };

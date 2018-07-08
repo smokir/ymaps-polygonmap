@@ -6,10 +6,14 @@
  */
 const defaultOnMouseLeave = function (e) {
     const objId = e.get('objectId');
+    const object = this.objectManager.objects.getById(objId);
+    const fillColor = object.properties.fillColor;
 
     if (this._prevObjectId !== objId) {
         this.objectManager.objects.setObjectOptions(objId, {
+            fillColor,
             fillOpacity: this.options.get('fillOpacity'),
+            strokeColor: this.options.get('strokeColor'),
             strokeWidth: this.options.get('strokeWidth')
         });
     }

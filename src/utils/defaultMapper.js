@@ -19,6 +19,8 @@ const defaultMapper = function (feature) {
         fillColor = this.colorize.getColor(colorNumber);
     }
 
+    feature.properties.fillColor = fillColor;
+
     feature.options = {
         fillColor,
         fillOpacity: this.options.get('fillOpacity'),
