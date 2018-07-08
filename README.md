@@ -55,7 +55,7 @@ Yandex.Maps API module for data visualization.
 ## Polygonmap
 Polygonmap module.
 
-**Requires**: <code>module:option.Manager</code>, <code>module:ObjectManager</code>
+**Requires**: <code>module:option.Manager</code>, <code>module:ObjectManager</code>  
 
 * [Polygonmap](#module_Polygonmap)
     * [Polygonmap](#exp_module_Polygonmap--Polygonmap) ⏏
@@ -69,7 +69,7 @@ Polygonmap module.
 <a name="exp_module_Polygonmap--Polygonmap"></a>
 
 ### Polygonmap ⏏
-**Kind**: Exported class
+**Kind**: Exported class  
 <a name="new_module_Polygonmap--Polygonmap_new"></a>
 
 #### new Polygonmap([data], [options])
@@ -99,9 +99,13 @@ Polygonmap module.
 | [options.onMouseLeave] | <code>function</code> | <code>defaultOnMouseLeave</code> | Handler for mouseLeave event. |
 | [options.onClick] | <code>function</code> | <code>defaultOnClick</code> | Handler for click event. |
 | [options.balloonContent] | <code>function</code> | <code>defaultBalloonContent</code> | Function for render content of baloon. Recieves object with properties of polygon. |
+| [options.fillColorHover] | <code>string</code> |  | Color of polygon on polygon hover. |
 | [options.fillOpacityHover] | <code>number</code> | <code>0.9</code> | Number of opacity on polygon hover. |
+| [options.strokeColorHover] | <code>string</code> |  | Color of polygon stroke on polygon hover. |
 | [options.strokeWidthHover] | <code>number</code> | <code>2</code> | Number of stroke width on polygon hover. |
+| [options.fillColorActive] | <code>string</code> |  | Color of polygon on polygon active. |
 | [options.fillOpacityActive] | <code>number</code> | <code>0.9</code> | Number of opacity on polygon active. |
+| [options.strokeColorActive] | <code>string</code> |  | Color of polygon stroke on polygon active. |
 | [options.strokeWidthActive] | <code>number</code> | <code>2</code> | Number of stroke width on polygon active. |
 | [options.interactivity] | <code>boolean</code> | <code>true</code> | Flag for enable interactivity. |
 
@@ -110,17 +114,17 @@ Polygonmap module.
 #### polygonmap.getData() ⇒ <code>Object</code>
 Get the data, polygons and points.
 
-**Kind**: instance method of [<code>Polygonmap</code>](#exp_module_Polygonmap--Polygonmap)
-**Returns**: <code>Object</code> - Polygons and points.
-**Access**: public
+**Kind**: instance method of [<code>Polygonmap</code>](#exp_module_Polygonmap--Polygonmap)  
+**Returns**: <code>Object</code> - Polygons and points.  
+**Access**: public  
 <a name="module_Polygonmap--Polygonmap+setData"></a>
 
 #### polygonmap.setData(data) ⇒ <code>Polygonmap</code>
 Set the data, polygons and points.
 
-**Kind**: instance method of [<code>Polygonmap</code>](#exp_module_Polygonmap--Polygonmap)
-**Returns**: <code>Polygonmap</code> - Self-reference.
-**Access**: public
+**Kind**: instance method of [<code>Polygonmap</code>](#exp_module_Polygonmap--Polygonmap)  
+**Returns**: <code>Polygonmap</code> - Self-reference.  
+**Access**: public  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -133,17 +137,17 @@ Set the data, polygons and points.
 #### polygonmap.getMap() ⇒ <code>Map</code>
 Get the Map instance.
 
-**Kind**: instance method of [<code>Polygonmap</code>](#exp_module_Polygonmap--Polygonmap)
-**Returns**: <code>Map</code> - Reference to Map instance.
-**Access**: public
+**Kind**: instance method of [<code>Polygonmap</code>](#exp_module_Polygonmap--Polygonmap)  
+**Returns**: <code>Map</code> - Reference to Map instance.  
+**Access**: public  
 <a name="module_Polygonmap--Polygonmap+setMap"></a>
 
 #### polygonmap.setMap(map) ⇒ <code>Polygonmap</code>
 Set Map instance to render Polygonmap object.
 
-**Kind**: instance method of [<code>Polygonmap</code>](#exp_module_Polygonmap--Polygonmap)
-**Returns**: <code>Polygonmap</code> - Self-reference.
-**Access**: public
+**Kind**: instance method of [<code>Polygonmap</code>](#exp_module_Polygonmap--Polygonmap)  
+**Returns**: <code>Polygonmap</code> - Self-reference.  
+**Access**: public  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -154,8 +158,8 @@ Set Map instance to render Polygonmap object.
 #### polygonmap.destroy()
 Destructs Polygonmap instance.
 
-**Kind**: instance method of [<code>Polygonmap</code>](#exp_module_Polygonmap--Polygonmap)
-**Access**: public
+**Kind**: instance method of [<code>Polygonmap</code>](#exp_module_Polygonmap--Polygonmap)  
+**Access**: public  
 
 ## Examples
 
