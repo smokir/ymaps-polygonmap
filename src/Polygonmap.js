@@ -60,7 +60,7 @@ ymaps.modules.define('Polygonmap', [
      * @alias module:Polygonmap
      */
     class Polygonmap {
-        constructor(data, options) {
+        constructor(data, options = {}) {
             const defaultOptions = new OptionManager({
                 mapper: defaultMapper,
                 fillBy: 'points',
@@ -316,6 +316,8 @@ ymaps.modules.define('Polygonmap', [
 
             const mapper = this.options.get('mapper');
             const filterEmptyPolygons = this.options.get('filterEmptyPolygons');
+            const colorScheme = this.options.get('colorScheme');
+            const colorRanges = this.options.get('colorRanges');
             const onMouseEnter = this.options.get('onMouseEnter');
             const onMouseLeave = this.options.get('onMouseLeave');
             const onClick = this.options.get('onClick');
@@ -324,6 +326,13 @@ ymaps.modules.define('Polygonmap', [
 
             if (filterEmptyPolygons) {
                 this.options.set('filter', defaultFilter.bind(this));
+            }
+
+            if (
+                typeof options.colorRanges === 'undefined' &&
+                colorRanges !== colorScheme.length
+            ) {
+                this.options.set('colorRanges', colorScheme.length);
             }
 
             this.options.set('onMouseEnter', onMouseEnter.bind(this));
@@ -360,16 +369,20 @@ ymaps.modules.define('Polygonmap', [
                 this._data.polygons.features = this._data.polygons.features.reduce(reducer, []);
             }
 
-            this.colorize = new Colorize(
-                colorRangesMinimum === 'min' ?
-                    fillByWeight ? this.pointsWeightMinimum : this.pointsCountMinimum :
-                    colorRangesMinimum,
-                fillByWeight ? this.pointsWeightMaximum : this.pointsCountMaximum,
-                {
-                    colorScheme: this.options.get('colorScheme'),
-                    colorRanges: this.options.get('colorRanges')
-                }
-            );
+            try {
+                this.colorize = new Colorize(
+                    colorRangesMinimum === 'min' ?
+                        fillByWeight ? this.pointsWeightMinimum : this.pointsCountMinimum :
+                        colorRangesMinimum,
+                    fillByWeight ? this.pointsWeightMaximum : this.pointsCountMaximum,
+                    {
+                        colorScheme: this.options.get('colorScheme'),
+                        colorRanges: this.options.get('colorRanges')
+                    }
+                );
+            } catch (error) {
+                console.error(error);
+            }
 
             const reducer = (acc, feature) => {
                 if (colorRangesMinimum !== 'min' || !filter || filter(feature)) {
