@@ -51,9 +51,13 @@ ymaps.modules.define('Polygonmap', [
      * @param {function} [options.onClick=defaultOnClick] Handler for click event.
      * @param {function} [options.balloonContent=defaultBalloonContent] Function for render content of baloon.
      * Recieves object with properties of polygon.
+     * @param {string} [options.fillColorHover] Color of polygon on polygon hover.
      * @param {number} [options.fillOpacityHover=0.9] Number of opacity on polygon hover.
+     * @param {string} [options.strokeColorHover] Color of polygon stroke on polygon hover.
      * @param {number} [options.strokeWidthHover=2] Number of stroke width on polygon hover.
+     * @param {string} [options.fillColorActive] Color of polygon on polygon active.
      * @param {number} [options.fillOpacityActive=0.9] Number of opacity on polygon active.
+     * @param {string} [options.strokeColorActive] Color of polygon stroke on polygon active.
      * @param {number} [options.strokeWidthActive=2] Number of stroke width on polygon active.
      * @param {boolean} [options.interactivity=true] Flag for enable interactivity.
      *
@@ -92,9 +96,13 @@ ymaps.modules.define('Polygonmap', [
                 onMouseLeave: defaultOnMouseLeave,
                 onClick: defaultOnClick,
                 balloonContent: defaultBalloonContent,
+                fillColorHover: undefined,
                 fillOpacityHover: 0.9,
+                strokeColorHover: '#fff',
                 strokeWidthHover: 2,
+                fillColorActive: undefined,
                 fillOpacityActive: 0.9,
+                strokeColorActive: '#fff',
                 strokeWidthActive: 2,
                 interactivity: true
             });
