@@ -60,7 +60,7 @@ ymaps.modules.define('Polygonmap', [
      * @alias module:Polygonmap
      */
     class Polygonmap {
-        constructor(data, options) {
+        constructor(data, options = {}) {
             const defaultOptions = new OptionManager({
                 mapper: defaultMapper,
                 fillBy: 'points',
@@ -312,10 +312,12 @@ ymaps.modules.define('Polygonmap', [
          * @private
          */
         _initOptions(options, defaultOptions) {
-            this.options = this._prepareOptions(options, defaultOptions);
+            this.options = new OptionManager(options, defaultOptions);
 
             const mapper = this.options.get('mapper');
             const filterEmptyPolygons = this.options.get('filterEmptyPolygons');
+            const colorScheme = this.options.get('colorScheme');
+            const colorRanges = this.options.get('colorRanges');
             const onMouseEnter = this.options.get('onMouseEnter');
             const onMouseLeave = this.options.get('onMouseLeave');
             const onClick = this.options.get('onClick');
@@ -326,51 +328,16 @@ ymaps.modules.define('Polygonmap', [
                 this.options.set('filter', defaultFilter.bind(this));
             }
 
+            if (
+                typeof options.colorRanges === 'undefined' &&
+                colorRanges !== colorScheme.length
+            ) {
+                this.options.set('colorRanges', colorScheme.length);
+            }
+
             this.options.set('onMouseEnter', onMouseEnter.bind(this));
             this.options.set('onMouseLeave', onMouseLeave.bind(this));
             this.options.set('onClick', onClick.bind(this));
-        }
-
-        /**
-         * Prepare otions
-         * @param {Object} options Options.
-         * @param {Object} defaultOptions Default options.
-         * @private
-         * @returns {OptionManager} OptionManager with options
-         */
-        _prepareOptions(options, defaultOptions) {
-            const colorScheme = options.colorScheme;
-            const colorRanges = options.colorRanges;
-
-            if (colorScheme && !colorRanges) {
-                if (typeof colorScheme === 'object') {
-                    /* eslint-disable-next-line no-console */
-                    console.warn('You specified a colorScheme, but did not specify the colorRanges,' +
-                    'we did this for you automatically');
-
-                    options.colorRanges = colorScheme.length;
-                } else {
-                    //eslint-disable-next-line no-console
-                    console.warn('You specified a colorScheme as default preset,' +
-                    ' but in this case colorRanges should be at least 10, we did it for you automatically');
-
-                    options.colorRanges = 10; // value 10 set before module "colormap" don't support values less than 10
-                }
-            } else if (colorRanges && !colorScheme) {
-                const defaultColorSheme = defaultOptions.get('colorScheme');
-
-                if (typeof defaultColorSheme === 'object') {
-                    options.colorRanges = defaultColorSheme.length;
-                } else {
-                    options.colorRanges = 10; // value 10 set before module "colormap" don't support values less than 10
-                }
-
-                //eslint-disable-next-line no-console
-                console.warn('You specified a colorRanges but did not specify a colorScheme,' +
-                ' we are forced to align colorRanges to the default value');
-            }
-
-            return new OptionManager(options, defaultOptions);
         }
 
         /**
@@ -402,16 +369,20 @@ ymaps.modules.define('Polygonmap', [
                 this._data.polygons.features = this._data.polygons.features.reduce(reducer, []);
             }
 
-            this.colorize = new Colorize(
-                colorRangesMinimum === 'min' ?
-                    fillByWeight ? this.pointsWeightMinimum : this.pointsCountMinimum :
-                    colorRangesMinimum,
-                fillByWeight ? this.pointsWeightMaximum : this.pointsCountMaximum,
-                {
-                    colorScheme: this.options.get('colorScheme'),
-                    colorRanges: this.options.get('colorRanges')
-                }
-            );
+            try {
+                this.colorize = new Colorize(
+                    colorRangesMinimum === 'min' ?
+                        fillByWeight ? this.pointsWeightMinimum : this.pointsCountMinimum :
+                        colorRangesMinimum,
+                    fillByWeight ? this.pointsWeightMaximum : this.pointsCountMaximum,
+                    {
+                        colorScheme: this.options.get('colorScheme'),
+                        colorRanges: this.options.get('colorRanges')
+                    }
+                );
+            } catch (error) {
+                console.error(error);
+            }
 
             const reducer = (acc, feature) => {
                 if (colorRangesMinimum !== 'min' || !filter || filter(feature)) {
