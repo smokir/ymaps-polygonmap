@@ -226,40 +226,45 @@ function define(ymaps) {
                         const restPointFeatures = [];
                         const polygonFeature = normalizeFeature(polygonFeatures[i], meta, {id: i});
 
-                        let pointsCount = 0;
-                        let pointsWeight = 0;
-
-                        for (let j = 0; j < pointFeatures.length; j++) {
-                            let pointFeature;
-
-                            if (i === 0) {
-                                pointFeature = normalizeFeature(pointFeatures[j], meta, {id: j});
-                                this._data.points.features.push(pointFeature);
-                            } else {
-                                pointFeature = pointFeatures[j];
-                            }
-
-                            if (inside(polygonFeature.geometry, pointFeature.geometry)) {
-                                pointsCount++;
-                                pointsWeight += pointFeature.properties[fillByWeightProp];
-                            } else {
-                                restPointFeatures.push(pointFeature);
-                            }
-                        }
-
-                        pointFeatures = restPointFeatures;
-
-                        if (fillBy === 'weight') {
-                            pointsWeight = fillByWeightType === 'middle' ?
-                                pointsWeight === 0 && pointsCount === 0 ?
-                                    0 :
-                                    pointsWeight / pointsCount :
-                                pointsWeight;
-                        }
-
                         polygonFeature.properties = polygonFeature.properties || {};
-                        polygonFeature.properties.pointsCount = pointsCount;
-                        polygonFeature.properties.pointsWeight = pointsWeight;
+
+                        if (typeof polygonFeature.properties.pointsCount !== 'number' &&
+                            typeof polygonFeature.properties.pointsWeight !== 'number'
+                        ) {
+                            let pointsCount = 0;
+                            let pointsWeight = 0;
+
+                            for (let j = 0; j < pointFeatures.length; j++) {
+                                let pointFeature;
+
+                                if (i === 0) {
+                                    pointFeature = normalizeFeature(pointFeatures[j], meta, {id: j});
+                                    this._data.points.features.push(pointFeature);
+                                } else {
+                                    pointFeature = pointFeatures[j];
+                                }
+
+                                if (inside(polygonFeature.geometry, pointFeature.geometry)) {
+                                    pointsCount++;
+                                    pointsWeight += pointFeature.properties[fillByWeightProp];
+                                } else {
+                                    restPointFeatures.push(pointFeature);
+                                }
+                            }
+
+                            pointFeatures = restPointFeatures;
+
+                            if (fillBy === 'weight') {
+                                pointsWeight = fillByWeightType === 'middle' ?
+                                    pointsWeight === 0 && pointsCount === 0 ?
+                                        0 :
+                                        pointsWeight / pointsCount :
+                                    pointsWeight;
+                            }
+
+                            polygonFeature.properties.pointsCount = pointsCount;
+                            polygonFeature.properties.pointsWeight = pointsWeight;
+                        }
 
                         this._calculator(polygonFeature, {fillBy});
 
