@@ -1,4 +1,4 @@
-import '../../src/Polygonmap';
+import '../../src';
 import points from '../data/bikeparking-moscow.geojson';
 import polygons from '../data/moscow-mo.geojson';
 

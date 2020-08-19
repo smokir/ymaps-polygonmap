@@ -1,5 +1,5 @@
 module.exports = {
-    entry: './src/Polygonmap.js',
+    entry: './src/index.js',
     output: {
         filename: 'polygonmap.min.js',
         path: __dirname + '/umd'

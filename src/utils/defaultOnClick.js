@@ -15,13 +15,13 @@ const defaultOnClick = function (e) {
     });
     this.balloon.open(e.get('coords'));
 
-    const fillColor = this.options.get('fillColorActive');
     const options = {
-        fillOpacity: this.options.get('fillOpacityActive'),
-        strokeColor: this.options.get('strokeColorActive'),
-        strokeWidth: this.options.get('strokeWidthActive')
+        fillOpacity: object.options.fillOpacityActive || this.options.get('fillOpacityActive'),
+        strokeColor: object.options.strokeColorActive || this.options.get('strokeColorActive'),
+        strokeWidth: object.options.strokeWidthActive || this.options.get('strokeWidthActive')
     };
 
+    const fillColor = object.options.fillColorActive || this.options.get('fillColorActive');
     if (fillColor) {
         options.fillColor = fillColor;
     }
@@ -31,14 +31,15 @@ const defaultOnClick = function (e) {
     const onClose = () => {
         if (this._prevObjectId) {
             const object = this.objectManager.objects.getById(this._prevObjectId);
-            const fillColor = object.properties.fillColor;
 
-            this.objectManager.objects.setObjectOptions(this._prevObjectId, {
-                fillColor,
-                fillOpacity: this.options.get('fillOpacity'),
-                strokeColor: this.options.get('strokeColor'),
-                strokeWidth: this.options.get('strokeWidth')
-            });
+            if (object) {
+                this.objectManager.objects.setObjectOptions(this._prevObjectId, {
+                    fillColor: object.options.fillColorDefault,
+                    fillOpacity: object.options.fillOpacityDefault,
+                    strokeColor: object.options.strokeColorDefault,
+                    strokeWidth: object.options.strokeWidthDefault
+                });
+            }
         }
     };
 

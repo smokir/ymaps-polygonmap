@@ -8,13 +8,15 @@ const defaultOnMouseEnter = function (e) {
     const objId = e.get('objectId');
 
     if (this._prevObjectId !== objId) {
-        const fillColor = this.options.get('fillColorHover');
+        const object = this.objectManager.objects.getById(objId);
+
         const options = {
-            fillOpacity: this.options.get('fillOpacityHover'),
-            strokeColor: this.options.get('strokeColorHover'),
-            strokeWidth: this.options.get('strokeWidthHover')
+            fillOpacity: object.options.fillOpacityHover || this.options.get('fillOpacityHover'),
+            strokeColor: object.options.strokeColorHover || this.options.get('strokeColorHover'),
+            strokeWidth: object.options.strokeWidthHover || this.options.get('strokeWidthHover')
         };
 
+        const fillColor = object.options.fillColorHover || this.options.get('fillColorHover');
         if (fillColor) {
             options.fillColor = fillColor;
         }

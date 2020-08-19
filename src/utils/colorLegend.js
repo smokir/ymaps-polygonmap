@@ -31,6 +31,8 @@ const init = (polygonmap) => {
         CustomControlClass.superclass.constructor.call(this, options);
     };
 
+    const ymaps = polygonmap.getYMaps();
+
     ymaps.util.augment(CustomControlClass, ymaps.collection.Item, {
         onAddToMap(map) {
             CustomControlClass.superclass.onAddToMap.call(this, map);

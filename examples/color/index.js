@@ -1,5 +1,5 @@
 /* eslint-disable no-invalid-this */
-import '../../src/Polygonmap';
+import '../../src';
 import points from '../data/bikeparking-moscow.geojson';
 import pointsPyaterochka from '../data/pyaterochka-moscow.geojson';
 import pointsHotels from '../data/hotels-moscow.geojson';

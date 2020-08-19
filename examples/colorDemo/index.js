@@ -1,9 +1,9 @@
 /* eslint-disable no-invalid-this */
-import '../../src/Polygonmap';
+import '../../src';
 import points from '../data/bikeparking-moscow.geojson';
 import polygons from '../data/moscow-mo.geojson';
 
-ymaps.ready(() => {    
+ymaps.ready(() => {
     var myMap = new ymaps.Map("map", {
         center: [37.64, 55.76],
         zoom: 10,
