@@ -16,9 +16,27 @@ const defaultOnClick = function (e) {
     this.balloon.open(e.get('coords'));
 
     const options = {
-        fillOpacity: object.options.fillOpacityActive || this.options.get('fillOpacityActive'),
-        strokeColor: object.options.strokeColorActive || this.options.get('strokeColorActive'),
-        strokeWidth: object.options.strokeWidthActive || this.options.get('strokeWidthActive')
+        fillColorOriginal: object.options.fillColor || this.options.get('fillColor'),
+
+        fillOpacityOriginal: typeof object.options.fillOpacity === 'number' ?
+            object.options.fillOpacity :
+            this.options.get('fillOpacity'),
+        strokeColorOriginal: typeof object.options.strokeColor === 'number' ?
+            object.options.strokeColor :
+            this.options.get('strokeColor'),
+        strokeWidthOriginal: typeof object.options.strokeWidth === 'number' ?
+            object.options.strokeWidth :
+            this.options.get('strokeWidth'),
+
+        fillOpacity: typeof object.options.fillOpacityActive === 'number' ?
+            object.options.fillOpacityActive :
+            this.options.get('fillOpacityActive'),
+        strokeColor: typeof object.options.strokeColorActive === 'number' ?
+            object.options.strokeColorActive :
+            this.options.get('strokeColorActive'),
+        strokeWidth: typeof object.options.strokeWidthActive === 'number' ?
+            object.options.strokeWidthActive :
+            this.options.get('strokeWidthActive')
     };
 
     const fillColor = object.options.fillColorActive || this.options.get('fillColorActive');
@@ -34,10 +52,10 @@ const defaultOnClick = function (e) {
 
             if (object) {
                 this.objectManager.objects.setObjectOptions(this._prevObjectId, {
-                    fillColor: object.options.fillColorDefault,
-                    fillOpacity: object.options.fillOpacityDefault,
-                    strokeColor: object.options.strokeColorDefault,
-                    strokeWidth: object.options.strokeWidthDefault
+                    fillColor: object.options.fillColorOriginal,
+                    fillOpacity: object.options.fillOpacityOriginal,
+                    strokeColor: object.options.strokeColorOriginal,
+                    strokeWidth: object.options.strokeWidthOriginal
                 });
             }
         }

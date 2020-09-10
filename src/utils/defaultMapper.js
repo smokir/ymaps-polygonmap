@@ -28,12 +28,6 @@ const defaultMapper = function (feature) {
         strokeColor: this.options.get('strokeColor')
     }, feature.options);
 
-    // saving default values because original values will be changed on hover and click
-    feature.options.fillColorDefault = feature.options.fillColor;
-    feature.options.fillOpacityDefault = feature.options.fillOpacity;
-    feature.options.strokeColorDefault = feature.options.strokeColor;
-    feature.options.strokeWidthDefault = feature.options.strokeWidth;
-
     return feature;
 };
 

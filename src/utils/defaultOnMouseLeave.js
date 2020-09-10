@@ -10,10 +10,10 @@ const defaultOnMouseLeave = function (e) {
 
     if (this._prevObjectId !== objId) {
         this.objectManager.objects.setObjectOptions(objId, {
-            fillColor: object.options.fillColorDefault,
-            fillOpacity: object.options.fillOpacityDefault,
-            strokeColor: object.options.strokeColorDefault,
-            strokeWidth: object.options.strokeWidthDefault
+            fillColor: object.options.fillColorOriginal,
+            fillOpacity: object.options.fillOpacityOriginal,
+            strokeColor: object.options.strokeColorOriginal,
+            strokeWidth: object.options.strokeWidthOriginal
         });
     }
 };
